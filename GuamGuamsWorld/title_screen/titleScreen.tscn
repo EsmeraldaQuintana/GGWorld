@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://title_screen/title_screen_background.tex" type="Texture" id=1]
+[ext_resource path="res://title_screen/logo.png" type="Texture" id=2]
+[ext_resource path="res://title_screen/exit button notpressed.tex" type="Texture" id=3]
+[ext_resource path="res://title_screen/exitButton.gd" type="Script" id=4]
+[ext_resource path="res://title_screen/start button notpressed.tex" type="Texture" id=5]
+[ext_resource path="res://title_screen/startButton.gd" type="Script" id=6]
+
+[node name="background" type="TextureFrame"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 1030.0
+margin/bottom = 603.0
+texture = ExtResource( 1 )
+stretch_mode = 0
+
+[node name="logo" type="TextureFrame" parent="."]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 380.0
+margin/top = 106.0
+margin/right = 480.0
+margin/bottom = 206.0
+texture = ExtResource( 2 )
+stretch_mode = 0
+
+[node name="exitButton" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 580.0
+margin/top = 382.0
+margin/right = 730.0
+margin/bottom = 457.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 3 )
+params/scale = Vector2( 0.75, 0.75 )
+script/script = ExtResource( 4 )
+
+[node name="startButton" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 250.0
+margin/top = 381.0
+margin/right = 400.0
+margin/bottom = 456.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 5 )
+params/scale = Vector2( 0.75, 0.75 )
+script/script = ExtResource( 6 )
+
+
