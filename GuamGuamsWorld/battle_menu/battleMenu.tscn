@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://battle_menu/menu_background.png" type="Texture" id=1]
+[ext_resource path="res://battle_menu/menu_arrow.png" type="Texture" id=2]
+[ext_resource path="res://battle_menu/menuArrow.gd" type="Script" id=3]
+
+[node name="menuBackground" type="TextureFrame"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 120.0
+margin/bottom = 48.0
+texture = ExtResource( 1 )
+stretch_mode = 0
+
+[node name="menuArrow" type="TextureFrame" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 8.0
+margin/top = 12.0
+margin/right = 14.0
+margin/bottom = 22.0
+texture = ExtResource( 2 )
+stretch_mode = 0
+script/script = ExtResource( 3 )
+
+
