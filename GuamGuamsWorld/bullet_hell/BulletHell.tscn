@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://bullet_hell/BulletHell.gd" type="Script" id=1]
 [ext_resource path="res://bullet_hell/background.png" type="Texture" id=2]
@@ -9,6 +9,11 @@
 [sub_resource type="CanvasItemMaterial" id=1]
 
 shader/shading_mode = 0
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 24, 30 )
 
 [node name="Background Node" type="TextureFrame"]
 
@@ -53,16 +58,44 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 61.0
-margin/top = 50.0
+margin/top = 48.0
 margin/right = 561.0
-margin/bottom = 550.0
+margin/bottom = 548.0
 texture = ExtResource( 4 )
 stretch_mode = 0
 
-[node name="BH Player" type="Sprite" parent="BH Boundaries"]
+[node name="StaticBody2D" type="StaticBody2D" parent="BH Boundaries"]
 
-visibility/light_mask = 0
-transform/pos = Vector2( 247.435, 421.473 )
+material/use_parent = true
+transform/pos = Vector2( 3.55502, 249.667 )
+transform/scale = Vector2( 0.139838, 7.80113 )
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Player" type="KinematicBody2D" parent="."]
+
+transform/pos = Vector2( 311.845, 449.352 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+
+[node name="Player Sprite" type="Sprite" parent="Player"]
+
 texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
 
 
