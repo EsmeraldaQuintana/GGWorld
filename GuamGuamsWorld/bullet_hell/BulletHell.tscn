@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=13 format=1]
 
 [ext_resource path="res://bullet_hell/BulletHell.gd" type="Script" id=1]
 [ext_resource path="res://bullet_hell/background.png" type="Texture" id=2]
 [ext_resource path="res://bullet_hell/tiledbackground.png" type="Texture" id=3]
 [ext_resource path="res://bullet_hell/ActiveBoundary.png" type="Texture" id=4]
 [ext_resource path="res://bullet_hell/creature_back_48x60.png" type="Texture" id=5]
+[ext_resource path="res://dinos/dino.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -75,6 +76,7 @@ region_rect = Rect2( 1024, 600, 0, 0 )
 
 [node name="Box" type="Sprite" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 312.357, 297.949 )
 texture = ExtResource( 4 )
 __meta__ = { "_edit_lock_":true }
@@ -200,5 +202,7 @@ shape = SubResource( 6 )
 trigger = false
 _update_shape_index = 0
 __meta__ = { "_edit_lock_":true }
+
+[node name="dino" parent="." instance=ExtResource( 6 )]
 
 

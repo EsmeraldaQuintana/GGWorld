@@ -2,7 +2,7 @@
 
 [ext_resource path="res://dinos/dino.gd" type="Script" id=1]
 
-[node name="Sprite" type="Sprite"]
+[node name="frontSprite" type="Sprite"]
 
 script/script = ExtResource( 1 )
 

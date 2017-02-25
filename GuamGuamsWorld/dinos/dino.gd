@@ -1,11 +1,11 @@
 extends Sprite
 
-var totalHP
-var currentHP
-var frontSprite
-var backSprite
+class Dino extends Sprite:
+	var totalHP = 100
+	var currentHP = 100
+	var name
+	var attacks
+	var type
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
 	pass
