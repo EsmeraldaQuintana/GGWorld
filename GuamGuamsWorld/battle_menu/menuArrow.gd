@@ -11,7 +11,7 @@ func _ready():
 	self.set_process(true)
 
 func _process(delta):
-	if Input.is_action_pressed("move_up"):
+	if Input.is_action_pressed("ui_up"):
 		if current_state == "Pokemon":
 			current_state = "Fight"
 			current_location = Vector2(8, 12)
@@ -19,7 +19,7 @@ func _process(delta):
 			current_state = "Bag"
 			current_location = Vector2(65, 12)
 			
-	if Input.is_action_pressed("move_left"):
+	if Input.is_action_pressed("ui_left"):
 		if current_state == "Bag":
 			current_state = "Fight"
 			current_location = Vector2(8, 12)
@@ -27,7 +27,7 @@ func _process(delta):
 			current_state = "Pokemon"
 			current_location = Vector2(8, 28)
 			
-	if Input.is_action_pressed("move_right"):
+	if Input.is_action_pressed("ui_right"):
 		if current_state == "Fight":
 			current_state = "Bag"
 			current_location = Vector2(65, 12)
@@ -35,7 +35,7 @@ func _process(delta):
 			current_state = "Run"
 			current_location = Vector2(65, 28)
 			
-	if Input.is_action_pressed("move_down"):
+	if Input.is_action_pressed("ui_down"):
 		if current_state == "Fight":
 			current_state = "Pokemon"
 			current_location = Vector2(8, 28)
