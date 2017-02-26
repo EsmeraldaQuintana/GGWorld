@@ -5,9 +5,9 @@
 [ext_resource path="res://bullet_hell/tiledbackground.png" type="Texture" id=3]
 [ext_resource path="res://bullet_hell/ActiveBoundary.png" type="Texture" id=4]
 [ext_resource path="res://bullet_hell/creature_back_48x60.png" type="Texture" id=5]
-[ext_resource path="res://battle_menu/battleMenu.tscn" type="PackedScene" id=6]
-[ext_resource path="res://dinos/Squirtle/Squirtle.tscn" type="PackedScene" id=7]
-[ext_resource path="res://dinos/Torchic/Torchic.tscn" type="PackedScene" id=8]
+[ext_resource path="res://dinos/Squirtle/Squirtle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://dinos/Torchic/Torchic.tscn" type="PackedScene" id=7]
+[ext_resource path="res://battle_menu/battleMenu.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -205,22 +205,19 @@ trigger = false
 _update_shape_index = 0
 __meta__ = { "_edit_lock_":true }
 
-[node name="menuBackground" parent="." instance=ExtResource( 6 )]
-
-rect/scale = Vector2( 2, 2 )
-margin/left = 691.0
-margin/top = 425.0
-margin/right = 811.0
-margin/bottom = 473.0
-
-[node name="Squirtle" parent="." instance=ExtResource( 7 )]
+[node name="Squirtle" parent="." instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 700, 200 )
 transform/scale = Vector2( 2, 2 )
 
-[node name="Torchic" parent="." instance=ExtResource( 8 )]
+[node name="Torchic" parent="." instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 900, 200 )
 transform/scale = Vector2( 2, 2 )
+
+[node name="menuBackground" parent="." instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 800, 400 )
+transform/scale = Vector2( 1.5, 1.5 )
 
 
