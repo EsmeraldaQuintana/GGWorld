@@ -6,7 +6,6 @@ class Dino extends Sprite:
 	var name
 	var attacks
 	var type
-	var frontSprite
 
 func _ready():
-	self.set_texture(frontSprite)
+	pass
