@@ -1,7 +1,6 @@
 extends "res://dinos/dino.gd".Dino
 
 
-
 var frontSprite = preload("res://dinos/Squirtle/frontSprite.png")
 func _init():
 	totalHP = 100
