@@ -2,7 +2,6 @@
 
 [ext_resource path="res://overworld/map/PathAndObjects.png" type="Texture" id=1]
 
-
 [node name="Node" type="Node"]
 
 [node name="UpLeft" type="Sprite" parent="."]
@@ -173,6 +172,7 @@ region_rect = Rect2( 32, 353, 32, 32 )
 
 [node name="Object" type="Sprite" parent="."]
 
+visibility/visible = false
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 225, 416, 32, 32 )
