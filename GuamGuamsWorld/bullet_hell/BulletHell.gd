@@ -13,6 +13,12 @@ var player_velocity = Vector2()
 
 # fixed_process happens on timed basis
 func _fixed_process(delta):
+	var colliding = .get_node("Player").is_colliding()
+	if (colliding):
+		print("colliding!")
+		print("took 100 dmg", .get_node("Player").get_collider().free())
+		player_health = 0
+		print("player health is ", player_health)
 	player_velocity.y += delta
 	if (Input.is_action_pressed("move_left")):
 		player_velocity.x = -player_speed
@@ -31,17 +37,16 @@ func _fixed_process(delta):
 	
 # first function called is _ready()
 func _ready():
-	# set_process(true)
-	# activates _fixed_process()
+	set_process(true)
 	set_fixed_process(true)
 	screen_size = get_viewport_rect().size
 	var boundarybox = get_node("Box").get_pos()
 	print("boundarybox_x is", boundarybox.x)
 	print("boundarybox_y is", boundarybox.y)
-	 # pad_size obtains texture size
 	player_size = get_node("Player/Player Sprite").get_texture().get_size()
-	
+
 # _process() currently unused!
 # gamestate update
 # delta processes at every frame
-# func _process(delta):
+#func _process(delta):
+#)
