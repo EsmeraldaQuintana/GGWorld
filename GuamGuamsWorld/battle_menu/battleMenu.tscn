@@ -1,34 +1,40 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://battle_menu/menu_background.png" type="Texture" id=1]
 [ext_resource path="res://battle_menu/menu_arrow.png" type="Texture" id=2]
 [ext_resource path="res://battle_menu/menuArrow.gd" type="Script" id=3]
+[ext_resource path="res://battle_menu/textBackground.png" type="Texture" id=4]
 
-[node name="menuBackground" type="TextureFrame"]
+[node name="menuBackground" type="Sprite"]
 
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 120.0
-margin/bottom = 48.0
+transform/pos = Vector2( 117.698, 25.3592 )
 texture = ExtResource( 1 )
-stretch_mode = 0
 
-[node name="menuArrow" type="TextureFrame" parent="."]
+[node name="menuArrow" type="Sprite" parent="."]
+
+transform/pos = Vector2( -49, -7 )
+texture = ExtResource( 2 )
+script/script = ExtResource( 3 )
+
+[node name="text_box" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0, 50 )
+texture = ExtResource( 4 )
+
+[node name="label" type="Label" parent="text_box"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 8.0
-margin/top = 12.0
-margin/right = 14.0
-margin/bottom = 22.0
-texture = ExtResource( 2 )
-stretch_mode = 0
-script/script = ExtResource( 3 )
+size_flags/vertical = 0
+margin/left = -103.0
+margin/top = -17.0
+margin/right = 103.0
+margin/bottom = 16.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 

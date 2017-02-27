@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://dinos/Torchic/Torchic.gd" type="Script" id=1]
+
+[node name="Torchic" type="Sprite"]
+
+transform/pos = Vector2( 29, 30 )
+script/script = ExtResource( 1 )
+
+

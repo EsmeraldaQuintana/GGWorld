@@ -4,5 +4,4 @@ func _ready():
 	pass
 
 func _pressed():
-	# change scene to beginning of game
-	pass
+	get_tree().change_scene("res://bullet_hell/BulletHell.tscn")
