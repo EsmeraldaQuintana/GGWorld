@@ -42,7 +42,7 @@ stretch_mode = 0
 [node name="BH image" type="Sprite" parent="logo"]
 
 visibility/opacity = 0.51
-transform/pos = Vector2( 52.5, 92.5 )
+transform/pos = Vector2( 52.5, 97.5 )
 transform/scale = Vector2( 0.402344, 0.36875 )
 texture = ExtResource( 3 )
 modulate = Color( 0.53549, 1, 0.710392, 1 )
