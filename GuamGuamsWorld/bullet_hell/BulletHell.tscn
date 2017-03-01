@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=1]
+[gd_scene load_steps=20 format=1]
 
 [ext_resource path="res://bullet_hell/BulletHell.gd" type="Script" id=1]
 [ext_resource path="res://bullet_hell/background.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://dinos/Torchic/Torchic.tscn" type="PackedScene" id=7]
 [ext_resource path="res://battle_menu/battleMenu.tscn" type="PackedScene" id=8]
 [ext_resource path="res://bullet_hell/FIRE.png" type="Texture" id=9]
+[ext_resource path="res://MonHp.gd" type="Script" id=10]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -94,7 +95,6 @@ __meta__ = { "_edit_lock_":true }
 
 [node name="Tile Test BROKEN" type="Sprite" parent="."]
 
-visibility/visible = false
 transform/pos = Vector2( 26.6702, 30.0106 )
 texture = ExtResource( 3 )
 modulate = Color( 0.984375, 0.596008, 0.596008, 1 )
@@ -275,5 +275,12 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "Bullet Slide"
+
+[node name="MonHp" type="Node2D" parent="."]
+
+transform/pos = Vector2( 682, 536 )
+transform/scale = Vector2( 2.5, 0.5 )
+script/script = ExtResource( 10 )
+health = 100
 
 
