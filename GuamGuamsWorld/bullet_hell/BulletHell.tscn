@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=1]
+[gd_scene load_steps=22 format=1]
 
 [ext_resource path="res://bullet_hell/BulletHell.gd" type="Script" id=1]
 [ext_resource path="res://bullet_hell/background.png" type="Texture" id=2]
@@ -7,10 +7,11 @@
 [ext_resource path="res://bullet_hell/creature_back_48x60.png" type="Texture" id=5]
 [ext_resource path="res://dinos/Squirtle/Squirtle.tscn" type="PackedScene" id=6]
 [ext_resource path="res://dinos/Torchic/Torchic.tscn" type="PackedScene" id=7]
-[ext_resource path="res://battle_menu/battleMenu.tscn" type="PackedScene" id=8]
-[ext_resource path="res://bullet_hell/FIRE.png" type="Texture" id=9]
-[ext_resource path="res://MonHp.gd" type="Script" id=10]
-[ext_resource path="res://bullet_hell/light.tex" type="Texture" id=11]
+[ext_resource path="res://dinos/Nidorino/nidrorino.png" type="Texture" id=8]
+[ext_resource path="res://battle_menu/battleMenu.tscn" type="PackedScene" id=9]
+[ext_resource path="res://bullet_hell/FIRE.png" type="Texture" id=10]
+[ext_resource path="res://MonHp.gd" type="Script" id=11]
+[ext_resource path="res://bullet_hell/light.tex" type="Texture" id=12]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -103,6 +104,7 @@ region_rect = Rect2( 1024, 600, 0, 0 )
 
 [node name="Box" type="Sprite" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 312.357, 297.949 )
 texture = ExtResource( 4 )
 __meta__ = { "_edit_lock_":true }
@@ -207,6 +209,7 @@ __meta__ = { "_edit_lock_":true }
 
 [node name="Player" type="KinematicBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 296.503, 418.742 )
 input/pickable = false
 shapes/0/shape = SubResource( 6 )
@@ -238,13 +241,20 @@ transform/scale = Vector2( 2, 2 )
 transform/pos = Vector2( 900, 200 )
 transform/scale = Vector2( 2, 2 )
 
-[node name="menuBackground" parent="." instance=ExtResource( 8 )]
+[node name="Nidorino" type="Sprite" parent="."]
+
+transform/pos = Vector2( 798, 198 )
+transform/scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 8 )
+
+[node name="menuBackground" parent="." instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 800, 400 )
 transform/scale = Vector2( 1.5, 1.5 )
 
 [node name="Bullet" type="KinematicBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 295.922, 85.62 )
 input/pickable = false
 shapes/0/shape = SubResource( 8 )
@@ -257,7 +267,7 @@ __meta__ = { "_edit_group_":true }
 
 [node name="Bullet Sprite" type="Sprite" parent="Bullet"]
 
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="BulletShape2D" type="CollisionShape2D" parent="Bullet"]
 
@@ -277,17 +287,17 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = "Bullet Slide"
 
-[node name="MonHp" type="Node2D" parent="."]
+[node name="Hp Bar " type="Node2D" parent="."]
 
 transform/pos = Vector2( 682, 536 )
 transform/scale = Vector2( 2.5, 0.5 )
-script/script = ExtResource( 10 )
+script/script = ExtResource( 11 )
 health = 100
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="lightning" type="Sprite" parent="."]
 
 transform/pos = Vector2( 645, 65 )
 transform/scale = Vector2( 0.0500001, 0.05 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 
 
