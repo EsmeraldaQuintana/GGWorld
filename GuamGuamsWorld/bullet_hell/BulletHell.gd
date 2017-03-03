@@ -16,9 +16,10 @@ func _fixed_process(delta):
 	var colliding = .get_node("Player").is_colliding()
 	if (colliding):
 		print("colliding!")
-		print("took 100 dmg", .get_node("Player").get_collider().free())
-		player_health = 0
-		print("player health is ", player_health)
+		if (.get_node("Player").get_collider() == .get_node("Bullet")):
+			print("took 100 dmg", .get_node("Player").get_collider().free())
+			player_health = 0
+			print("player health is ", player_health)
 	player_velocity.y += delta
 	if (Input.is_action_pressed("move_left")):
 		player_velocity.x = -player_speed
