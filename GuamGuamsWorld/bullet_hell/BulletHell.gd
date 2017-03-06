@@ -9,6 +9,7 @@ var player_speed = 300
 #		because it is updated to 0 on inactivity
 #		in _fixed_process()
 var player_velocity = Vector2()
+var colliding
 
 # first function called is _ready()
 func _ready():
@@ -24,19 +25,20 @@ func _ready():
 
 func _fixed_process(delta):
 	# COLLIDING HANDLING
-	var colliding = .get_node("Player").is_colliding()
+	colliding = .get_node("Player").is_colliding()
 	if (colliding):
-		# print("colliding!")
 		if (.get_node("Player").get_collider() == .get_node("Bullet")):
 			.get_node("Player").get_collider().free()
+			colliding = false 
 			print("Took 60 bullet dmg!")
 			global.player_health = global.player_health - 60
 			print("Player health is ", global.player_health)
-		#if (.get_node("Player").get_collider() == .get_node("Lightning")):
-		#	.get_node("Player").get_collider().free()
-		#	print("Took 40 lightning dmg!")
-		#	global.player_health = global.player_health - 40
-		#	print("Player health is ", global.player_health)
+		if (.get_node("Player").get_collider() == .get_node("Lightning")):
+			.get_node("Player").get_collider().free()
+			colliding = false
+			print("Took 40 lightning dmg!")
+			global.player_health = global.player_health - 40
+			print("Player health is ", global.player_health)
 	# COLLIDING HANDLING END
 	# PLAYER MOVEMENT
 	player_velocity.y += delta
@@ -56,7 +58,6 @@ func _fixed_process(delta):
 	get_node("Player").move(motion)
 	# PLAYER MOVEMENT END
 
-# _process() currently unused!
 # gamestate update
 # delta processes at every frame
 #func _process(delta):
