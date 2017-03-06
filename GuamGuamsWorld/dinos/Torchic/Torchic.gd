@@ -8,5 +8,5 @@ func _init():
 
 func _ready():
 	set_texture(frontSprite)
-	print(name)
+	print(name, " loaded into scene")
 	pass
