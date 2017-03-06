@@ -1,6 +1,7 @@
 extends TextureFrame
 
-var player_health = 100
+# var player_health = global.player_health OLD
+# global.player_health for health
 var screen_size
 var player_size
 var player_speed = 300
@@ -9,17 +10,30 @@ var player_speed = 300
 #		in _fixed_process()
 var player_velocity = Vector2()
 
-# NOTE: BH BOUNDARIES 500x500 box, 8px border, active area is 485x485
+# first function called is _ready()
+func _ready():
+	print("BulletHell.gd sees player health as ", global.player_health)
+	set_process(true)
+	set_fixed_process(true)
+	# BOUNDARY BOX DEBUGGING
+	#var boundarybox = get_node("Box").get_pos()
+	#print("boundarybox_x is", boundarybox.x)
+	#print("boundarybox_y is", boundarybox.y)
+	#player_size = get_node("Player/Player Sprite").get_texture().get_size()
+	# BOUNDARY BOX DEBUGGING END
 
-# fixed_process happens on timed basis
 func _fixed_process(delta):
+	# COLLIDING HANDLING
 	var colliding = .get_node("Player").is_colliding()
 	if (colliding):
-		print("colliding!")
+		# print("colliding!")
 		if (.get_node("Player").get_collider() == .get_node("Bullet")):
-			print("took 100 dmg", .get_node("Player").get_collider().free())
-			player_health = 0
-			print("player health is ", player_health)
+			.get_node("Player").get_collider().free()
+			print("Took 50 dmg!")
+			global.player_health = global.player_health - 50
+			print("Player health is ", global.player_health)
+	# COLLIDING HANDLING END
+	# PLAYER MOVEMENT
 	player_velocity.y += delta
 	if (Input.is_action_pressed("move_left")):
 		player_velocity.x = -player_speed
@@ -35,19 +49,12 @@ func _fixed_process(delta):
 		player_velocity.y = 0
 	var motion = player_velocity * delta
 	get_node("Player").move(motion)
-	
-# first function called is _ready()
-func _ready():
-	set_process(true)
-	set_fixed_process(true)
-	screen_size = get_viewport_rect().size
-	var boundarybox = get_node("Box").get_pos()
-	print("boundarybox_x is", boundarybox.x)
-	print("boundarybox_y is", boundarybox.y)
-	player_size = get_node("Player/Player Sprite").get_texture().get_size()
+	# PLAYER MOVEMENT END
 
 # _process() currently unused!
 # gamestate update
 # delta processes at every frame
 #func _process(delta):
 #)
+
+# NOTE: BH BOUNDARIES 500x500 box, 8px border, active area is 485x485

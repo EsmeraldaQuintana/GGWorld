@@ -12,7 +12,7 @@ func _ready():
 	t.set_wait_time(2)
 	self.add_child(t)
 	t.start()
-	print("INIT time left ", t.get_time_left())
+	print("TIMER INIT, time left ", t.get_time_left())
 	
 func _draw():
 	var rectangle = Rect2(0,0,(health/1),25)
@@ -25,8 +25,7 @@ func _process(delta):
 	if health <= 0:
 		print("Oh boy, you have fainted.")
 	if (t.get_time_left() - .3 <= 0):
-		print("TIME UP")
-		print("MonHP.gd sees health as ", global.player_health)
+		print("TIMER UP, MonHP.gd sees health as ", global.player_health)
 		t.set_wait_time(3)
 		t.start()
 	
