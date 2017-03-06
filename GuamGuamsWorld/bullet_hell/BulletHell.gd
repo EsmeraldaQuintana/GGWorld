@@ -29,9 +29,14 @@ func _fixed_process(delta):
 		# print("colliding!")
 		if (.get_node("Player").get_collider() == .get_node("Bullet")):
 			.get_node("Player").get_collider().free()
-			print("Took 50 dmg!")
-			global.player_health = global.player_health - 50
+			print("Took 60 bullet dmg!")
+			global.player_health = global.player_health - 60
 			print("Player health is ", global.player_health)
+		#if (.get_node("Player").get_collider() == .get_node("Lightning")):
+		#	.get_node("Player").get_collider().free()
+		#	print("Took 40 lightning dmg!")
+		#	global.player_health = global.player_health - 40
+		#	print("Player health is ", global.player_health)
 	# COLLIDING HANDLING END
 	# PLAYER MOVEMENT
 	player_velocity.y += delta

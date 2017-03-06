@@ -1,7 +1,7 @@
 extends Node2D
 
 var health = global.player_health
-var t
+var t      # holds pointer to timer
 
 func _ready():
 	#set_process_input(true)
