@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # Set the constant value to increase movement by
-const WALK_SPEED=200
+const WALK_SPEED=300
 
 var velocity=Vector2()
 
@@ -10,16 +10,16 @@ func _fixed_process(delta):
 	
 	# A series of if/elif/else statements that checks for
 	# input and then moves character.
-	if (Input.is_action_pressed("ui_left")):
+	if (Input.is_action_pressed("move_left")):
 		velocity.x = -WALK_SPEED
-	elif (Input.is_action_pressed("ui_right")):
+	elif (Input.is_action_pressed("move_right")):
 		velocity.x = WALK_SPEED
 	else:
 		velocity.x = 0
 	
-	if (Input.is_action_pressed("ui_down")):
+	if (Input.is_action_pressed("move_down")):
 		velocity.y = WALK_SPEED
-	elif (Input.is_action_pressed("ui_up")):
+	elif (Input.is_action_pressed("move_up")):
 		velocity.y = -WALK_SPEED
 	else:
 		velocity.y = 0
