@@ -1,0 +1,1992 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://overworld/map/fixed.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 8 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Brick_UL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 19
+region = true
+region_rect = Rect2( 305, 0, 16, 16 )
+
+[node name="Brick_UR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 24, 8 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 20
+region = true
+region_rect = Rect2( 319, 0, 16, 16 )
+
+[node name="Brick_DL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 8, 24 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 71
+region = true
+region_rect = Rect2( 305, 15, 16, 16 )
+
+[node name="Brick_DR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 24, 24 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 72
+region = true
+region_rect = Rect2( 319, 15, 16, 16 )
+
+[node name="Brick_UpL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 56, 8 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 122
+region = true
+region_rect = Rect2( 290, 34, 16, 16 )
+
+[node name="Brick_UpM" type="Sprite" parent="."]
+
+transform/pos = Vector2( 72, 8 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 123
+region = true
+region_rect = Rect2( 306, 34, 16, 16 )
+
+[node name="Brick_UpR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 88, 8 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 124
+region = true
+region_rect = Rect2( 318, 34, 16, 16 )
+
+[node name="Brick_MidL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 56, 24 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 174
+region = true
+region_rect = Rect2( 290, 49, 16, 16 )
+
+[node name="Brick_Mid" type="Sprite" parent="."]
+
+transform/pos = Vector2( 72, 24 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 175
+region = true
+region_rect = Rect2( 305, 49, 16, 16 )
+
+[node name="Brick_MidR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 88, 24 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 176
+region = true
+region_rect = Rect2( 318, 49, 16, 16 )
+
+[node name="Brick_DownL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 56, 40 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 226
+region = true
+region_rect = Rect2( 290, 62, 16, 16 )
+
+[node name="Brick_DownM" type="Sprite" parent="."]
+
+transform/pos = Vector2( 72, 40 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 227
+region = true
+region_rect = Rect2( 305, 62, 16, 16 )
+
+[node name="Brick_DownR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 88, 40 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 228
+region = true
+region_rect = Rect2( 318, 62, 16, 16 )
+
+[node name="Water_UL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 120, 8 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 31
+region = true
+region_rect = Rect2( 497, 2, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Water_UL"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water_UL/StaticBody2D"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Water_UR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 136, 8 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 32
+region = true
+region_rect = Rect2( 511, 1, 16, 16 )
+
+[node name="StaticBody2D1" type="StaticBody2D" parent="Water_UR"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water_UR/StaticBody2D1"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Water_DL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 120, 24 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 83
+region = true
+region_rect = Rect2( 497, 14, 16, 16 )
+
+[node name="StaticBody2D1" type="StaticBody2D" parent="Water_DL"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water_DL/StaticBody2D1"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Water_DR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 136, 24 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 84
+region = true
+region_rect = Rect2( 511, 14, 16, 16 )
+
+[node name="StaticBody2D1" type="StaticBody2D" parent="Water_DR"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water_DR/StaticBody2D1"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Water_UpL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 168, 8 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 134
+region = true
+region_rect = Rect2( 481, 33, 16, 16 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Water_UpL"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water_UpL/StaticBody2D2"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Water_UpM" type="Sprite" parent="."]
+
+transform/pos = Vector2( 184, 8 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 135
+region = true
+region_rect = Rect2( 496, 33, 16, 16 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Water_UpM"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water_UpM/StaticBody2D3"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Water_UpR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 200, 8 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 136
+region = true
+region_rect = Rect2( 511, 33, 16, 16 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Water_UpR"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water_UpR/StaticBody2D4"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Water_MidL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 168, 24 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 186
+region = true
+region_rect = Rect2( 481, 48, 16, 16 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Water_MidL"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water_MidL/StaticBody2D5"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Water_Mid" type="Sprite" parent="."]
+
+transform/pos = Vector2( 184, 24 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 187
+
+[node name="Water_MidR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 200, 24 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 188
+region = true
+region_rect = Rect2( 511, 46, 16, 16 )
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Water_MidR"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water_MidR/StaticBody2D7"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Water_DownL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 168, 40 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 238
+region = true
+region_rect = Rect2( 481, 61, 16, 16 )
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Water_DownL"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water_DownL/StaticBody2D8"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Water_DownM" type="Sprite" parent="."]
+
+transform/pos = Vector2( 184, 40 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 239
+region = true
+region_rect = Rect2( 496, 61, 16, 16 )
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="Water_DownM"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water_DownM/StaticBody2D9"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Water_DownR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 200, 40 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 240
+region = true
+region_rect = Rect2( 511, 61, 16, 16 )
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="Water_DownR"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water_DownR/StaticBody2D10"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Grass_One" type="Sprite" parent="."]
+
+transform/pos = Vector2( 8, 72 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 105
+region = true
+region_rect = Rect2( 17, 32, 16, 16 )
+
+[node name="Grass_Two" type="Sprite" parent="."]
+
+transform/pos = Vector2( 24, 72 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 106
+region = true
+region_rect = Rect2( 33, 32, 16, 16 )
+
+[node name="Grass_Three" type="Sprite" parent="."]
+
+transform/pos = Vector2( 40, 56 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 107
+region = true
+region_rect = Rect2( 32, 320, 16, 16 )
+
+[node name="Grass_Four" type="Sprite" parent="."]
+
+transform/pos = Vector2( 56, 72 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 109
+
+[node name="Tree_TopL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 8, 104.8 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 470
+region = true
+region_rect = Rect2( 32, 145, 16, 16 )
+
+[node name="Tree_TopR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 24, 104.8 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 471
+region = true
+region_rect = Rect2( 48, 145, 16, 16 )
+
+[node name="Tree_MidL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 8, 120 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 522
+region = true
+region_rect = Rect2( 32, 160, 16, 16 )
+
+[node name="Tree_MidR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 24, 120 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 523
+region = true
+region_rect = Rect2( 48, 160, 16, 16 )
+
+[node name="Tree_BotL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 8, 136 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 574
+region = true
+region_rect = Rect2( 32, 175, 16, 16 )
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="Tree_BotL"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree_BotL/StaticBody2D11"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Tree_BotR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 24, 136 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 575
+region = true
+region_rect = Rect2( 48, 175, 16, 16 )
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="Tree_BotR"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree_BotR/StaticBody2D12"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Lamp_Top" type="Sprite" parent="."]
+
+transform/pos = Vector2( 56, 119 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 213
+region = true
+region_rect = Rect2( 79, 64, 16, 16 )
+
+[node name="Lamp_Bot" type="Sprite" parent="."]
+
+transform/pos = Vector2( 56, 135 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 265
+region = true
+region_rect = Rect2( 79, 79, 16, 16 )
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="Lamp_Bot"]
+
+transform/pos = Vector2( -0.0350494, 1.02048 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lamp_Bot/StaticBody2D13"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Bridge_TopL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 88, 104 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 633
+region = true
+region_rect = Rect2( 144, 193, 16, 16 )
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="Bridge_TopL"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_TopL/StaticBody2D14"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Bridge_TopWL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 104, 104 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 634
+region = true
+region_rect = Rect2( 160, 193, 16, 16 )
+
+[node name="StaticBody2D15" type="StaticBody2D" parent="Bridge_TopWL"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_TopWL/StaticBody2D15"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Bridge_TopM" type="Sprite" parent="."]
+
+transform/pos = Vector2( 120, 104 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 635
+region = true
+region_rect = Rect2( 176, 193, 16, 16 )
+
+[node name="StaticBody2D16" type="StaticBody2D" parent="Bridge_TopM"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_TopM/StaticBody2D16"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Bridge_TopWR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 136, 104 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 636
+region = true
+region_rect = Rect2( 192, 193, 16, 16 )
+
+[node name="StaticBody2D17" type="StaticBody2D" parent="Bridge_TopWR"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_TopWR/StaticBody2D17"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Bridge_TopR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 152, 104 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 637
+region = true
+region_rect = Rect2( 207, 193, 16, 16 )
+
+[node name="StaticBody2D18" type="StaticBody2D" parent="Bridge_TopR"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_TopR/StaticBody2D18"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Bridge_MidL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 88, 120 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 685
+
+[node name="Bridge_MidWL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 104, 120 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 686
+
+[node name="Bridge_Mid" type="Sprite" parent="."]
+
+transform/pos = Vector2( 120, 120 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 687
+
+[node name="Bridge_MidWR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 136, 120 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 688
+
+[node name="Bridge_MidR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 152, 120 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 689
+region = true
+region_rect = Rect2( 207, 209, 16, 16 )
+
+[node name="Bridge_BotL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 88, 136 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 737
+region = true
+region_rect = Rect2( 144, 223, 16, 16 )
+
+[node name="StaticBody2D19" type="StaticBody2D" parent="Bridge_BotL"]
+
+transform/pos = Vector2( 0, -3.8147e-06 )
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_BotL/StaticBody2D19"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Bridge_BotWL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 104, 136 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 738
+region = true
+region_rect = Rect2( 160, 223, 16, 16 )
+
+[node name="StaticBody2D20" type="StaticBody2D" parent="Bridge_BotWL"]
+
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_BotWL/StaticBody2D20"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Bridge_BotM" type="Sprite" parent="."]
+
+transform/pos = Vector2( 120, 136 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 739
+region = true
+region_rect = Rect2( 176, 223, 16, 16 )
+
+[node name="StaticBody2D21" type="StaticBody2D" parent="Bridge_BotM"]
+
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_BotM/StaticBody2D21"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Bridge_BotWR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 136, 136 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 740
+region = true
+region_rect = Rect2( 192, 223, 16, 16 )
+
+[node name="StaticBody2D22" type="StaticBody2D" parent="Bridge_BotWR"]
+
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_BotWR/StaticBody2D22"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Bridge_BotR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 152, 136 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 741
+region = true
+region_rect = Rect2( 207, 223, 16, 16 )
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="Bridge_BotR"]
+
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_BotR/StaticBody2D23"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="LgtHs_DoorL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 264, 136 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1706
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="LgtHs_DoorL"]
+
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_DoorL/StaticBody2D23"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Bridge_Door" type="Sprite" parent="."]
+
+transform/pos = Vector2( 280, 136 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1707
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="Bridge_Door"]
+
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_Door/StaticBody2D23"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Bridge_DoorR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 296, 136 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1708
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="Bridge_DoorR"]
+
+transform/pos = Vector2( 0, -1.90735e-06 )
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_DoorR/StaticBody2D23"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="LgtHs_DoorUL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 264, 120 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1654
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="LgtHs_DoorUL"]
+
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_DoorUL/StaticBody2D23"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="LgtHs_DoorU" type="Sprite" parent="."]
+
+transform/pos = Vector2( 280, 120 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1655
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="LgtHs_DoorU"]
+
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_DoorU/StaticBody2D23"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="LgtHs_DoorUR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 296, 120 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1656
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="LgtHs_DoorUR"]
+
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_DoorUR/StaticBody2D23"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="LgtHs_FrontR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 312, 120 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1657
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="LgtHs_FrontR"]
+
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_FrontR/StaticBody2D23"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="LgtHs_FrontL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 248, 120 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1653
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="LgtHs_FrontL"]
+
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_FrontL/StaticBody2D23"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="LgtHs_RoofLL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 248, 104 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1601
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="LgtHs_RoofLL"]
+
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_RoofLL/StaticBody2D23"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="LgtHs_RoofML" type="Sprite" parent="."]
+
+transform/pos = Vector2( 264, 104 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1602
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="LgtHs_RoofML"]
+
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_RoofML/StaticBody2D23"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="LgtHs_RoofM" type="Sprite" parent="."]
+
+transform/pos = Vector2( 280, 104 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1603
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="LgtHs_RoofM"]
+
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_RoofM/StaticBody2D23"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="LgtHs_RoofMR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 296, 104 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1604
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="LgtHs_RoofMR"]
+
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_RoofMR/StaticBody2D23"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="LgtHs_RoofRR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 312, 104 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1605
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="LgtHs_RoofRR"]
+
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_RoofRR/StaticBody2D23"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="LgtHs_RoofUL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 248, 88 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1549
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="LgtHs_RoofUL"]
+
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_RoofUL/StaticBody2D23"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="LgtHs_TowerL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 264, 88 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1550
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="LgtHs_TowerL"]
+
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_TowerL/StaticBody2D23"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="LgtHs_TowerM" type="Sprite" parent="."]
+
+transform/pos = Vector2( 280, 88 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1551
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="LgtHs_TowerM"]
+
+transform/pos = Vector2( 0, -7.62939e-06 )
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_TowerM/StaticBody2D23"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="LgtHs_TowerR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 296, 88 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1552
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="LgtHs_TowerR"]
+
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_TowerR/StaticBody2D23"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="LgtHs_RoofUR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 312, 88 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1553
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="LgtHs_RoofUR"]
+
+transform/scale = Vector2( 1, 0.909091 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_RoofUR/StaticBody2D23"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="LgtHs_RoofUL2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 248, 72 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1497
+
+[node name="LgtHs_TowerL2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 264, 72 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1498
+
+[node name="LgtHs_TowerM2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 280, 72 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1499
+
+[node name="LgtHs_TowerR2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 296, 72 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1500
+
+[node name="LgtHs_UR2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 312, 72 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1501
+
+[node name="LgtHs_RoofEL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 248, 56 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1445
+
+[node name="LgtHs_TowerL3" type="Sprite" parent="."]
+
+transform/pos = Vector2( 264, 56 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1446
+
+[node name="LgtHs_TowerM3" type="Sprite" parent="."]
+
+transform/pos = Vector2( 280, 56 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1447
+
+[node name="LgtHs_TowerR3" type="Sprite" parent="."]
+
+transform/pos = Vector2( 296, 56 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1448
+
+[node name="LgtHs_TowerER" type="Sprite" parent="."]
+
+transform/pos = Vector2( 312, 56 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1449
+
+[node name="LgtHs_TowerL4" type="Sprite" parent="."]
+
+transform/pos = Vector2( 264, 40 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1394
+
+[node name="LgtHs_TowerM4" type="Sprite" parent="."]
+
+transform/pos = Vector2( 280, 40.8 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1395
+
+[node name="LgtHs_TowerR4" type="Sprite" parent="."]
+
+transform/pos = Vector2( 296, 40 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1396
+
+[node name="LgtHs_TowerTBL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 264, 24 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1342
+
+[node name="LgtHs_TowerTB" type="Sprite" parent="."]
+
+transform/pos = Vector2( 280, 24 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1343
+
+[node name="LgtHs_TowerTBR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 296, 24 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1344
+
+[node name="LgtHs_TowerTML" type="Sprite" parent="."]
+
+transform/pos = Vector2( 264, 8 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1290
+
+[node name="LgtHs_TowerTM" type="Sprite" parent="."]
+
+transform/pos = Vector2( 280, 8 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1291
+
+[node name="LgtHs_TowerTMR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 296, 8 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1292
+
+[node name="LgtHs_TowerTTL" type="Sprite" parent="."]
+
+transform/pos = Vector2( 264, -8 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1238
+
+[node name="LgtHs_TowerTT" type="Sprite" parent="."]
+
+transform/pos = Vector2( 280, -8 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1239
+
+[node name="LgtHs_TowerTTR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 296, -8 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1240
+
+[node name="LgtHs_TowerPoint" type="Sprite" parent="."]
+
+transform/pos = Vector2( 280, -24 )
+transform/scale = Vector2( 1, 1.1 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 1187
+
+[node name="Gyra_BaseL1 " type="Sprite" parent="."]
+
+transform/pos = Vector2( 376, 152 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 2796
+region = true
+region_rect = Rect2( 644, 856, 16, 16 )
+
+[node name="Gyra_BaseL2 " type="Sprite" parent="."]
+
+transform/pos = Vector2( 376, 136 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 2796
+region = true
+region_rect = Rect2( 644, 840, 16, 16 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Gyra_BaseL2 "]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gyra_BaseL2 /StaticBody2D5"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Gyra_BaseL3 " type="Sprite" parent="."]
+
+transform/pos = Vector2( 376, 120 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 2744
+region = true
+region_rect = Rect2( 644, 824, 16, 16 )
+
+[node name="Gyra_BaseL4" type="Sprite" parent="."]
+
+transform/pos = Vector2( 376, 104 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 2692
+region = true
+region_rect = Rect2( 644, 808, 16, 16 )
+
+[node name="Gyra_BaseL5" type="Sprite" parent="."]
+
+transform/pos = Vector2( 376, 88 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 2692
+region = true
+region_rect = Rect2( 644, 792, 16, 16 )
+
+[node name="Gyra_BaseLL1" type="Sprite" parent="."]
+
+transform/pos = Vector2( 360, 120 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 2744
+region = true
+region_rect = Rect2( 628, 824, 16, 16 )
+
+[node name="Gyra_BaseLL2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 360, 104 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 2744
+region = true
+region_rect = Rect2( 628, 808, 16, 16 )
+
+[node name="Gyra_BaseM1" type="Sprite" parent="."]
+
+transform/pos = Vector2( 392, 152 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 2796
+region = true
+region_rect = Rect2( 660, 856, 16, 16 )
+
+[node name="Gyra_BaseM2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 392, 136 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 2797
+region = true
+region_rect = Rect2( 660, 840, 16, 16 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Gyra_BaseM2"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gyra_BaseM2/StaticBody2D3"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Gyra_BaseM3" type="Sprite" parent="."]
+
+transform/pos = Vector2( 392, 120 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 2745
+region = true
+region_rect = Rect2( 660, 824, 16, 16 )
+
+[node name="Gyra_BaseM4" type="Sprite" parent="."]
+
+transform/pos = Vector2( 392, 104 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 2693
+region = true
+region_rect = Rect2( 660, 808, 16, 16 )
+
+[node name="Gyra_BaseM5" type="Sprite" parent="."]
+
+transform/pos = Vector2( 392, 88 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 2692
+region = true
+region_rect = Rect2( 660, 792, 16, 16 )
+
+[node name="Gyra_BaseR1" type="Sprite" parent="."]
+
+transform/pos = Vector2( 408, 152 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 2796
+region = true
+region_rect = Rect2( 676, 856, 16, 16 )
+
+[node name="Gyra_BaseR2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 408, 136 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 2798
+region = true
+region_rect = Rect2( 676, 840, 16, 16 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Gyra_BaseR2"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gyra_BaseR2/StaticBody2D4"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Gyra_BaseR3" type="Sprite" parent="."]
+
+transform/pos = Vector2( 408, 120 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 2746
+region = true
+region_rect = Rect2( 676, 824, 16, 16 )
+
+[node name="Gyra_BaseR4" type="Sprite" parent="."]
+
+transform/pos = Vector2( 408, 104 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 2695
+region = true
+region_rect = Rect2( 676, 808, 16, 16 )
+
+[node name="Gyra_BaseR5" type="Sprite" parent="."]
+
+transform/pos = Vector2( 408, 88 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 2695
+region = true
+region_rect = Rect2( 676, 792, 16, 16 )
+
+[node name="Gyra_BaseRR" type="Sprite" parent="."]
+
+transform/pos = Vector2( 420, 120 )
+texture = ExtResource( 1 )
+vframes = 54
+hframes = 52
+frame = 2747
+region = true
+region_rect = Rect2( 692, 824, 8, 16 )
+
+
