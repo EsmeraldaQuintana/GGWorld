@@ -7,7 +7,7 @@
 [ext_resource path="res://SmoothCollisionTest.gd" type="Script" id=5]
 [ext_resource path="res://bullet_hell/creature_back_48x60.png" type="Texture" id=6]
 [ext_resource path="res://myPokemon.gd" type="Script" id=7]
-[ext_resource path="res://dinos/Torchic/Torchic.tscn" type="PackedScene" id=8]
+[ext_resource path="res://bullet_hell/otherPokemon.gd" type="Script" id=8]
 [ext_resource path="res://battle_menu/battleMenu.tscn" type="PackedScene" id=9]
 [ext_resource path="res://bullet_hell/FIRE.png" type="Texture" id=10]
 [ext_resource path="res://MonHp.gd" type="Script" id=11]
@@ -264,10 +264,10 @@ __meta__ = { "_edit_lock_":true }
 transform/pos = Vector2( 700, 200 )
 script/script = ExtResource( 7 )
 
-[node name="theirPokemon" parent="." instance=ExtResource( 8 )]
+[node name="otherPokemon" type="Sprite" parent="."]
 
-transform/pos = Vector2( 900, 200 )
-transform/scale = Vector2( 2, 2 )
+transform/pos = Vector2( 900, 150 )
+script/script = ExtResource( 8 )
 
 [node name="menuBackground" parent="." instance=ExtResource( 9 )]
 
