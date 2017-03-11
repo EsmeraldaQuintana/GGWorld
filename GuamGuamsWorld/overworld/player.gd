@@ -80,3 +80,5 @@ func _fixed_process(delta):
 		move_to(get_pos() + direction * speed)
 		if get_pos() == currentPos + Vector2(GRID * direction.x, GRID * direction.y):
 			moving = false
+	if get_pos().y < -6:
+		get_tree().change_scene("res://bullet_hell/BulletHell.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=1]
+[gd_scene load_steps=25 format=1]
 
 [ext_resource path="res://bullet_hell/BulletHell.gd" type="Script" id=1]
 [ext_resource path="res://bullet_hell/background.png" type="Texture" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://bullet_hell/ActiveBoundary.png" type="Texture" id=4]
 [ext_resource path="res://SmoothCollisionTest.gd" type="Script" id=5]
 [ext_resource path="res://bullet_hell/creature_back_48x60.png" type="Texture" id=6]
-[ext_resource path="res://dinos/Squirtle/Squirtle.tscn" type="PackedScene" id=7]
+[ext_resource path="res://myPokemon.gd" type="Script" id=7]
 [ext_resource path="res://dinos/Torchic/Torchic.tscn" type="PackedScene" id=8]
 [ext_resource path="res://battle_menu/battleMenu.tscn" type="PackedScene" id=9]
 [ext_resource path="res://bullet_hell/FIRE.png" type="Texture" id=10]
@@ -42,10 +42,6 @@ extents = Vector2( 29.6323, 10.0572 )
 
 custom_solver_bias = 0.0
 extents = Vector2( 24, 30 )
-
-[sub_resource type="GDScript" id=12]
-
-script/source = "extends \"res://dinos/dino.gd\".Dino\n\nvar frontSprite = preload(\"res://dinos/Nidorino/nidrorino.png\")\nfunc _init():\n\ttotalHP = 100\n\tname = \"Nidorino\"\n\nfunc _ready():\n\tset_texture(frontSprite)\n\tprint(name)\n\tpass\n"
 
 [sub_resource type="GDScript" id=7]
 
@@ -263,22 +259,15 @@ trigger = false
 _update_shape_index = 0
 __meta__ = { "_edit_lock_":true }
 
-[node name="Squirtle" parent="." instance=ExtResource( 7 )]
+[node name="myPokemon" type="Sprite" parent="."]
 
 transform/pos = Vector2( 700, 200 )
-transform/scale = Vector2( 2, 2 )
+script/script = ExtResource( 7 )
 
-[node name="Torchic" parent="." instance=ExtResource( 8 )]
+[node name="theirPokemon" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 900, 200 )
 transform/scale = Vector2( 2, 2 )
-
-[node name="Nidorino" type="Sprite" parent="."]
-
-transform/pos = Vector2( 798, 198 )
-transform/scale = Vector2( 0.6, 0.6 )
-script/script = SubResource( 12 )
-__meta__ = { "_edit_lock_":true }
 
 [node name="menuBackground" parent="." instance=ExtResource( 9 )]
 
@@ -295,7 +284,6 @@ shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
-__meta__ = { "_edit_group_":true }
 
 [node name="Bullet Sprite" type="Sprite" parent="Bullet"]
 
