@@ -8,12 +8,11 @@
 [ext_resource path="res://bullet_hell/creature_back_48x60.png" type="Texture" id=6]
 [ext_resource path="res://dinos/Squirtle/Squirtle.tscn" type="PackedScene" id=7]
 [ext_resource path="res://dinos/Torchic/Torchic.tscn" type="PackedScene" id=8]
-[ext_resource path="res://dinos/Nidorino/nidrorino.png" type="Texture" id=9]
-[ext_resource path="res://battle_menu/battleMenu.tscn" type="PackedScene" id=10]
-[ext_resource path="res://bullet_hell/FIRE.png" type="Texture" id=11]
-[ext_resource path="res://MonHp.gd" type="Script" id=12]
-[ext_resource path="res://bullet_hell/light.tex" type="Texture" id=13]
-[ext_resource path="res://bullet_hell/LIGHTNING.png" type="Texture" id=14]
+[ext_resource path="res://battle_menu/battleMenu.tscn" type="PackedScene" id=9]
+[ext_resource path="res://bullet_hell/FIRE.png" type="Texture" id=10]
+[ext_resource path="res://MonHp.gd" type="Script" id=11]
+[ext_resource path="res://bullet_hell/light.tex" type="Texture" id=12]
+[ext_resource path="res://bullet_hell/LIGHTNING.png" type="Texture" id=13]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -43,6 +42,10 @@ extents = Vector2( 29.6323, 10.0572 )
 
 custom_solver_bias = 0.0
 extents = Vector2( 24, 30 )
+
+[sub_resource type="GDScript" id=12]
+
+script/source = "extends \"res://dinos/dino.gd\".Dino\n\nvar frontSprite = preload(\"res://dinos/Nidorino/nidrorino.png\")\nfunc _init():\n\ttotalHP = 100\n\tname = \"Nidorino\"\n\nfunc _ready():\n\tset_texture(frontSprite)\n\tprint(name)\n\tpass\n"
 
 [sub_resource type="GDScript" id=7]
 
@@ -274,10 +277,10 @@ transform/scale = Vector2( 2, 2 )
 
 transform/pos = Vector2( 798, 198 )
 transform/scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 9 )
+script/script = SubResource( 12 )
 __meta__ = { "_edit_lock_":true }
 
-[node name="menuBackground" parent="." instance=ExtResource( 10 )]
+[node name="menuBackground" parent="." instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 800, 400 )
 transform/scale = Vector2( 1.5, 1.5 )
@@ -296,7 +299,7 @@ __meta__ = { "_edit_group_":true }
 
 [node name="Bullet Sprite" type="Sprite" parent="Bullet"]
 
-texture = ExtResource( 11 )
+texture = ExtResource( 10 )
 
 [node name="BulletShape2D" type="CollisionShape2D" parent="Bullet"]
 
@@ -321,13 +324,13 @@ autoplay = "Bullet Slide"
 
 transform/pos = Vector2( 683.36, 536 )
 transform/scale = Vector2( 2.5, 0.5 )
-script/script = ExtResource( 12 )
+script/script = ExtResource( 11 )
 
 [node name="lightning" type="Sprite" parent="."]
 
 transform/pos = Vector2( 645, 65 )
 transform/scale = Vector2( 0.0500001, 0.05 )
-texture = ExtResource( 13 )
+texture = ExtResource( 12 )
 
 [node name="Lightning" type="KinematicBody2D" parent="."]
 
@@ -342,7 +345,7 @@ collision/margin = 0.08
 
 [node name="Sprite" type="Sprite" parent="Lightning"]
 
-texture = ExtResource( 14 )
+texture = ExtResource( 13 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="LightningShape" type="CollisionShape2D" parent="Lightning"]

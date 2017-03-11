@@ -20,6 +20,13 @@ func _ready():
 	set_fixed_process(true)
 	sprite = get_node("Sprite")
 	animationPlayer = get_node("AnimationPlayer")
+	var myParty = Party.party
+	var Torchic = Party.createPokemon("Torchic", "Fire", "res://dinos/Torchic/frontSprite.png", "res://dinos/Torchic/backSprite.png")
+	var starter = Party.createPokemonInstance(Torchic, 20, 20)
+	myParty.append(starter)
+	print('Your party contains: ')
+	for pokemon in myParty:
+		print(pokemon.PokeType.Name, pokemon.TotalHP) 
 	
 func _fixed_process(delta):
 	#If the player pressed Esc, quit the game
