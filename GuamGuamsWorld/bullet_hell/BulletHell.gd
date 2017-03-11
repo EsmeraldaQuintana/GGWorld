@@ -4,6 +4,7 @@ extends TextureFrame
 # global.player_health for health
 var screen_size
 var player_size
+var currentPokemon = Party.party[0]
 #var player_speed = 300
 # player_velocity doesn't need to be initialized
 #		because it is updated to 0 on inactivity
@@ -13,7 +14,7 @@ var colliding
 
 # first function called is _ready()
 func _ready():
-	print("BulletHell.gd sees player health as ", global.player_health)
+	print("BulletHell.gd sees player health as ", currentPokemon.CurrentHP)
 	set_process(true)
 	set_fixed_process(true)
 	# BOUNDARY BOX DEBUGGING
@@ -31,14 +32,14 @@ func _fixed_process(delta):
 			.get_node("Player").get_collider().free()
 			colliding = false 
 			print("Took 60 bullet dmg!")
-			global.player_health = global.player_health - 60
-			print("Player health is ", global.player_health)
+			currentPokemon.CurrentHP -= 5
+			print("Player health is ", currentPokemon.CurrentHP)
 		if (.get_node("Player").get_collider() == .get_node("Lightning")):
 			.get_node("Player").get_collider().free()
 			colliding = false
-			print("Took 40 lightning dmg!")
-			global.player_health = global.player_health - 40
-			print("Player health is ", global.player_health)
+			print("Took 5 lightning dmg!")
+			currentPokemon.CurrentHP -= 5
+			print("Player health is ", currentPokemon.CurrentHP)
 
 	# COLLIDING HANDLING END
 	# PLAYER MOVEMENT

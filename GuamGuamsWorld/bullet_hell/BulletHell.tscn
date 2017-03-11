@@ -1,18 +1,17 @@
-[gd_scene load_steps=25 format=1]
+[gd_scene load_steps=24 format=1]
 
 [ext_resource path="res://bullet_hell/BulletHell.gd" type="Script" id=1]
 [ext_resource path="res://bullet_hell/background.png" type="Texture" id=2]
-[ext_resource path="res://bullet_hell/tiledbackground.png" type="Texture" id=3]
-[ext_resource path="res://bullet_hell/ActiveBoundary.png" type="Texture" id=4]
-[ext_resource path="res://SmoothCollisionTest.gd" type="Script" id=5]
-[ext_resource path="res://bullet_hell/creature_back_48x60.png" type="Texture" id=6]
+[ext_resource path="res://bullet_hell/ActiveBoundary.png" type="Texture" id=3]
+[ext_resource path="res://SmoothCollisionTest.gd" type="Script" id=4]
+[ext_resource path="res://bullet_hell/creature_back_48x60.png" type="Texture" id=5]
+[ext_resource path="res://bullet_hell/battle_arena.png" type="Texture" id=6]
 [ext_resource path="res://myPokemon.gd" type="Script" id=7]
 [ext_resource path="res://bullet_hell/otherPokemon.gd" type="Script" id=8]
 [ext_resource path="res://battle_menu/battleMenu.tscn" type="PackedScene" id=9]
 [ext_resource path="res://bullet_hell/FIRE.png" type="Texture" id=10]
 [ext_resource path="res://MonHp.gd" type="Script" id=11]
-[ext_resource path="res://bullet_hell/light.tex" type="Texture" id=12]
-[ext_resource path="res://bullet_hell/LIGHTNING.png" type="Texture" id=13]
+[ext_resource path="res://bullet_hell/LIGHTNING.png" type="Texture" id=12]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -123,18 +122,10 @@ texture = ExtResource( 2 )
 stretch_mode = 0
 __meta__ = { "_edit_lock_":true }
 
-[node name="Tile Test BROKEN" type="Sprite" parent="."]
-
-transform/pos = Vector2( 26.6702, 30.0106 )
-texture = ExtResource( 3 )
-modulate = Color( 0.984375, 0.596008, 0.596008, 1 )
-region_rect = Rect2( 1024, 600, 0, 0 )
-
 [node name="Box" type="Sprite" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 312.357, 297.949 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="bottom wall" type="StaticBody2D" parent="Box"]
@@ -245,11 +236,11 @@ shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
-script/script = ExtResource( 5 )
+script/script = ExtResource( 4 )
 
 [node name="Player Sprite" type="Sprite" parent="Player"]
 
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
@@ -259,14 +250,19 @@ trigger = false
 _update_shape_index = 0
 __meta__ = { "_edit_lock_":true }
 
-[node name="myPokemon" type="Sprite" parent="."]
+[node name="battleArena" type="Sprite" parent="."]
 
-transform/pos = Vector2( 700, 200 )
+transform/pos = Vector2( 788.899, 164.664 )
+texture = ExtResource( 6 )
+
+[node name="myPokemon" type="Sprite" parent="battleArena"]
+
+transform/pos = Vector2( -63.8987, 24 )
 script/script = ExtResource( 7 )
 
-[node name="otherPokemon" type="Sprite" parent="."]
+[node name="otherPokemon" type="Sprite" parent="battleArena"]
 
-transform/pos = Vector2( 900, 150 )
+transform/pos = Vector2( 56.1013, -4.66382 )
 script/script = ExtResource( 8 )
 
 [node name="menuBackground" parent="." instance=ExtResource( 9 )]
@@ -314,12 +310,6 @@ transform/pos = Vector2( 683.36, 536 )
 transform/scale = Vector2( 2.5, 0.5 )
 script/script = ExtResource( 11 )
 
-[node name="lightning" type="Sprite" parent="."]
-
-transform/pos = Vector2( 645, 65 )
-transform/scale = Vector2( 0.0500001, 0.05 )
-texture = ExtResource( 12 )
-
 [node name="Lightning" type="KinematicBody2D" parent="."]
 
 transform/pos = Vector2( 276.226, -0.0463562 )
@@ -333,7 +323,7 @@ collision/margin = 0.08
 
 [node name="Sprite" type="Sprite" parent="Lightning"]
 
-texture = ExtResource( 13 )
+texture = ExtResource( 12 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="LightningShape" type="CollisionShape2D" parent="Lightning"]

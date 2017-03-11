@@ -1,6 +1,6 @@
 extends Node2D
 
-var health = global.player_health
+var health = Party.party[0].CurrentHP
 var t      # holds pointer to timer
 
 func _ready():
@@ -20,12 +20,12 @@ func _draw():
 	draw_rect(rectangle, color)
 
 func _process(delta):
-	health = global.player_health
+	health = Party.party[0].CurrentHP
 	update()
 	if health <= 0:
 		print("Oh boy, you have fainted.")
 	if (t.get_time_left() - .3 <= 0):
-		print("TIMER UP, MonHP.gd sees health as ", global.player_health)
+		print("TIMER UP, MonHP.gd sees health as ", health)
 		t.set_wait_time(3)
 		t.start()
 	
