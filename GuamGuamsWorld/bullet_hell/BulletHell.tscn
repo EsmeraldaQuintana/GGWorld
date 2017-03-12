@@ -4,7 +4,7 @@
 [ext_resource path="res://bullet_hell/background.png" type="Texture" id=2]
 [ext_resource path="res://bullet_hell/ActiveBoundary.png" type="Texture" id=3]
 [ext_resource path="res://SmoothCollisionTest.gd" type="Script" id=4]
-[ext_resource path="res://bullet_hell/creature_back_48x60.png" type="Texture" id=5]
+[ext_resource path="res://bullet_hell/pokeball.png" type="Texture" id=5]
 [ext_resource path="res://bullet_hell/battle_arena.png" type="Texture" id=6]
 [ext_resource path="res://myPokemon.gd" type="Script" id=7]
 [ext_resource path="res://bullet_hell/otherPokemon.gd" type="Script" id=8]
@@ -40,7 +40,7 @@ extents = Vector2( 29.6323, 10.0572 )
 [sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
-extents = Vector2( 24, 30 )
+extents = Vector2( 25.8226, 25.0966 )
 
 [sub_resource type="GDScript" id=7]
 
