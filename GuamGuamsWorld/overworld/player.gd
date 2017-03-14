@@ -47,38 +47,53 @@ func _fixed_process(delta):
 		var resultDown = world.intersect_point(get_pos() + Vector2(0, GRID))
 		var resultLeft = world.intersect_point(get_pos() + Vector2(-GRID, 0))
 		var resultRight = world.intersect_point(get_pos() + Vector2(GRID, 0))
-		if Input.is_action_pressed("ui_up"):
+		var rand = randi() % 10
+		
+		if Input.is_action_pressed("move_up"):
 			sprite.set_frame(0)
 			if resultUp.empty():
 				moving = true
 				direction = Vector2(0, -1)
 				currentPos = get_pos()
 				animationPlayer.play("walk_up")
-		elif Input.is_action_pressed("ui_down"):
+			if rand == 0:
+				randomEncounter()
+		elif Input.is_action_pressed("move_down"):
 			sprite.set_frame(6)
 			if resultDown.empty():
 				moving = true
 				direction = Vector2(0, 1)
 				currentPos = get_pos()
 				animationPlayer.play("walk_down")
-		elif Input.is_action_pressed("ui_left"):
+			if rand == 0:
+				randomEncounter()
+		elif Input.is_action_pressed("move_left"):
 			sprite.set_frame(3)
 			if resultLeft.empty():
 				moving = true
 				direction = Vector2(-1, 0)
 				currentPos = get_pos()
 				animationPlayer.play("walk_left")
-		elif Input.is_action_pressed("ui_right"):
+			if rand == 0:
+				randomEncounter()
+		elif Input.is_action_pressed("move_right"):
 			sprite.set_frame(9)
 			if resultRight.empty():
 				moving = true
 				direction = Vector2(1, 0)
 				currentPos = get_pos()
 				animationPlayer.play("walk_right")
+			if rand == 0:
+				randomEncounter()
 	else:
 		#Update the players movement based on their direction and speed
 		move_to(get_pos() + direction * speed)
 		if get_pos() == currentPos + Vector2(GRID * direction.x, GRID * direction.y):
 			moving = false
-	if get_pos().y < -6:
-		get_tree().change_scene("res://bullet_hell/BulletHell.tscn")
+			
+func randomEncounter():
+	var bh = load("res://bullet_hell/BulletHell.tscn").instance()
+	var packed_ow = PackedScene.new()
+	packed_ow.pack(get_tree().get_current_scene())
+	ResourceSaver.save("res://overworld/packedOverworld.tscn", packed_ow)
+	self.get_tree().change_scene("res://bullet_hell/BulletHell.tscn")

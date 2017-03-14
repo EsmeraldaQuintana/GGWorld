@@ -52,6 +52,6 @@ func _process(delta):
 		elif current_state == "Pokemon":
 			label.set_text("Pokemon-switching DLC coming soon -- only $20.")
 		elif current_state == "Run":
-			label.set_text("Better not. It'll trigger your asthma.")
+			self.get_tree().change_scene("res://overworld/packedOverworld.tscn")
 	
 	self.set_pos(current_location)
