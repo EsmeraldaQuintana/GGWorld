@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://overworld/map/tileset.xml" type="TileSet" id=1]
 [ext_resource path="res://overworld/player.gd" type="Script" id=2]
 [ext_resource path="res://overworld/PlayerSprites/redtest.png" type="Texture" id=3]
+[ext_resource path="res://overworld/map/Menu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://overworld/map/Menu/Controls.tscn" type="PackedScene" id=5]
+[ext_resource path="res://overworld/map/Dialogue Box.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 
@@ -129,7 +132,7 @@ transform/pos = Vector2( -0.0300293, -0.27301 )
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 0.4, 0.4 )
+zoom = Vector2( 0.2, 0.2 )
 limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000
@@ -142,6 +145,46 @@ drag_margin/left = 0.2
 drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="KinematicBody2D/Camera2D"]
+
+layer = 2
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 4, 3 )
+
+[node name="Menu" parent="KinematicBody2D/Camera2D/CanvasLayer" instance=ExtResource( 4 )]
+
+process/pause_mode = 2
+visibility/visible = false
+rect/scale = Vector2( 0.5, 0.5 )
+margin/left = 185.0
+margin/right = 329.0
+
+[node name="Controls" parent="KinematicBody2D/Camera2D/CanvasLayer" instance=ExtResource( 5 )]
+
+process/pause_mode = 2
+visibility/visible = false
+anchor/left = 2
+rect/scale = Vector2( 0.5, 0.5 )
+margin/left = 0.00195312
+margin/right = 370.0
+
+[node name="Dialogue Box" parent="KinematicBody2D/Camera2D/CanvasLayer" instance=ExtResource( 6 )]
+
+visibility/visible = false
+margin/left = -16.0
+margin/top = 64.0
+margin/right = 688.0
+margin/bottom = 168.0
+patch_margin/top = 10
+patch_margin/bottom = 10
+
+[node name="RichTextLabel" parent="KinematicBody2D/Camera2D/CanvasLayer/Dialogue Box"]
+
+margin/right = 441.0
+margin/bottom = 107.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
 
 [node name="TileFront" type="TileMap" parent="."]
 
@@ -162,3 +205,5 @@ occluder/light_mask = 1
 tile_data = IntArray( -1769457, 93, -1703922, 90, -1703921, 91, -1703920, 92, -1638386, 87, -1638385, 88, -1638384, 89, -1572850, 84, -1572849, 85, -1572848, 86, -1507314, 81, -1507313, 82, -1507312, 83, -1441779, 76, -1441778, 77, -1441777, 78, -1441776, 79, -1441775, 80, -1376243, 71, -1376242, 72, -1376241, 73, -1376240, 74, -1376239, 75, -1114100, 36, -1114094, 36, -1048562, 98, -1048561, 105, -1048560, 110, -983027, 100, -983026, 97, -983025, 104, -983024, 109, -917491, 99, -917490, 96, -917489, 103, -917488, 108, -917487, 111, -655348, 36, -655343, 36, -327667, 36, -327664, 36, 65549, 36, 65552, 36, 196614, 36, 196622, 30, 196623, 31, 262158, 32, 262159, 33, 327686, 36, 393229, 36, 393232, 36, 458754, 30, 458755, 31, 524290, 32, 524291, 33 )
 
 
+[editable path="KinematicBody2D/Camera2D/CanvasLayer/Menu"]
+[editable path="KinematicBody2D/Camera2D/CanvasLayer/Dialogue Box"]

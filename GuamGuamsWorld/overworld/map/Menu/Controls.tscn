@@ -1,0 +1,636 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://overworld/map/Menu/Box.png" type="Texture" id=1]
+[ext_resource path="res://overworld/map/Interact/font.fnt" type="BitmapFont" id=2]
+
+[node name="Controls" type="Patch9Frame"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 368.0
+margin/bottom = 400.0
+texture = ExtResource( 1 )
+patch_margin/left = 8
+patch_margin/top = 8
+patch_margin/right = 8
+patch_margin/bottom = 8
+
+[node name="Node2D" type="Node2D" parent="."]
+
+transform/pos = Vector2( 168, 184 )
+transform/rot = 0.143096
+transform/scale = Vector2( 5.25, 5.75 )
+
+[node name="Overworld" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -25.0
+margin/top = -16.0
+margin/right = 146.0
+margin/bottom = 19.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "Move Up: "
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Up" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -25.0
+margin/top = -19.0
+margin/right = 337.0
+margin/bottom = 16.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "Overworld Controls:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Up Keys" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -25.0
+margin/top = -13.0
+margin/right = 231.0
+margin/bottom = 22.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "W or Up Arrow"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Down" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 7.0
+margin/top = -16.0
+margin/right = 216.0
+margin/bottom = 19.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "Move Down: "
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Down Keys" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 7.0
+margin/top = -13.0
+margin/right = 292.0
+margin/bottom = 22.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "S or Down Arrow"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Left" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -25.0
+margin/top = -9.0
+margin/right = 184.0
+margin/bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "Move Left: "
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Left Keys" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -25.0
+margin/top = -6.0
+margin/right = 295.0
+margin/bottom = 29.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "A or Left Arrow"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Right" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 7.0
+margin/top = -9.0
+margin/right = 235.0
+margin/bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "Move Right: "
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Right Keys" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 7.0
+margin/top = -6.0
+margin/right = 327.0
+margin/bottom = 29.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "D or Right Arrow"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Run" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -25.0
+margin/top = -2.0
+margin/right = 295.0
+margin/bottom = 33.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "Run Toggle:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Run Keys" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -25.0
+margin/top = 1.0
+margin/right = 295.0
+margin/bottom = 36.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "R"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Menu" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 7.0
+margin/top = -2.0
+margin/right = 327.0
+margin/bottom = 33.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "Open Menu:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Menu Keys" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 7.0
+margin/top = 1.0
+margin/right = 327.0
+margin/bottom = 36.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "Escape"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Interact" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -25.0
+margin/top = -27.0
+margin/right = 317.0
+margin/bottom = 8.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "Interact / Select:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Interact Keys " type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -25.0
+margin/top = -24.0
+margin/right = 317.0
+margin/bottom = 11.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "E or Enter"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Bullet Hell" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -25.0
+margin/top = 5.0
+margin/right = 280.0
+margin/bottom = 40.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "Combat Controls:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Up BH" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -25.0
+margin/top = 8.0
+margin/right = 336.0
+margin/bottom = 43.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "Move Character Up: "
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Up BH Keys" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -25.0
+margin/top = 11.0
+margin/right = 231.0
+margin/bottom = 46.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "W"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Down BH" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 7.0
+margin/top = 8.0
+margin/right = 406.0
+margin/bottom = 43.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "Move Character Down: "
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Down BH Keys" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 7.0
+margin/top = 11.0
+margin/right = 292.0
+margin/bottom = 46.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "S "
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Left BH" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -25.0
+margin/top = 15.0
+margin/right = 374.0
+margin/bottom = 50.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "Move Character Left: "
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Left BH Keys" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -25.0
+margin/top = 18.0
+margin/right = 295.0
+margin/bottom = 53.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "A "
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Right BH" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 7.0
+margin/top = 15.0
+margin/right = 425.0
+margin/bottom = 50.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "Move Character Right: "
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Right BH Keys" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 7.0
+margin/top = 18.0
+margin/right = 327.0
+margin/bottom = 53.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "D "
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Menu Up BH" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -25.0
+margin/top = 22.0
+margin/right = 393.0
+margin/bottom = 57.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "Move Cursor Up: "
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Right BH Keys 2" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -25.0
+margin/top = 25.0
+margin/right = 295.0
+margin/bottom = 60.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "Up Arrow"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Menu Down BH" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 7.0
+margin/top = 22.0
+margin/right = 425.0
+margin/bottom = 57.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "Move Cursor Down:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Menu Down Keys" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 7.0
+margin/top = 25.0
+margin/right = 425.0
+margin/bottom = 60.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "Down Arrow"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Menu Left BH" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -25.0
+margin/top = 29.0
+margin/right = 393.0
+margin/bottom = 64.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "Move Cursor Left:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Menu Left Keys" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -25.0
+margin/top = 32.0
+margin/right = 393.0
+margin/bottom = 67.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "Left Arrow"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Menu Right BH" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 7.0
+margin/top = 29.0
+margin/right = 425.0
+margin/bottom = 64.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "Move Cursor Right:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Move Menu Right Keys" type="Label" parent="Node2D"]
+
+rect/scale = Vector2( 0.075, 0.075 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 7.0
+margin/top = 32.0
+margin/right = 425.0
+margin/bottom = 67.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.460938, 0.441132, 0.441132, 1 )
+custom_colors/font_color_shadow = Color( 0.148438, 0.148438, 0.148438, 1 )
+text = "Right Arrow"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+
