@@ -62,7 +62,9 @@ func _fixed_process(delta):
 		var resultDown = world.intersect_point(get_pos() + Vector2(0, GRID))
 		var resultLeft = world.intersect_point(get_pos() + Vector2(-GRID, 0))
 		var resultRight = world.intersect_point(get_pos() + Vector2(GRID, 0))
-		var rand = randi() % 10
+		
+		# Hardcoded 1/20 random encounter rate
+		var rand = randi() % 20
 		
 		#When respective direction is pressed, sprite is changed to that direction
 		#If there is no collision in that direction's tile, move to it
@@ -126,7 +128,8 @@ func _fixed_process(delta):
 			moving = false
 	interact = false
 	menu = false
-	
+
+# This could maybe go in a different file -- that might make more sense.
 func randomEncounter():
 	var bh = load("res://bullet_hell/BulletHell.tscn").instance()
 	var packed_ow = PackedScene.new()
