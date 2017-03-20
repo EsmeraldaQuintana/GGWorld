@@ -130,7 +130,7 @@ text = [ "Sorry, the lighthouse is closed due to construction.", "Please return 
 
 [node name="Player" type="KinematicBody2D" parent="."]
 
-transform/pos = Vector2( 248, -232 )
+transform/pos = Vector2( 72, 40 )
 transform/scale = Vector2( 0.25, 0.25 )
 input/pickable = false
 collision/layers = 1
@@ -191,19 +191,17 @@ scale = Vector2( 4, 3 )
 
 [node name="Dialogue Box" parent="Player/Camera2D/CanvasLayer" instance=ExtResource( 6 )]
 
-rect/scale = Vector2( 0.4, 0.4 )
+visibility/visible = false
 margin/left = 4.0
 margin/top = 149.0
-margin/right = 624.0
-margin/bottom = 256.0
+margin/right = 252.0
+margin/bottom = 197.0
 
 [node name="RichTextLabel" parent="Player/Camera2D/CanvasLayer/Dialogue Box"]
 
-rect/scale = Vector2( 1, 1 )
-margin/left = 20.0
-margin/top = 14.0
-margin/right = 600.0
-margin/bottom = 94.0
+margin/left = 12.0
+margin/right = 572.0
+margin/bottom = 99.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 
 [node name="Menu" parent="Player/Camera2D/CanvasLayer" instance=ExtResource( 7 )]
@@ -225,7 +223,6 @@ margin/right = 370.0
 
 [node name="TileFront" type="TileMap" parent="."]
 
-visibility/visible = false
 mode = 0
 tile_set = ExtResource( 1 )
 cell/size = Vector2( 16, 16 )
