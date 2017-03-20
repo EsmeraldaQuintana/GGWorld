@@ -2,12 +2,12 @@
 
 [ext_resource path="res://overworld/map/fixed.png" type="Texture" id=1]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
@@ -157,7 +157,7 @@ region_rect = Rect2( 497, 2, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Water_UL"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -169,7 +169,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water_UL/StaticBody2D"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -186,7 +186,7 @@ region_rect = Rect2( 511, 1, 16, 16 )
 [node name="StaticBody2D1" type="StaticBody2D" parent="Water_UR"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -198,7 +198,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water_UR/StaticBody2D1"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -215,7 +215,7 @@ region_rect = Rect2( 497, 14, 16, 16 )
 [node name="StaticBody2D1" type="StaticBody2D" parent="Water_DL"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -227,7 +227,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water_DL/StaticBody2D1"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -244,7 +244,7 @@ region_rect = Rect2( 511, 14, 16, 16 )
 [node name="StaticBody2D1" type="StaticBody2D" parent="Water_DR"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -256,7 +256,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water_DR/StaticBody2D1"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -273,7 +273,7 @@ region_rect = Rect2( 481, 33, 16, 16 )
 [node name="StaticBody2D2" type="StaticBody2D" parent="Water_UpL"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -285,7 +285,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water_UpL/StaticBody2D2"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -302,7 +302,7 @@ region_rect = Rect2( 496, 33, 16, 16 )
 [node name="StaticBody2D3" type="StaticBody2D" parent="Water_UpM"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -314,7 +314,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water_UpM/StaticBody2D3"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -331,7 +331,7 @@ region_rect = Rect2( 511, 33, 16, 16 )
 [node name="StaticBody2D4" type="StaticBody2D" parent="Water_UpR"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -343,7 +343,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water_UpR/StaticBody2D4"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -360,7 +360,7 @@ region_rect = Rect2( 481, 48, 16, 16 )
 [node name="StaticBody2D5" type="StaticBody2D" parent="Water_MidL"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -372,7 +372,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water_MidL/StaticBody2D5"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -397,7 +397,7 @@ region_rect = Rect2( 511, 46, 16, 16 )
 [node name="StaticBody2D7" type="StaticBody2D" parent="Water_MidR"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -409,7 +409,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water_MidR/StaticBody2D7"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -426,7 +426,7 @@ region_rect = Rect2( 481, 61, 16, 16 )
 [node name="StaticBody2D8" type="StaticBody2D" parent="Water_DownL"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -438,7 +438,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water_DownL/StaticBody2D8"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -455,7 +455,7 @@ region_rect = Rect2( 496, 61, 16, 16 )
 [node name="StaticBody2D9" type="StaticBody2D" parent="Water_DownM"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -467,7 +467,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water_DownM/StaticBody2D9"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -484,7 +484,7 @@ region_rect = Rect2( 511, 61, 16, 16 )
 [node name="StaticBody2D10" type="StaticBody2D" parent="Water_DownR"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -496,7 +496,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water_DownR/StaticBody2D10"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -593,7 +593,7 @@ region_rect = Rect2( 32, 175, 16, 16 )
 [node name="StaticBody2D11" type="StaticBody2D" parent="Tree_BotL"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -605,7 +605,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tree_BotL/StaticBody2D11"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -622,7 +622,7 @@ region_rect = Rect2( 48, 175, 16, 16 )
 [node name="StaticBody2D12" type="StaticBody2D" parent="Tree_BotR"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -634,7 +634,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tree_BotR/StaticBody2D12"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -662,7 +662,7 @@ region_rect = Rect2( 79, 79, 16, 16 )
 
 transform/pos = Vector2( -0.0350494, 1.02048 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -674,7 +674,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lamp_Bot/StaticBody2D13"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -691,7 +691,7 @@ region_rect = Rect2( 144, 193, 16, 16 )
 [node name="StaticBody2D14" type="StaticBody2D" parent="Bridge_TopL"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -703,7 +703,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_TopL/StaticBody2D14"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -720,7 +720,7 @@ region_rect = Rect2( 160, 193, 16, 16 )
 [node name="StaticBody2D15" type="StaticBody2D" parent="Bridge_TopWL"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -732,7 +732,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_TopWL/StaticBody2D15"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -749,7 +749,7 @@ region_rect = Rect2( 176, 193, 16, 16 )
 [node name="StaticBody2D16" type="StaticBody2D" parent="Bridge_TopM"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -761,7 +761,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_TopM/StaticBody2D16"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -778,7 +778,7 @@ region_rect = Rect2( 192, 193, 16, 16 )
 [node name="StaticBody2D17" type="StaticBody2D" parent="Bridge_TopWR"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -790,7 +790,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_TopWR/StaticBody2D17"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -807,7 +807,7 @@ region_rect = Rect2( 207, 193, 16, 16 )
 [node name="StaticBody2D18" type="StaticBody2D" parent="Bridge_TopR"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -819,7 +819,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_TopR/StaticBody2D18"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -881,7 +881,7 @@ region_rect = Rect2( 144, 223, 16, 16 )
 transform/pos = Vector2( 0, -3.8147e-06 )
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -893,7 +893,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_BotL/StaticBody2D19"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -912,7 +912,7 @@ region_rect = Rect2( 160, 223, 16, 16 )
 
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -924,7 +924,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_BotWL/StaticBody2D20"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -943,7 +943,7 @@ region_rect = Rect2( 176, 223, 16, 16 )
 
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -955,7 +955,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_BotM/StaticBody2D21"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -974,7 +974,7 @@ region_rect = Rect2( 192, 223, 16, 16 )
 
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -986,7 +986,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_BotWR/StaticBody2D22"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -1005,7 +1005,7 @@ region_rect = Rect2( 207, 223, 16, 16 )
 
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1017,7 +1017,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_BotR/StaticBody2D23"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -1034,7 +1034,7 @@ frame = 1706
 
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1046,7 +1046,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_DoorL/StaticBody2D23"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -1063,7 +1063,7 @@ frame = 1707
 
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1075,7 +1075,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_Door/StaticBody2D23"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -1093,7 +1093,7 @@ frame = 1708
 transform/pos = Vector2( 0, -1.90735e-06 )
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1105,7 +1105,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_DoorR/StaticBody2D23"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -1122,7 +1122,7 @@ frame = 1654
 
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1134,7 +1134,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_DoorUL/StaticBody2D23"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -1151,7 +1151,7 @@ frame = 1655
 
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1163,7 +1163,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_DoorU/StaticBody2D23"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -1180,7 +1180,7 @@ frame = 1656
 
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1192,7 +1192,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_DoorUR/StaticBody2D23"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -1209,7 +1209,7 @@ frame = 1657
 
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1221,7 +1221,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_FrontR/StaticBody2D23"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -1238,7 +1238,7 @@ frame = 1653
 
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1250,7 +1250,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_FrontL/StaticBody2D23"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -1267,7 +1267,7 @@ frame = 1601
 
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1279,7 +1279,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_RoofLL/StaticBody2D23"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -1296,7 +1296,7 @@ frame = 1602
 
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1308,7 +1308,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_RoofML/StaticBody2D23"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -1325,7 +1325,7 @@ frame = 1603
 
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1337,7 +1337,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_RoofM/StaticBody2D23"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -1354,7 +1354,7 @@ frame = 1604
 
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1366,7 +1366,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_RoofMR/StaticBody2D23"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -1383,7 +1383,7 @@ frame = 1605
 
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1395,7 +1395,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_RoofRR/StaticBody2D23"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -1412,7 +1412,7 @@ frame = 1549
 
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1424,7 +1424,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_RoofUL/StaticBody2D23"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -1441,7 +1441,7 @@ frame = 1550
 
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1453,7 +1453,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_TowerL/StaticBody2D23"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -1471,7 +1471,7 @@ frame = 1551
 transform/pos = Vector2( 0, -7.62939e-06 )
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1483,7 +1483,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_TowerM/StaticBody2D23"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -1500,7 +1500,7 @@ frame = 1552
 
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1512,7 +1512,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_TowerR/StaticBody2D23"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -1529,7 +1529,7 @@ frame = 1553
 
 transform/scale = Vector2( 1, 0.909091 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1541,7 +1541,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LgtHs_RoofUR/StaticBody2D23"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -1775,7 +1775,7 @@ region_rect = Rect2( 644, 840, 16, 16 )
 [node name="StaticBody2D5" type="StaticBody2D" parent="Gyra_BaseL2 "]
 
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1787,7 +1787,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gyra_BaseL2 /StaticBody2D5"]
 
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
@@ -1864,7 +1864,7 @@ region_rect = Rect2( 660, 840, 16, 16 )
 [node name="StaticBody2D3" type="StaticBody2D" parent="Gyra_BaseM2"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1876,7 +1876,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gyra_BaseM2/StaticBody2D3"]
 
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
@@ -1933,7 +1933,7 @@ region_rect = Rect2( 676, 840, 16, 16 )
 [node name="StaticBody2D4" type="StaticBody2D" parent="Gyra_BaseR2"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1945,7 +1945,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gyra_BaseR2/StaticBody2D4"]
 
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 

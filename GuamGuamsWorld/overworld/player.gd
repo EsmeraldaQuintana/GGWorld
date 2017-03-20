@@ -140,5 +140,5 @@ func randomEncounter():
 func interact(result):
 	for dictionary in result:
 		if typeof(dictionary.collider) == TYPE_OBJECT and dictionary.collider.has_node("Interact"):
-			get_node("Camera2D/Dialogue Box").set_hidden(false)
-			get_node("Camera2D/Dialogue Box")._print_dialogue(dictionary.collider.get_node("Interact").text)
+			get_node("Camera2D/CanvasLayer/Dialogue Box").set_hidden(false)
+			get_node("Camera2D/CanvasLayer/Dialogue Box")._print_dialogue(dictionary.collider.get_node("Interact").text)

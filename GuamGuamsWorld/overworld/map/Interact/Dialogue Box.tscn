@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://overworld/map/Interact/speech.png" type="Texture" id=1]
-[ext_resource path="res://overworld/map/Dialogue_Box.gd" type="Script" id=2]
+[ext_resource path="res://overworld/map/Interact/Dialogue_Box.gd" type="Script" id=2]
 [ext_resource path="res://overworld/map/Interact/font.fnt" type="BitmapFont" id=3]
 
 [node name="Dialogue Box" type="Patch9Frame"]
@@ -31,7 +31,7 @@ size_flags/vertical = 2
 margin/left = 10.0
 margin/top = 6.0
 margin/right = 80.0
-margin/bottom = 73.0
+margin/bottom = 76.0
 custom_fonts/mono_font = ExtResource( 3 )
 custom_fonts/bold_italics_font = ExtResource( 3 )
 custom_fonts/italics_font = ExtResource( 3 )

@@ -1,21 +1,26 @@
-[gd_scene load_steps=17 format=1]
+[gd_scene load_steps=19 format=1]
 
 [ext_resource path="res://overworld/map/tileset.xml" type="TileSet" id=1]
-[ext_resource path="res://overworld/player.gd" type="Script" id=2]
-[ext_resource path="res://overworld/PlayerSprites/redtest.png" type="Texture" id=3]
-[ext_resource path="res://overworld/map/Menu.tscn" type="PackedScene" id=4]
-[ext_resource path="res://overworld/map/Menu/Box.png" type="Texture" id=5]
-[ext_resource path="res://overworld/map/Menu.gd" type="Script" id=6]
-[ext_resource path="res://overworld/map/Menu/pointer.png" type="Texture" id=7]
-[ext_resource path="res://overworld/map/Interact/font.fnt" type="BitmapFont" id=8]
-[ext_resource path="res://overworld/map/Menu/Controls.tscn" type="PackedScene" id=9]
-[ext_resource path="res://overworld/map/Dialogue Box.tscn" type="PackedScene" id=10]
-[ext_resource path="res://overworld/map/Interact/speech.png" type="Texture" id=11]
-[ext_resource path="res://overworld/map/Interact/Dialogue_Box.gd" type="Script" id=12]
+[ext_resource path="res://overworld/map/fixed.png" type="Texture" id=2]
+[ext_resource path="res://overworld/map/signLine.gd" type="Script" id=3]
+[ext_resource path="res://overworld/player.gd" type="Script" id=4]
+[ext_resource path="res://overworld/PlayerSprites/redtest.png" type="Texture" id=5]
+[ext_resource path="res://overworld/map/Dialogue Box.tscn" type="PackedScene" id=6]
+[ext_resource path="res://overworld/map/Interact/speech.png" type="Texture" id=7]
+[ext_resource path="res://overworld/map/Interact/Dialogue_Box.gd" type="Script" id=8]
+[ext_resource path="res://overworld/map/Interact/font.fnt" type="BitmapFont" id=9]
+[ext_resource path="res://overworld/map/Menu.tscn" type="PackedScene" id=10]
+[ext_resource path="res://overworld/map/Menu/Box.png" type="Texture" id=11]
+[ext_resource path="res://overworld/map/Menu.gd" type="Script" id=12]
+[ext_resource path="res://overworld/map/Menu/Controls.tscn" type="PackedScene" id=13]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="RectangleShape2D" id=1]
 
-resource/name = "walk_down"
+custom_solver_bias = 0.0
+extents = Vector2( 8, 8 )
+
+[sub_resource type="Animation" id=2]
+
 length = 0.3
 loop = false
 step = 0.1
@@ -25,9 +30,8 @@ tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = { "times":FloatArray( 0, 0.1, 0.2, 0.3 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":1, "values":[ 6, 7, 8, 6 ] }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource/name = "walk_left"
 length = 0.3
 loop = false
 step = 0.1
@@ -37,9 +41,8 @@ tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = { "times":FloatArray( 0, 0.1, 0.2, 0.3 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":1, "values":[ 3, 4, 5, 3 ] }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
-resource/name = "walk_right"
 length = 0.3
 loop = false
 step = 0.1
@@ -49,7 +52,7 @@ tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = { "times":FloatArray( 0, 0.1, 0.2, 0.3 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":1, "values":[ 9, 10, 11, 9 ] }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 
 length = 0.3
 loop = false
@@ -96,42 +99,76 @@ collision/bounce = 0.0
 collision/layers = 1
 collision/mask = 1
 occluder/light_mask = 1
-tile_data = IntArray( -1310707, 66, -1310706, 67, -1310705, 68, -1310704, 69, -1310703, 70, -1245171, 61, -1245170, 62, -1245169, 63, -1245168, 64, -1245167, 65, -1179635, 60, -1179634, 56, -1179633, 57, -1179632, 58, -1179631, 59, -1114098, 53, -1114097, 54, -1114096, 55, -1048564, 37, -1048558, 37, -851954, 95, -851953, 102, -851952, 107, -786418, 94, -786417, 101, -786416, 106, -589812, 37, -589807, 37, -524280, 98, -524279, 105, -524278, 110, -524269, 98, -524268, 105, -524267, 110, -458745, 100, -458744, 97, -458743, 104, -458742, 109, -458734, 100, -458733, 97, -458732, 104, -458731, 109, -393209, 99, -393208, 96, -393207, 103, -393206, 108, -393205, 111, -393198, 99, -393197, 96, -393196, 103, -393195, 108, -393194, 111, -327672, 95, -327671, 102, -327670, 107, -327661, 95, -327660, 102, -327659, 107, -262136, 94, -262135, 101, -262134, 106, -262131, 37, -262128, 37, -262125, 94, -262124, 101, -262123, 106, 131085, 37, 131088, 37, 262150, 37, 327694, 34, 327695, 35, 393222, 37, 458761, 21, 458765, 37, 458768, 37, 589826, 34, 589827, 35 )
+tile_data = IntArray( -1310707, 66, -1310706, 67, -1310705, 68, -1310704, 69, -1310703, 70, -1245171, 61, -1245170, 62, -1245169, 63, -1245168, 64, -1245167, 65, -1179635, 60, -1179634, 56, -1179633, 57, -1179632, 58, -1179631, 59, -1114098, 53, -1114096, 55, -1048564, 37, -1048558, 37, -851954, 95, -851953, 102, -851952, 107, -786418, 94, -786417, 101, -786416, 106, -589812, 37, -589807, 37, -524280, 98, -524279, 105, -524278, 110, -524269, 98, -524268, 105, -524267, 110, -458745, 100, -458744, 97, -458743, 104, -458742, 109, -458734, 100, -458733, 97, -458732, 104, -458731, 109, -393209, 99, -393208, 96, -393207, 103, -393206, 108, -393205, 111, -393198, 99, -393197, 96, -393196, 103, -393195, 108, -393194, 111, -327672, 95, -327671, 102, -327670, 107, -327661, 95, -327660, 102, -327659, 107, -262136, 94, -262135, 101, -262134, 106, -262131, 37, -262128, 37, -262125, 94, -262124, 101, -262123, 106, 131085, 37, 131088, 37, 262150, 37, 327694, 34, 327695, 35, 393222, 37, 458761, 21, 458765, 37, 458768, 37, 589826, 34, 589827, 35 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+[node name="Sprite" type="Sprite" parent="."]
 
-transform/pos = Vector2( 231.979, -167.938 )
+transform/pos = Vector2( 248, -264 )
+texture = ExtResource( 2 )
+vframes = 54
+hframes = 52
+frame = 1707
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+
+z/z = 4095
+z/relative = false
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Interact" type="Node2D" parent="Sprite/StaticBody2D"]
+
+script/script = ExtResource( 3 )
+text = [ "Sorry, the lighthouse is closed due to construction." ]
+
+[node name="Player" type="KinematicBody2D" parent="."]
+
+transform/pos = Vector2( 248, -248 )
 transform/scale = Vector2( 0.25, 0.25 )
 input/pickable = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
-script/script = ExtResource( 2 )
+script/script = ExtResource( 4 )
 
-[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+[node name="Sprite" type="Sprite" parent="Player"]
 
 transform/pos = Vector2( -0.49646, -30.8497 )
 transform/scale = Vector2( 4, 4 )
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 vframes = 4
 hframes = 3
 region_rect = Rect2( 0, 0, 96, 128 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/walk_down = SubResource( 1 )
-anims/walk_left = SubResource( 2 )
-anims/walk_right = SubResource( 3 )
-anims/walk_up = SubResource( 4 )
+anims/walk_down = SubResource( 2 )
+anims/walk_left = SubResource( 3 )
+anims/walk_right = SubResource( 4 )
+anims/walk_up = SubResource( 5 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
 
-[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 
 transform/pos = Vector2( -0.0300293, -0.27301 )
 anchor_mode = 1
@@ -151,14 +188,72 @@ drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="KinematicBody2D/Camera2D"]
+[node name="CanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
 
 layer = 2
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 4, 3 )
 
-[node name="Menu" type="Patch9Frame" parent="KinematicBody2D/Camera2D/CanvasLayer" instance=ExtResource( 4 )]
+[node name="Dialogue Box" type="Patch9Frame" parent="Player/Camera2D/CanvasLayer" instance=ExtResource( 6 )]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 4.0
+margin/top = 149.0
+margin/right = 624.0
+margin/bottom = 256.0
+texture = ExtResource( 7 )
+patch_margin/left = 17
+patch_margin/top = 5
+patch_margin/right = 17
+patch_margin/bottom = 5
+script/script = ExtResource( 8 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/Camera2D/CanvasLayer/Dialogue Box"]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 10.0
+margin/top = 6.0
+margin/right = 80.0
+margin/bottom = 76.0
+custom_fonts/mono_font = ExtResource( 9 )
+custom_fonts/bold_italics_font = ExtResource( 9 )
+custom_fonts/italics_font = ExtResource( 9 )
+custom_fonts/bold_font = ExtResource( 9 )
+custom_fonts/normal_font = ExtResource( 9 )
+bbcode/enabled = false
+bbcode/bbcode = ""
+visible_characters = -1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/Camera2D/CanvasLayer/Dialogue Box"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 12.0
+margin/top = 6.0
+margin/right = 240.0
+margin/bottom = 43.0
+custom_fonts/mono_font = ExtResource( 9 )
+custom_fonts/bold_italics_font = ExtResource( 9 )
+custom_fonts/italics_font = ExtResource( 9 )
+custom_fonts/bold_font = ExtResource( 9 )
+custom_fonts/normal_font = ExtResource( 9 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode/enabled = false
+bbcode/bbcode = ""
+visible_characters = -1
+
+[node name="Menu" type="Patch9Frame" parent="Player/Camera2D/CanvasLayer" instance=ExtResource( 10 )]
 
 process/pause_mode = 2
 visibility/visible = false
@@ -171,150 +266,14 @@ margin/left = 185.0
 margin/top = 0.0
 margin/right = 329.0
 margin/bottom = 149.0
-texture = ExtResource( 5 )
+texture = ExtResource( 11 )
 patch_margin/left = 8
 patch_margin/top = 8
 patch_margin/right = 8
 patch_margin/bottom = 8
-script/script = ExtResource( 6 )
+script/script = ExtResource( 12 )
 
-[node name="Sprite" type="Sprite" parent="KinematicBody2D/Camera2D/CanvasLayer/Menu"]
-
-transform/pos = Vector2( 13.4381, 32.3815 )
-transform/scale = Vector2( 0.872672, 0.827962 )
-texture = ExtResource( 7 )
-
-[node name="Labels" type="Node2D" parent="KinematicBody2D/Camera2D/CanvasLayer/Menu"]
-
-transform/pos = Vector2( 72.3031, 96.5929 )
-transform/scale = Vector2( 2.24053, 2.98147 )
-
-[node name="Battle" type="Label" parent="KinematicBody2D/Camera2D/CanvasLayer/Menu/Labels"]
-
-rect/scale = Vector2( 0.3, 0.3 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = -23.0
-margin/top = -26.0
-margin/right = 91.0
-margin/bottom = 9.0
-custom_fonts/font = ExtResource( 8 )
-custom_colors/font_color = Color( 0.605469, 0.562897, 0.562897, 1 )
-custom_colors/font_color_shadow = Color( 0.230469, 0.212463, 0.212463, 1 )
-text = "Battle"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Controls" type="Label" parent="KinematicBody2D/Camera2D/CanvasLayer/Menu/Labels"]
-
-rect/scale = Vector2( 0.3, 0.3 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = -23.0
-margin/top = -12.0
-margin/right = 130.0
-margin/bottom = 23.0
-custom_fonts/font = ExtResource( 8 )
-custom_colors/font_color = Color( 0.605469, 0.562897, 0.562897, 1 )
-custom_colors/font_color_shadow = Color( 0.230469, 0.212463, 0.212463, 1 )
-text = "Controls"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Quit" type="Label" parent="KinematicBody2D/Camera2D/CanvasLayer/Menu/Labels"]
-
-rect/scale = Vector2( 0.3, 0.3 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = -23.0
-margin/top = 3.0
-margin/right = 91.0
-margin/bottom = 38.0
-custom_fonts/font = ExtResource( 8 )
-custom_colors/font_color = Color( 0.605469, 0.562897, 0.562897, 1 )
-custom_colors/font_color_shadow = Color( 0.230469, 0.212463, 0.212463, 1 )
-text = "Quit"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Battle" type="Label" parent="KinematicBody2D/Camera2D/CanvasLayer/Menu/Labels"]
-
-rect/scale = Vector2( 0.3, 0.3 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = -23.0
-margin/top = -26.0
-margin/right = 91.0
-margin/bottom = 9.0
-custom_fonts/font = ExtResource( 8 )
-custom_colors/font_color = Color( 0.605469, 0.562897, 0.562897, 1 )
-custom_colors/font_color_shadow = Color( 0.230469, 0.212463, 0.212463, 1 )
-text = "Battle"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Controls" type="Label" parent="KinematicBody2D/Camera2D/CanvasLayer/Menu/Labels"]
-
-rect/scale = Vector2( 0.3, 0.3 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = -23.0
-margin/top = -12.0
-margin/right = 130.0
-margin/bottom = 23.0
-custom_fonts/font = ExtResource( 8 )
-custom_colors/font_color = Color( 0.605469, 0.562897, 0.562897, 1 )
-custom_colors/font_color_shadow = Color( 0.230469, 0.212463, 0.212463, 1 )
-text = "Controls"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Quit" type="Label" parent="KinematicBody2D/Camera2D/CanvasLayer/Menu/Labels"]
-
-rect/scale = Vector2( 0.3, 0.3 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = -23.0
-margin/top = 3.0
-margin/right = 91.0
-margin/bottom = 38.0
-custom_fonts/font = ExtResource( 8 )
-custom_colors/font_color = Color( 0.605469, 0.562897, 0.562897, 1 )
-custom_colors/font_color_shadow = Color( 0.230469, 0.212463, 0.212463, 1 )
-text = "Quit"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Sprite" type="Sprite" parent="KinematicBody2D/Camera2D/CanvasLayer/Menu"]
-
-transform/pos = Vector2( 13.4381, 32.3815 )
-transform/scale = Vector2( 0.872672, 0.827962 )
-texture = ExtResource( 7 )
-
-[node name="Labels" type="Node2D" parent="KinematicBody2D/Camera2D/CanvasLayer/Menu"]
-
-transform/pos = Vector2( 72.3031, 96.5929 )
-transform/scale = Vector2( 2.24053, 2.98147 )
-
-[node name="Controls" type="Patch9Frame" parent="KinematicBody2D/Camera2D/CanvasLayer" instance=ExtResource( 9 )]
+[node name="Controls" type="Patch9Frame" parent="Player/Camera2D/CanvasLayer" instance=ExtResource( 13 )]
 
 process/pause_mode = 2
 visibility/visible = false
@@ -328,73 +287,15 @@ margin/left = 0.00195312
 margin/top = 0.0
 margin/right = 370.0
 margin/bottom = 400.0
-texture = ExtResource( 5 )
+texture = ExtResource( 11 )
 patch_margin/left = 8
 patch_margin/top = 8
 patch_margin/right = 8
 patch_margin/bottom = 8
 
-[node name="Dialogue Box" type="Patch9Frame" parent="KinematicBody2D/Camera2D/CanvasLayer" instance=ExtResource( 10 )]
-
-visibility/visible = false
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = -16.0
-margin/top = 64.0
-margin/right = 688.0
-margin/bottom = 168.0
-texture = ExtResource( 11 )
-patch_margin/left = 17
-patch_margin/top = 10
-patch_margin/right = 17
-patch_margin/bottom = 10
-script/script = ExtResource( 12 )
-
-[node name="RichTextLabel" type="RichTextLabel" parent="KinematicBody2D/Camera2D/CanvasLayer/Dialogue Box"]
-
-rect/scale = Vector2( 0.4, 0.4 )
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 10.0
-margin/top = 6.0
-margin/right = 80.0
-margin/bottom = 76.0
-custom_fonts/mono_font = ExtResource( 8 )
-custom_fonts/bold_italics_font = ExtResource( 8 )
-custom_fonts/italics_font = ExtResource( 8 )
-custom_fonts/bold_font = ExtResource( 8 )
-custom_fonts/normal_font = ExtResource( 8 )
-bbcode/enabled = false
-bbcode/bbcode = ""
-visible_characters = -1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="KinematicBody2D/Camera2D/CanvasLayer/Dialogue Box"]
-
-rect/scale = Vector2( 0.4, 0.4 )
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 10.0
-margin/top = 6.0
-margin/right = 441.0
-margin/bottom = 107.0
-custom_fonts/mono_font = ExtResource( 8 )
-custom_fonts/bold_italics_font = ExtResource( 8 )
-custom_fonts/italics_font = ExtResource( 8 )
-custom_fonts/bold_font = ExtResource( 8 )
-custom_fonts/normal_font = ExtResource( 8 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode/enabled = false
-bbcode/bbcode = ""
-visible_characters = -1
-
 [node name="TileFront" type="TileMap" parent="."]
 
+visibility/visible = false
 mode = 0
 tile_set = ExtResource( 1 )
 cell/size = Vector2( 16, 16 )
@@ -412,5 +313,4 @@ occluder/light_mask = 1
 tile_data = IntArray( -1769457, 93, -1703922, 90, -1703921, 91, -1703920, 92, -1638386, 87, -1638385, 88, -1638384, 89, -1572850, 84, -1572849, 85, -1572848, 86, -1507314, 81, -1507313, 82, -1507312, 83, -1441779, 76, -1441778, 77, -1441777, 78, -1441776, 79, -1441775, 80, -1376243, 71, -1376242, 72, -1376241, 73, -1376240, 74, -1376239, 75, -1114100, 36, -1114094, 36, -1048562, 98, -1048561, 105, -1048560, 110, -983027, 100, -983026, 97, -983025, 104, -983024, 109, -917491, 99, -917490, 96, -917489, 103, -917488, 108, -917487, 111, -655348, 36, -655343, 36, -327667, 36, -327664, 36, 65549, 36, 65552, 36, 196614, 36, 196622, 30, 196623, 31, 262158, 32, 262159, 33, 327686, 36, 393229, 36, 393232, 36, 458754, 30, 458755, 31, 524290, 32, 524291, 33 )
 
 
-[editable path="KinematicBody2D/Camera2D/CanvasLayer/Menu"]
-[editable path="KinematicBody2D/Camera2D/CanvasLayer/Dialogue Box"]
+[editable path="Player/Camera2D/CanvasLayer/Dialogue Box"]
