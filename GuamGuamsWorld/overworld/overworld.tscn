@@ -98,6 +98,7 @@ tile_data = IntArray( -1310707, 66, -1310706, 67, -1310705, 68, -1310704, 69, -1
 
 [node name="Sprite" type="Sprite" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 248, -264 )
 texture = ExtResource( 2 )
 vframes = 54
@@ -130,6 +131,7 @@ text = [ "Sorry, the lighthouse is closed due to construction.", "Please return 
 
 [node name="Player" type="KinematicBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 72, 40 )
 transform/scale = Vector2( 0.25, 0.25 )
 input/pickable = false
