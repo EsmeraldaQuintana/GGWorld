@@ -14,7 +14,7 @@ size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 144.0
-margin/bottom = 149.0
+margin/bottom = 210.0
 texture = ExtResource( 1 )
 patch_margin/left = 8
 patch_margin/top = 8
@@ -30,8 +30,8 @@ texture = ExtResource( 3 )
 
 [node name="Labels" type="Node2D" parent="."]
 
-transform/pos = Vector2( 72.3031, 96.5929 )
-transform/scale = Vector2( 2.24053, 2.98147 )
+transform/pos = Vector2( 72.3031, 100.593 )
+transform/scale = Vector2( 2.24053, 3.10647 )
 
 [node name="Battle" type="Label" parent="Labels"]
 
@@ -86,6 +86,25 @@ custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.605469, 0.562897, 0.562897, 1 )
 custom_colors/font_color_shadow = Color( 0.230469, 0.212463, 0.212463, 1 )
 text = "Quit"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Pokemon" type="Label" parent="Labels"]
+
+rect/scale = Vector2( 0.3, 0.3 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -23.0
+margin/top = 16.0
+margin/right = 53.0
+margin/bottom = 51.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.253906, 0.242004, 0.242004, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Pokemon"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

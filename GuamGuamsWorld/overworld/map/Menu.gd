@@ -66,6 +66,8 @@ func _handle_interaction():
 	elif currentLabel == 2:
 		get_tree().set_pause(false)
 		get_tree().change_scene("res://title_screen/titleScreen.tscn")
+	elif currentLabel == 3:
+		get_tree().change_scene("res://overworld/map/Menu/Pokemon.tscn")
 
 #Repositions pointer based on current label
 func pointer_update():
