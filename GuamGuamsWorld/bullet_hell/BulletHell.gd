@@ -24,22 +24,22 @@ func _ready():
 	#player_size = get_node("Player/Player Sprite").get_texture().get_size()
 	# BOUNDARY BOX DEBUGGING END
 
-func _fixed_process(delta):
-	# COLLIDING HANDLING
-	colliding = .get_node("Player").is_colliding()
-	if (colliding):
-		if (.get_node("Player").get_collider() == .get_node("Bullet")):
-			.get_node("Player").get_collider().free()
-			colliding = false 
-			print("Took 60 bullet dmg!")
-			currentPokemon.CurrentHP -= 5
-			print("Player health is ", currentPokemon.CurrentHP)
-		if (.get_node("Player").get_collider() == .get_node("Lightning")):
-			.get_node("Player").get_collider().free()
-			colliding = false
-			print("Took 5 lightning dmg!")
-			currentPokemon.CurrentHP -= 5
-			print("Player health is ", currentPokemon.CurrentHP)
+#func _fixed_process(delta):
+#	# COLLIDING HANDLING
+#	colliding = .get_node("Player").is_colliding()
+#	if (colliding):
+#		if (.get_node("Player").get_collider() == .get_node("Bullet")):
+#			.get_node("Player").get_collider().free()
+#			colliding = false 
+#			print("Took 60 bullet dmg!")
+#			currentPokemon.CurrentHP -= 5
+#			print("Player health is ", currentPokemon.CurrentHP)
+#		if (.get_node("Player").get_collider() == .get_node("Lightning")):
+#			.get_node("Player").get_collider().free()
+#			colliding = false
+#			print("Took 5 lightning dmg!")
+#			currentPokemon.CurrentHP -= 5
+#			print("Player health is ", currentPokemon.CurrentHP)
 
 	# COLLIDING HANDLING END
 	# PLAYER MOVEMENT
