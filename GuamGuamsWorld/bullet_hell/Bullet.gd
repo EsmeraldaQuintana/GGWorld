@@ -15,7 +15,7 @@ var shoots = 0
 
 var timer = null
 var can_shoot = true
-var bullet_delay = .2
+var bullet_delay = 1
 
 func _ready():
 	set_process(true)
