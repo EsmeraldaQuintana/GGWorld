@@ -278,6 +278,7 @@ __meta__ = { "_edit_lock_":true }
 
 [node name="Fireballstuff" type="KinematicBody2D" parent="."]
 
+editor/display_folded = true
 input/pickable = false
 collision/layers = 1
 collision/mask = 1
