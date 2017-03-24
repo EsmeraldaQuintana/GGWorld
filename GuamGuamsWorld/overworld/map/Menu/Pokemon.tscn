@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://overworld/map/Menu/menu.tex" type="Texture" id=1]
-[ext_resource path="res://overworld/map/Menu/Spot_0.tex" type="Texture" id=2]
-[ext_resource path="res://overworld/map/Menu/1stMon.tex" type="Texture" id=3]
-[ext_resource path="res://overworld/map/Menu/tMon.tex" type="Texture" id=4]
-[ext_resource path="res://overworld/map/Menu/Selected.tex" type="Texture" id=5]
-[ext_resource path="res://overworld/map/Menu/tCancel.tex" type="Texture" id=6]
-[ext_resource path="res://overworld/map/Menu/Cancel_selected.tex" type="Texture" id=7]
+[ext_resource path="res://overworld/map/Menu/Pokemon.gd" type="Script" id=2]
+[ext_resource path="res://overworld/map/Menu/Spot_0.tex" type="Texture" id=3]
+[ext_resource path="res://overworld/map/Menu/1stMon.tex" type="Texture" id=4]
+[ext_resource path="res://overworld/map/Menu/tMon.tex" type="Texture" id=5]
+[ext_resource path="res://overworld/map/Menu/Selected.tex" type="Texture" id=6]
+[ext_resource path="res://overworld/map/Menu/tCancel.tex" type="Texture" id=7]
+[ext_resource path="res://overworld/map/Menu/Cancel_selected.tex" type="Texture" id=8]
 
 [node name="Pokemon" type="Patch9Frame"]
 
@@ -20,6 +21,7 @@ margin/top = 0.0
 margin/right = 41.0
 margin/bottom = 40.0
 texture = ExtResource( 1 )
+script/script = ExtResource( 2 )
 
 [node name="team" type="Patch9Frame" parent="."]
 
@@ -44,11 +46,12 @@ margin/left = -14.0
 margin/top = 5.0
 margin/right = 71.0
 margin/bottom = 61.0
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 stretch_mode = 0
 
 [node name="Spot[0]_select" type="TextureFrame" parent="team"]
 
+visibility/visible = false
 rect/scale = Vector2( 0.1425, 0.195 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -58,7 +61,7 @@ margin/left = -14.0
 margin/top = 5.0
 margin/right = 70.0
 margin/bottom = 62.0
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 stretch_mode = 0
 
 [node name="Spot[1]" type="TextureFrame" parent="team"]
@@ -72,7 +75,7 @@ margin/left = 1.0
 margin/top = 1.0
 margin/right = 152.0
 margin/bottom = 23.0
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 stretch_mode = 0
 
 [node name="Spot[2]" type="TextureFrame" parent="team"]
@@ -86,7 +89,7 @@ margin/left = 1.0
 margin/top = 7.0
 margin/right = 152.0
 margin/bottom = 29.0
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 stretch_mode = 0
 
 [node name="Spot [3]" type="TextureFrame" parent="team"]
@@ -100,7 +103,7 @@ margin/left = 1.0
 margin/top = 13.0
 margin/right = 152.0
 margin/bottom = 35.0
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 stretch_mode = 0
 
 [node name="Spot[4]" type="TextureFrame" parent="team"]
@@ -114,7 +117,7 @@ margin/left = 1.0
 margin/top = 19.0
 margin/right = 152.0
 margin/bottom = 41.0
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 stretch_mode = 0
 
 [node name="Spot[5]" type="TextureFrame" parent="team"]
@@ -128,7 +131,7 @@ margin/left = 1.0
 margin/top = 25.0
 margin/right = 152.0
 margin/bottom = 47.0
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 stretch_mode = 0
 
 [node name="spot_selected" type="TextureFrame" parent="team"]
@@ -143,7 +146,7 @@ margin/left = 1.0
 margin/top = 1.0
 margin/right = 151.0
 margin/bottom = 23.0
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 stretch_mode = 0
 
 [node name="Cancel" type="TextureFrame" parent="team"]
@@ -157,7 +160,7 @@ margin/left = 15.0
 margin/top = 32.0
 margin/right = 69.0
 margin/bottom = 52.0
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 stretch_mode = 0
 
 [node name="Cancel_selected" type="TextureFrame" parent="team"]
@@ -172,7 +175,7 @@ margin/left = 15.0
 margin/top = 32.0
 margin/right = 69.0
 margin/bottom = 52.0
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 stretch_mode = 0
 
 

@@ -139,11 +139,7 @@ text = [ "Sorry, the lighthouse is closed due to construction.", "Please return 
 [node name="Player" type="KinematicBody2D" parent="."]
 
 editor/display_folded = true
-<<<<<<< HEAD
-transform/pos = Vector2( 104, 56 )
-=======
-transform/pos = Vector2( 88, 72 )
->>>>>>> b4458f849b2ba15c5148c436304177e9a0f30d90
+transform/pos = Vector2( 232, -72 )
 transform/scale = Vector2( 0.25, 0.25 )
 input/pickable = false
 collision/layers = 1
@@ -158,7 +154,6 @@ transform/scale = Vector2( 4, 4 )
 texture = ExtResource( 5 )
 vframes = 4
 hframes = 3
-frame = 3
 region_rect = Rect2( 0, 0, 96, 128 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
@@ -267,6 +262,106 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+margin/left = 10.0
+margin/top = 6.0
+margin/right = 80.0
+margin/bottom = 76.0
+custom_fonts/mono_font = ExtResource( 9 )
+custom_fonts/bold_italics_font = ExtResource( 9 )
+custom_fonts/italics_font = ExtResource( 9 )
+custom_fonts/bold_font = ExtResource( 9 )
+custom_fonts/normal_font = ExtResource( 9 )
+bbcode/enabled = false
+bbcode/bbcode = ""
+visible_characters = -1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/Camera2D/CanvasLayer/Dialogue Box"]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 10.0
+margin/top = 6.0
+margin/right = 80.0
+margin/bottom = 76.0
+custom_fonts/mono_font = ExtResource( 9 )
+custom_fonts/bold_italics_font = ExtResource( 9 )
+custom_fonts/italics_font = ExtResource( 9 )
+custom_fonts/bold_font = ExtResource( 9 )
+custom_fonts/normal_font = ExtResource( 9 )
+bbcode/enabled = false
+bbcode/bbcode = ""
+visible_characters = -1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/Camera2D/CanvasLayer/Dialogue Box"]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 10.0
+margin/top = 6.0
+margin/right = 80.0
+margin/bottom = 76.0
+custom_fonts/mono_font = ExtResource( 9 )
+custom_fonts/bold_italics_font = ExtResource( 9 )
+custom_fonts/italics_font = ExtResource( 9 )
+custom_fonts/bold_font = ExtResource( 9 )
+custom_fonts/normal_font = ExtResource( 9 )
+bbcode/enabled = false
+bbcode/bbcode = ""
+visible_characters = -1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/Camera2D/CanvasLayer/Dialogue Box"]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 10.0
+margin/top = 6.0
+margin/right = 80.0
+margin/bottom = 76.0
+custom_fonts/mono_font = ExtResource( 9 )
+custom_fonts/bold_italics_font = ExtResource( 9 )
+custom_fonts/italics_font = ExtResource( 9 )
+custom_fonts/bold_font = ExtResource( 9 )
+custom_fonts/normal_font = ExtResource( 9 )
+bbcode/enabled = false
+bbcode/bbcode = ""
+visible_characters = -1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/Camera2D/CanvasLayer/Dialogue Box"]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 10.0
+margin/top = 6.0
+margin/right = 80.0
+margin/bottom = 76.0
+custom_fonts/mono_font = ExtResource( 9 )
+custom_fonts/bold_italics_font = ExtResource( 9 )
+custom_fonts/italics_font = ExtResource( 9 )
+custom_fonts/bold_font = ExtResource( 9 )
+custom_fonts/normal_font = ExtResource( 9 )
+bbcode/enabled = false
+bbcode/bbcode = ""
+visible_characters = -1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/Camera2D/CanvasLayer/Dialogue Box"]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
 margin/left = 12.0
 margin/top = 6.0
 margin/right = 572.0
@@ -293,7 +388,7 @@ size_flags/vertical = 2
 margin/left = 185.0
 margin/top = 0.0
 margin/right = 329.0
-margin/bottom = 149.0
+margin/bottom = 210.0
 texture = ExtResource( 11 )
 patch_margin/left = 8
 patch_margin/top = 8
