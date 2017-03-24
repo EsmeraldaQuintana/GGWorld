@@ -51,7 +51,6 @@ stretch_mode = 0
 
 [node name="Spot[0]_select" type="TextureFrame" parent="team"]
 
-visibility/visible = false
 rect/scale = Vector2( 0.1425, 0.195 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
