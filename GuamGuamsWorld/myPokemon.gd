@@ -5,6 +5,6 @@ extends "res://dinos/dino.gd".Dino
 
 func _ready():
 	var myPokemon = Party.party[0]
-	set_texture(myPokemon.PokeType.backSprite)
-	print(myPokemon.PokeType.Name, " loaded into scene")
+	set_texture(myPokemon.backSprite)
+	print(myPokemon.name, " loaded into scene")
 	pass
