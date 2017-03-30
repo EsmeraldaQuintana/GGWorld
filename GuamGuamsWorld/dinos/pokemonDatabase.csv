@@ -1,4 +1,4 @@
-[ID, Name, Type, Attack]
-[001, Bulbasaur, Grass, Vine Whip]
-[007, Squirtle, Water, Water Gun]
-[255, Torchic, Fire, Ember]
+Number,Name,Type,Attack
+1,Bulbasaur,Grass,Vine Whip
+7,Squirtle,Water,Water Gun
+255,Torchic,Fire,Ember
