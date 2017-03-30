@@ -4,6 +4,9 @@
 extends "res://dinos/dino.gd".Dino
 
 func _ready():
-	var otherPokemon = Party.createPokemonInstance(1, 20, 20)
+	# Picks random pokemon from dictionary.
+	var possibleNums = DinoDictionary.pokedex.keys()
+	var i = randi() % possibleNums.size()
+	var otherPokemon = Party.createPokemonInstance(possibleNums[i], 20, 20)
 	set_texture(otherPokemon.frontSprite)
 	print(otherPokemon.name, " loaded into scene")
