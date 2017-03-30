@@ -49,3 +49,6 @@ func db_import(csv_file, dict_to_append, DICT_HEADERS_LIST):
 	print("Pokedex contains...")
 	for dino in dict_to_append.values():
 		print(dino)
+		
+func _ready():
+	db_import("res://dinos/pokemonDatabase.csv", self.pokedex, self.POKEDEX_HEADERS_LIST)

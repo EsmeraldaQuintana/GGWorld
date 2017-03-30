@@ -14,7 +14,7 @@ var colliding
 
 # first function called is _ready()
 func _ready():
-	if (Party.party == null):
+	if Party.party.size() == 0:
 		Party.party.append(Party.createPokemonInstance(255, 20, 20))
 	else:
 		currentPokemon = Party.party[0]
