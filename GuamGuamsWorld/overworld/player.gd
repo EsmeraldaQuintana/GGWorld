@@ -27,11 +27,9 @@ func _ready():
 	sprite = get_node("Sprite")
 	animationPlayer = get_node("AnimationPlayer")
 	var myParty = Party.party
-	var starter = Party.createPokemonInstance(255, 20, 20)
-	myParty.append(starter)
 	print('Your party contains: ')
-	for pokemon in myParty:
-		print(pokemon.name)
+	for dino in myParty:
+		print(dino.name)
 
 func _input(event):
 	#If the player pressed Esc, quit the game

@@ -10,8 +10,8 @@
 
 extends Node
 
-var pokedex = {}
-var POKEDEX_HEADERS_LIST = []
+var dinodex = {}
+var DINODEX_HEADERS_LIST = []
 func db_import(csv_file, dict_to_append, DICT_HEADERS_LIST):
 	# In order to loop through keys of keys as noted in the EDITED section
 	# of the first post, EXTRA ARG is called DICT_HEADERS_LIST
@@ -46,9 +46,9 @@ func db_import(csv_file, dict_to_append, DICT_HEADERS_LIST):
 			dict_to_append[int(line[0])] = temp_dict
 			temp_dict = {} # clear temp_dict
 	
-	print("Pokedex contains...")
+	print("Dinodex contains...")
 	for dino in dict_to_append.values():
 		print(dino)
 		
 func _ready():
-	db_import("res://dinos/pokemonDatabase.csv", self.pokedex, self.POKEDEX_HEADERS_LIST)
+	db_import("res://dinos/dinoDatabase.csv", self.dinodex, self.DINODEX_HEADERS_LIST)

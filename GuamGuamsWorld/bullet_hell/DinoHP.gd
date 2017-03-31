@@ -5,7 +5,7 @@ var t      # holds pointer to timer
 
 func _ready():
 	if Party.party.size() == 0:
-		Party.party.append(Party.createPokemonInstance(255, 20, 20))
+		Party.party.append(Party.createDinoInstance(255, 20, 20))
 	#set_process_input(true)
 	health = Party.party[0].CurrentHP
 	set_process(true)

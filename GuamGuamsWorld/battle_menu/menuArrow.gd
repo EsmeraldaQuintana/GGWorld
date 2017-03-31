@@ -12,7 +12,7 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_pressed("ui_up"):
-		if current_state == "Pokemon":
+		if current_state == "Dinos":
 			current_state = "Fight"
 			current_location = Vector2(-49, -7)
 		elif current_state == "Run":
@@ -24,20 +24,20 @@ func _process(delta):
 			current_state = "Fight"
 			current_location = Vector2(-49, -7)
 		elif current_state == "Run":
-			current_state = "Pokemon"
+			current_state = "Dinos"
 			current_location = Vector2(-49, 9)
 			
 	if Input.is_action_pressed("ui_right"):
 		if current_state == "Fight":
 			current_state = "Bag"
 			current_location = Vector2(7, -7)
-		elif current_state == "Pokemon":
+		elif current_state == "Dinos":
 			current_state = "Run"
 			current_location = Vector2(7, 9)
 			
 	if Input.is_action_pressed("ui_down"):
 		if current_state == "Fight":
-			current_state = "Pokemon"
+			current_state = "Dinos"
 			current_location = Vector2(-49, 9)
 		elif current_state == "Bag":
 			current_state = "Run"
@@ -49,8 +49,8 @@ func _process(delta):
 			label.set_text("You monster! Violence is never the answer!")
 		elif current_state == "Bag":
 			label.set_text("You've got nothing but a gum wrapper and three cents.")
-		elif current_state == "Pokemon":
-			label.set_text("Pokemon-switching DLC coming soon -- only $20.")
+		elif current_state == "Dinos":
+			label.set_text("Dino-switching DLC coming soon -- only $20.")
 		elif current_state == "Run":
 			self.get_tree().change_scene("res://overworld/packedOverworld.tscn")
 	

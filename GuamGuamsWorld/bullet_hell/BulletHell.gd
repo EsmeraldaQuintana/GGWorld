@@ -4,7 +4,7 @@ extends TextureFrame
 # global.player_health for health
 var screen_size
 var player_size
-var currentPokemon
+var currentDino
 #var player_speed = 300
 # player_velocity doesn't need to be initialized
 #		because it is updated to 0 on inactivity
@@ -14,11 +14,12 @@ var colliding
 
 # first function called is _ready()
 func _ready():
+	print("Party size = ", Party.party.size())
 	if Party.party.size() == 0:
-		Party.party.append(Party.createPokemonInstance(255, 20, 20))
+		Party.party.append(Party.createDinoInstance(255, 20, 20))
 	else:
-		currentPokemon = Party.party[0]
-	print("BulletHell.gd sees player health as ", currentPokemon.CurrentHP)
+		currentDino = Party.party[0]
+	print("BulletHell.gd sees player health as ", currentDino.CurrentHP)
 	set_process(true)
 	set_fixed_process(true)
 	# BOUNDARY BOX DEBUGGING
