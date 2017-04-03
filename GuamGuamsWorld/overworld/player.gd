@@ -23,6 +23,7 @@ const GRID = 16
 func _ready():
 	world = get_world_2d().get_direct_space_state()
 	set_fixed_process(true)
+	set_process(true)
 	set_process_input(true)
 	sprite = get_node("Sprite")
 	animationPlayer = get_node("AnimationPlayer")
@@ -125,6 +126,14 @@ func _fixed_process(delta):
 			moving = false
 	interact = false
 	menu = false
+
+#func _process(delta):
+	# if starter HP is 0, go to death screen
+	# need to eventually make a "all_pokemon_dead" function
+	# and use it here instead
+	# THIS DOESN'T WORK: "Invalid get index 'currentHP' (on base: 'Dictionary')."
+	#if (Party.party[0].currentHP == 0):
+	#	get_tree().change_scene("res://death_screen/Death_Screen.tscn")
 
 # This could maybe go in a different file -- that might make more sense.
 func randomEncounter():

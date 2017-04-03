@@ -1,12 +1,12 @@
-[gd_scene load_steps=22 format=1]
+[gd_scene load_steps=21 format=1]
 
 [ext_resource path="res://bullet_hell/BulletHell.gd" type="Script" id=1]
-[ext_resource path="res://bullet_hell/background.png" type="Texture" id=2]
+[ext_resource path="res://_assets/black_1024x600.png" type="Texture" id=2]
 [ext_resource path="res://overworld/map/tileset.xml" type="TileSet" id=3]
-[ext_resource path="res://bullet_hell/ActiveBoundary.png" type="Texture" id=4]
+[ext_resource path="res://_assets/BulletHellBoundary.png" type="Texture" id=4]
 [ext_resource path="res://SmoothCollisionTest.gd" type="Script" id=5]
-[ext_resource path="res://bullet_hell/pokeball.png" type="Texture" id=6]
-[ext_resource path="res://bullet_hell/battle_arena.png" type="Texture" id=7]
+[ext_resource path="res://_assets/BulletHellpokeball.png" type="Texture" id=6]
+[ext_resource path="res://_assets/Pokemon_battle_arena.png" type="Texture" id=7]
 [ext_resource path="res://bullet_hell/myDino.gd" type="Script" id=8]
 [ext_resource path="res://bullet_hell/otherDino.gd" type="Script" id=9]
 [ext_resource path="res://battle_menu/battleMenu.tscn" type="PackedScene" id=10]
@@ -54,18 +54,6 @@ tracks/0/path = NodePath(".:transform/pos")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = { "times":FloatArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ Vector2( 91.0003, 75.0002 ), Vector2( 154, 76.0002 ), Vector2( 240.001, 77.0002 ), Vector2( 363.001, 77.0002 ), Vector2( 462.001, 80.0002 ), Vector2( 532.002, 78.0002 ), Vector2( 436.001, 77.0002 ), Vector2( 335.001, 78.0002 ), Vector2( 243.001, 79.0002 ), Vector2( 153, 77.0002 ), Vector2( 91.0003, 75.0002 ) ] }
-
-[sub_resource type="Animation" id=8]
-
-resource/name = "MOVESHIT"
-length = 10.0
-loop = true
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:transform/pos")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 88.0003, 522.002 ), Vector2( 88.0003, 522.002 ) ] }
 
 [node name="BulletHell" type="TextureFrame"]
 
@@ -223,7 +211,6 @@ __meta__ = { "_edit_lock_":true }
 
 [node name="Player" type="KinematicBody2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 296.183, 425.583 )
 input/pickable = false
 shapes/0/shape = SubResource( 6 )
@@ -278,7 +265,6 @@ __meta__ = { "_edit_lock_":true }
 
 [node name="Fireballstuff" type="KinematicBody2D" parent="."]
 
-editor/display_folded = true
 input/pickable = false
 collision/layers = 1
 collision/mask = 1
@@ -301,27 +287,5 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "MoveBulletSpawn"
-
-[node name="Thunderstuf" type="KinematicBody2D" parent="."]
-
-input/pickable = false
-collision/layers = 1
-collision/mask = 1
-collision/margin = 0.08
-
-[node name="Position2D" type="Position2D" parent="Thunderstuf"]
-
-transform/pos = Vector2( 88.0003, 74.0002 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Thunderstuf/Position2D"]
-
-playback/process_mode = 1
-playback/default_blend_time = 0.0
-root/root = NodePath("..")
-anims/MOVESHIT = SubResource( 8 )
-playback/active = true
-playback/speed = 1.0
-blend_times = [  ]
-autoplay = "MOVESHIT"
 
 
