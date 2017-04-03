@@ -30,9 +30,8 @@ func on_timeout_complete():
 	can_shoot = true
 
 func _process(delta):
-	# will be element of [1, 10]
 	shoots = randi()%11+1
-	if (shoots > 1):
+	if (shoots > 2):
 		fire_once()
 		shoots = shoots - 1
 		timer.start()
