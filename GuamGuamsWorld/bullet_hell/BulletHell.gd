@@ -7,14 +7,15 @@ var colliding
 
 func _ready():
 	print("BulletHell.gd: Party size = ", Party.party.size())
-	if Party.party.size() == 0:
-		# when party size is 0, make default mon of num 255, Max HP 20, Current HP 20
-		# mon num 255 is Torchic
+	# question:
+	# Is there a way to make sure this code runs first? these two lines are
+	# repeated in scripts attached to child nodes of BulletHell
+	if (Party.party.size() == 0):
 		Party.party.append(Party.createDinoInstance(255, 20, 20))
 	else:
 		# else pick first pokemon in Party
 		currentDino = Party.party[0]
-	print("BulletHell.gd: Dino HP: ", currentDino.CurrentHP)
+	print("BulletHell.gd: dino HP: ", currentDino.CurrentHP)
 	# set_process(true)
 	# set_fixed_process(true)
 

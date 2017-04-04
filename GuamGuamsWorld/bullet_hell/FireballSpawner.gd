@@ -10,7 +10,6 @@ export (PackedScene) var scene
 #export (NodePath) var bullet_spawn_path
 #onready var bullet_spawn = get_node(bullet_spawn_path)
 
-
 var shoots = 0 
 
 var timer = null

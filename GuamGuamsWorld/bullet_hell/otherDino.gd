@@ -1,3 +1,5 @@
+#
+# attached to battleArena -> otherPokemon
 # This represents the OTHER Pokemon in the battle scene.
 # Right now, it's hardcoded in as Squirtle. Let's change this.
 

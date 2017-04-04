@@ -1,3 +1,7 @@
+#
+# This script is attached to every single fireball spawned! Yay!
+#
+
 extends KinematicBody2D
 
 var _movement

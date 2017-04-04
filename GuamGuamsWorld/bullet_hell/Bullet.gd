@@ -1,3 +1,7 @@
+#
+# This script is attached to the Fireballstuff Fireball Spawner~
+#
+
 extends KinematicBody2D
 
 export (int) var bullet_speed = 8
@@ -42,6 +46,6 @@ func fire_once():
 
 func shoot():
 	var bullet = scene.instance()
-	bullet.set_global_pos(get_node("FireballSpawner").get_global_pos())
+	bullet.set_global_pos(get_node("SpawnPoint").get_global_pos())
 	bullet.shoot(directional_force)
 	add_child(bullet)

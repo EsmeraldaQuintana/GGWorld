@@ -1,3 +1,5 @@
+#
+# attached to battleArena -> myPokemon
 # This represents YOUR Pokemon in the battle scene.
 # Loads its back sprite and places it in the scene.
 

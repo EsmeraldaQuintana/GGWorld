@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=1]
+[gd_scene load_steps=22 format=1]
 
 [ext_resource path="res://bullet_hell/BulletHell.gd" type="Script" id=1]
 [ext_resource path="res://_assets/black_1024x600.png" type="Texture" id=2]
@@ -10,9 +10,10 @@
 [ext_resource path="res://bullet_hell/myDino.gd" type="Script" id=8]
 [ext_resource path="res://bullet_hell/otherDino.gd" type="Script" id=9]
 [ext_resource path="res://battle_menu/battleMenu.tscn" type="PackedScene" id=10]
-[ext_resource path="res://bullet_hell/DinoHP.gd" type="Script" id=11]
-[ext_resource path="res://bullet_hell/Bullet.gd" type="Script" id=12]
-[ext_resource path="res://bullet_hell/bullet_scene.tscn" type="PackedScene" id=13]
+[ext_resource path="res://_assets/100x25_box.png" type="Texture" id=11]
+[ext_resource path="res://bullet_hell/DinoHP.gd" type="Script" id=12]
+[ext_resource path="res://bullet_hell/Bullet.gd" type="Script" id=13]
+[ext_resource path="res://bullet_hell/bullet_scene.tscn" type="PackedScene" id=14]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -106,6 +107,7 @@ __meta__ = { "_edit_lock_":true }
 
 [node name="Box" type="Sprite" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 312.357, 297.949 )
 texture = ExtResource( 4 )
 __meta__ = { "_edit_lock_":true }
@@ -236,7 +238,6 @@ __meta__ = { "_edit_lock_":true }
 
 [node name="battleArena" type="Sprite" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 788.899, 164.664 )
 texture = ExtResource( 7 )
 __meta__ = { "_edit_lock_":true }
@@ -256,28 +257,35 @@ script/script = ExtResource( 9 )
 transform/pos = Vector2( 800, 400 )
 transform/scale = Vector2( 1.5, 1.5 )
 
-[node name="Hp Bar " type="Node2D" parent="."]
+[node name="HP background" type="Sprite" parent="."]
 
-transform/pos = Vector2( 683.36, 536 )
-transform/scale = Vector2( 2.5, 0.5 )
-script/script = ExtResource( 11 )
+transform/pos = Vector2( 799.023, 540.212 )
+transform/scale = Vector2( 3.43114, 0.465695 )
+texture = ExtResource( 11 )
 __meta__ = { "_edit_lock_":true }
 
-[node name="Fireballstuff" type="KinematicBody2D" parent="."]
+[node name="Hp Bar " type="Node2D" parent="."]
+
+transform/pos = Vector2( 704.567, 533.82 )
+transform/scale = Vector2( 2.5, 0.5 )
+script/script = ExtResource( 12 )
+__meta__ = { "_edit_lock_":true }
+
+[node name="FireballSpawner" type="KinematicBody2D" parent="."]
 
 input/pickable = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
-script/script = ExtResource( 12 )
+script/script = ExtResource( 13 )
 bullet_speed = 8
-scene = ExtResource( 13 )
+scene = ExtResource( 14 )
 
-[node name="FireballSpawner" type="Position2D" parent="Fireballstuff"]
+[node name="SpawnPoint" type="Position2D" parent="FireballSpawner"]
 
 transform/pos = Vector2( 297.228, 78.4108 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Fireballstuff/FireballSpawner"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FireballSpawner/SpawnPoint"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
