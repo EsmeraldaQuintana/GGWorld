@@ -12,8 +12,8 @@
 [ext_resource path="res://battle_menu/battleMenu.tscn" type="PackedScene" id=10]
 [ext_resource path="res://_assets/100x25_box.png" type="Texture" id=11]
 [ext_resource path="res://bullet_hell/DinoHP.gd" type="Script" id=12]
-[ext_resource path="res://bullet_hell/Bullet.gd" type="Script" id=13]
-[ext_resource path="res://bullet_hell/bullet_scene.tscn" type="PackedScene" id=14]
+[ext_resource path="res://bullet_hell/FireballSpawner.gd" type="Script" id=13]
+[ext_resource path="res://bullet_hell/fireball.tscn" type="PackedScene" id=14]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -213,6 +213,7 @@ __meta__ = { "_edit_lock_":true }
 
 [node name="Player" type="KinematicBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 296.183, 425.583 )
 input/pickable = false
 shapes/0/shape = SubResource( 6 )
@@ -238,6 +239,7 @@ __meta__ = { "_edit_lock_":true }
 
 [node name="battleArena" type="Sprite" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 788.899, 164.664 )
 texture = ExtResource( 7 )
 __meta__ = { "_edit_lock_":true }
@@ -278,7 +280,6 @@ collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 13 )
-bullet_speed = 8
 scene = ExtResource( 14 )
 
 [node name="SpawnPoint" type="Position2D" parent="FireballSpawner"]

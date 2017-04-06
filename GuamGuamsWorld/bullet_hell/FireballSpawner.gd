@@ -1,15 +1,14 @@
 #
-# Copy of Bullet.gd
-# NOT USED YET!
+# attached to res://bullet_hell/BulletHell.tscn : BulletHell -> FireballSpawner
 #
 extends KinematicBody2D
 
-export (int) var bullet_speed = 8
+#export (int) var bullet_speed = 8
 
 var directional_force = Vector2(0, 3)
 var bullet_gravity = 0
 
-export (PackedScene) var scene
+export (PackedScene) var scene # Inspector -> Script Variables -> field holds res://bullet_hell/bullet_scene.tscn
 
 #export (NodePath) var bullet_spawn_path
 #onready var bullet_spawn = get_node(bullet_spawn_path)
@@ -44,6 +43,6 @@ func fire_once():
 
 func shoot():
 	var bullet = scene.instance()
-	bullet.set_global_pos(get_node("FireballSpawner").get_global_pos())
+	bullet.set_global_pos(get_node("SpawnPoint").get_global_pos())
 	bullet.shoot(directional_force)
 	add_child(bullet)
