@@ -1,3 +1,5 @@
+# attached to overworld.tscn -> overworld -> Player
+
 extends KinematicBody2D
 #Code based on XAND's
 

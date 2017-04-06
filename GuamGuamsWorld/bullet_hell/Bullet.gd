@@ -1,5 +1,5 @@
 #
-# This script is attached to the Fireballstuff Fireball Spawner~
+# attached to the BulletHell.tscn -> FireballSpawner
 #
 
 extends KinematicBody2D

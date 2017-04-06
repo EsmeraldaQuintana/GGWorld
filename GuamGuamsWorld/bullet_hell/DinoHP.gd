@@ -1,4 +1,5 @@
-# 
+#
+# attached to BulletHell.tscn -> Hp Bar 
 # DinoHP.gd draws the HP bar and updates it
 #
 

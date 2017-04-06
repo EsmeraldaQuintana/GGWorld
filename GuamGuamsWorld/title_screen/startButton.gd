@@ -1,3 +1,6 @@
+# attached to res://title_screen/titleScreen.tscn: background -> startButton
+# attached to res://death_screen/Death_screen.tscn: TextureFrame -> continue button
+
 extends TextureButton
 
 func _ready():

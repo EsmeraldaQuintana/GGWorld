@@ -1,3 +1,7 @@
+#
+# attached to BulletHell.tscn parent node BulletHell
+#
+
 extends TextureFrame
 
 var screen_size

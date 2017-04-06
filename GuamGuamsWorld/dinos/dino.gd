@@ -1,3 +1,5 @@
+# attached to dino.tscn -> frontSprite
+
 extends Sprite
 
 class Dino extends Sprite:

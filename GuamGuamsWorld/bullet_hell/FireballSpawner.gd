@@ -1,3 +1,7 @@
+#
+# Copy of Bullet.gd
+# NOT USED YET!
+#
 extends KinematicBody2D
 
 export (int) var bullet_speed = 8

@@ -1,4 +1,5 @@
 #
+# attached to bullet_scene.tscn parent node fire_ball
 # This script is attached to every single fireball spawned! Yay!
 #
 
