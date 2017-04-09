@@ -39,6 +39,10 @@ func _fixed_process(delta):
 		if (damage_taken == null):
 			damage_taken = 0
 		print("SmoothCollisionTest.gd sees damage is ", damage_taken)
+		# current_health = Party.party[0].CurrentHP
+		# UPDATE HEALTH
+		Party.party[0].CurrentHP -= damage_taken
+		# MAYBE change this ^ to currentDino ?
 	
 	
 #func _fixed_process(delta):
