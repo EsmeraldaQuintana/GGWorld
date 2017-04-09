@@ -20,6 +20,7 @@ func _ready():
 		# else pick first pokemon in Party
 		currentDino = Party.party[0]
 	print("BulletHell.gd: dino HP: ", currentDino.CurrentHP)
+	print("GET NODE IS: ", get_node("Player"));
 	# set_process(true)
 	# set_fixed_process(true)
 

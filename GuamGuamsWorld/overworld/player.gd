@@ -143,7 +143,7 @@ func _process(delta):
 	if (currentHP == 0):
 		print("Player.gd: you're dead!")
 		get_tree().change_scene("res://death_screen/Death_Screen.tscn")
-	# QUESTION: why doesn't Party.party[0].CurrentHP work?
+	
 
 # This could maybe go in a different file -- that might make more sense.
 func randomEncounter():

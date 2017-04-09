@@ -4,7 +4,7 @@
 [ext_resource path="res://_assets/black_1024x600.png" type="Texture" id=2]
 [ext_resource path="res://overworld/map/tileset.xml" type="TileSet" id=3]
 [ext_resource path="res://_assets/BulletHellBoundary.png" type="Texture" id=4]
-[ext_resource path="res://SmoothCollisionTest.gd" type="Script" id=5]
+[ext_resource path="res://bullet_hell/Player_Sprite.gd" type="Script" id=5]
 [ext_resource path="res://_assets/BulletHellpokeball.png" type="Texture" id=6]
 [ext_resource path="res://_assets/Pokemon_battle_arena.png" type="Texture" id=7]
 [ext_resource path="res://bullet_hell/myDino.gd" type="Script" id=8]
@@ -13,7 +13,7 @@
 [ext_resource path="res://_assets/100x25_box.png" type="Texture" id=11]
 [ext_resource path="res://bullet_hell/DinoHP.gd" type="Script" id=12]
 [ext_resource path="res://bullet_hell/FireballSpawner.gd" type="Script" id=13]
-[ext_resource path="res://bullet_hell/fireball.tscn" type="PackedScene" id=14]
+[ext_resource path="res://bullet_hell/bullet_objects/fireball.tscn" type="PackedScene" id=14]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -213,7 +213,6 @@ __meta__ = { "_edit_lock_":true }
 
 [node name="Player" type="KinematicBody2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 296.183, 425.583 )
 input/pickable = false
 shapes/0/shape = SubResource( 6 )

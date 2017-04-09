@@ -37,7 +37,7 @@ func _process(delta):
 	#if current_health <= 0:
 	#	print("DinoHP.gd: Oh boy, you have fainted.")
 	if (t.get_time_left() - .3 <= 0):
-		print("DinoHP.gd: TIMER UP, MonHP.gd sees health as ", current_health)
+		print("DinoHP.gd: health is ", current_health)
 		t.set_wait_time(3)
 		t.start()
 	
