@@ -7,6 +7,7 @@ extends Node2D
 
 var current_health
 var t      # holds pointer to timer
+# timer is only for debugging (timing print statements)
 
 func _ready():
 	set_process(true)
@@ -17,12 +18,12 @@ func _ready():
 	#	Party.party.append(Party.createDinoInstance(255, 20, 20))
 	#set_process_input(true)
 	current_health = Party.party[0].CurrentHP
-	print("DinoHP.gd: initial health is ", current_health)
-	t = Timer.new()
-	t.set_wait_time(2)
-	self.add_child(t)
-	t.start()
-	print("DinoHP.gd: TIMER INIT, time left ", t.get_time_left())
+	#print("DinoHP.gd: initial health is ", current_health)
+	#t = Timer.new()
+	#t.set_wait_time(2)
+	#self.add_child(t)
+	#t.start()
+	#print("DinoHP.gd: TIMER INIT, time left ", t.get_time_left())
 	
 func _draw():
 	# draws a rectangle of current_healthx25, position offset 0,0
@@ -36,10 +37,10 @@ func _process(delta):
 	# This is now handled in res://overworld/player.gd
 	#if current_health <= 0:
 	#	print("DinoHP.gd: Oh boy, you have fainted.")
-	if (t.get_time_left() - .3 <= 0):
-		print("DinoHP.gd: health is ", current_health)
-		t.set_wait_time(3)
-		t.start()
+	#if (t.get_time_left() - .3 <= 0):
+		#print("DinoHP.gd: health is ", current_health)
+	#	t.set_wait_time(3)
+	#	t.start()
 	
 	
 ##########################################

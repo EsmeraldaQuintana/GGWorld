@@ -1,5 +1,6 @@
 #
 # attached to res://bullet_hell/BulletHell.tscn : BulletHell -> Player
+# THIS SCRIPT HANDLES DAMAGE UPDATES
 #
 
 extends KinematicBody2D
@@ -9,8 +10,7 @@ const WALK_SPEED=300
 
 var velocity=Vector2()
 
-var damage_taken # holds damage of bullet collider
-
+var bullet_damage # holds damage of bullet collider
 
 func _fixed_process(delta):
 	### Movement Handling
@@ -35,14 +35,28 @@ func _fixed_process(delta):
 		var n = get_collision_normal()
 		motion = n.slide(motion)
 		velocity = n.slide(velocity)
-		damage_taken = get_collider().get("damage")
-		if (damage_taken == null):
-			damage_taken = 0
-		print("SmoothCollisionTest.gd sees damage is ", damage_taken)
+		bullet_damage = get_collider().get("damage")
+		if (bullet_damage == null):
+			bullet_damage = 0
+		#print("Player_Sprite.gd sees damage is ", damage_taken)
 		# current_health = Party.party[0].CurrentHP
 		# UPDATE HEALTH
-		Party.party[0].CurrentHP -= damage_taken
-		# MAYBE change this ^ to currentDino ?
+		
+		if (get_tree().get_root().get_node("BulletHell").no_party):
+			print("Player_Sprite.gd: in no_party if test!")
+			if (self.get_parent().BulletHell.current_hp <= 0):
+				self.get_parent().BulletHell.current_hp = 0
+			else:
+				self.get_parent().BulletHell.current_hp -= bullet_damage
+			# this next if test needs to be here to test death_screen on instance of BulletHell.tscn
+			if (self.get_parent().BulletHell.current_hp == 0):
+				print("Player.gd: you're dead!")
+				get_tree().change_scene("res://death_screen/Death_Screen.tscn")
+		else:
+			if (Party.party[0].CurrentHP <= 0):
+				Party.party[0].CurrentHP = 0
+			else:
+				Party.party[0].CurrentHP -= bullet_damage
 	
 	
 #func _fixed_process(delta):

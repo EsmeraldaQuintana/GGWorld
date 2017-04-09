@@ -7,25 +7,49 @@ extends TextureFrame
 var screen_size
 var player_size
 var currentDino
+var current_health
 var colliding
 
+var t
+
+var no_party = true
+
 func _ready():
-	print("BulletHell.gd: Party size = ", Party.party.size())
+	#print("BulletHell.gd: no_party init is ", no_party)
+	t = Timer.new()
+	t.set_wait_time(3)
+	self.add_child(t)
+	t.start()
+	#print("BulletHell.gd: Party size = ", Party.party.size())
+	#print("Printing array [0] ", Party.party[0])
 	# question:
 	# Is there a way to make sure this code runs first? these two lines are
 	# repeated in scripts attached to child nodes of BulletHell
 	if (Party.party.size() == 0):
+		no_party = true
+		#print("BulletHell.gd: no_party is (should be true) ", no_party)
 		Party.party.append(Party.createDinoInstance(255, 20, 20))
-	else:
-		# else pick first pokemon in Party
 		currentDino = Party.party[0]
-	print("BulletHell.gd: dino HP: ", currentDino.CurrentHP)
-	print("GET NODE IS: ", get_node("Player"));
-	# set_process(true)
+		# added in second line... dunno if I need that. hope so!
+	else:
+		currentDino = Party.party[0] # else pick first pokemon in Party
+		no_party = false
+		#print("BulletHell.gd: no_party is (should be false) ", no_party)
+	current_health = currentDino.CurrentHP
+	print("BulletHell.gd: dino HP: ", current_health)
+	set_process(true)
 	# set_fixed_process(true)
 
-
-
+func _process(delta):
+	current_health = currentDino.CurrentHP
+	#if (t.get_time_left() - .3 <= 0):
+	#	print("BulletHell.gd: health is ", current_health)
+	#	t.set_wait_time(3)
+	#	t.start()
+	if (current_health == 0):
+			print("BulletHell.gd: you're dead!")
+			get_tree().change_scene("res://death_screen/Death_Screen.tscn")
+	
 
 
 

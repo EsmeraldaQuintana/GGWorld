@@ -3,6 +3,9 @@
 extends KinematicBody2D
 #Code based on XAND's
 
+# DEBUGGING TIMER
+var t # TIMER
+
 #Movement Variables
 var direction = Vector2(0, 0)
 var currentPos = Vector2(0, 0)
@@ -34,9 +37,13 @@ func _ready():
 	sprite = get_node("Sprite")
 	animationPlayer = get_node("AnimationPlayer")
 	var myParty = Party.party
-	print('Your party contains: ')
+	print('player.gd: Your party contains: ')
 	for dino in myParty:
 		print(dino.name)
+	t = Timer.new()
+	t.set_wait_time(3)
+	self.add_child(t)
+	t.start()
 
 func _input(event):
 	#If the player pressed Esc, quit the game
@@ -137,9 +144,14 @@ func _process(delta):
 	# reupdating currentDino so this code won't break when we can change order of party
 	currentDino = Party.party[0]
 	currentHP = currentDino.CurrentHP
-	# if starter HP is 0, go to death screen
-	# need to eventually make a "all_pokemon_dead" function
-	# and use it here instead
+	# DEBUG PRINT WITH TIMER
+	if (t.get_time_left() - .3 <= 0):
+		print("player.gd: health is ", currentHP)
+		t.set_wait_time(3)
+		t.start()
+	# Death Screen Handler
+	#	need to eventually make a "all_pokemon_dead" function
+	#	and use it here instead
 	if (currentHP == 0):
 		print("Player.gd: you're dead!")
 		get_tree().change_scene("res://death_screen/Death_Screen.tscn")

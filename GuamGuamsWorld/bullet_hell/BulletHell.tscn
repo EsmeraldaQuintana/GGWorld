@@ -238,7 +238,6 @@ __meta__ = { "_edit_lock_":true }
 
 [node name="battleArena" type="Sprite" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 788.899, 164.664 )
 texture = ExtResource( 7 )
 __meta__ = { "_edit_lock_":true }
