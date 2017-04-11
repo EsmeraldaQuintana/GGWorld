@@ -6,6 +6,7 @@ var spot = 0
 var selected
 
 func _ready():
+	print("in ready")
 	set_process_input(true)
 	selected = get_node("team/spot_selected")
 
@@ -18,21 +19,66 @@ func _input(event):
 				if (spot == 0): 
 					get_node("team/Spot[0]_select").set_hidden(true)
 					get_node("team/Cancel_selected").set_hidden(false)
-					spot = 5 
+					spot = 6 
+					print(spot)
 				elif (spot == 1):
 					get_node("team/spot_selected").set_hidden(true)
 					get_node("team/Spot[0]_select").set_hidden(false)
+					spot = 0
+					print(spot)
+				elif (spot == 2):
+					spot = 1
+					print(spot)
+				elif (spot == 3):
+					spot = 2
+					print(spot)
+				elif (spot == 4):
+					spot = 3
+					print(spot)
+				elif (spot == 5):
+					spot = 4
+					print(spot)
+				elif (spot == 6):
+					get_node("team/Cancel_selected").set_hidden(true)
+					spot = 5
+					print(spot)
 				
 			if (Input.is_key_pressed(KEY_DOWN)):
 				if (spot == 0):
 					get_node("team/Spot[0]_select").set_hidden(true)
 					get_node("team/spot_selected").set_hidden(false)
 					spot = 1
+					print(spot)
 				
 				elif (spot == 1):
 					get_node("team/spot_selected").set_hidden(true)
-					get_node("team/Spot[0]_select").set_hidden(false)
+					#get_node("team/Spot[0]_select").set_hidden(false)
+					spot = 2
+					print(spot)
+					
+				elif (spot == 2):
+					spot = 3
+					print(spot)
+					
+				elif (spot == 3):
+					spot = 4
+					print(spot)
+					
+				elif (spot == 4):
+					get_node("team/Spot[5]").set_texture(load("res://overworld/map/Menu" + Selected.tex))
+					spot = 5
+					print(spot)
+					
+				elif (spot == 5):
+					spot = 6
+					get_node("team/Cancel_selected").set_hidden(false)
+					print(spot)
+					
+				elif (spot == 6):
 					spot = 0
+					get_node("team/Cancel_selected").set_hidden(true)
+					get_node("team/Spot[0]_select").set_hidden(false)
+					print(spot)
 				
 			if (Input.is_key_pressed(KEY_ESCAPE)):
 				get_tree().change_scene("res://overworld/overworld.tscn")
