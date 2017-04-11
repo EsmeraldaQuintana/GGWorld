@@ -9,7 +9,6 @@
 [ext_resource path="res://overworld/map/Menu/tCancel.tex" type="Texture" id=7]
 [ext_resource path="res://overworld/map/Menu/Cancel_selected.tex" type="Texture" id=8]
 
-
 [node name="Pokemon" type="Patch9Frame"]
 
 rect/scale = Vector2( 25.3, 15 )
