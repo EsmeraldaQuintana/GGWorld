@@ -1,28 +1,55 @@
+#
+# attached to BulletHell.tscn parent node BulletHell
+# this script handles change to Death Screen
+#
+
 extends TextureFrame
 
-# var player_health = global.player_health OLD
-# global.player_health for health
 var screen_size
 var player_size
 var currentDino
+var current_health
+var colliding
+
+var no_party = true
+
+func _ready():
+	print("BulletHell.gd: Party size = ", Party.party.size())
+	if (Party.party.size() == 0):
+		no_party = true
+		Party.party.append(Party.createDinoInstance(255, 20, 20))
+		currentDino = Party.party[0]
+	else:
+		currentDino = Party.party[0] # else pick first pokemon in Party
+		no_party = false
+	current_health = currentDino.CurrentHP
+	print("BulletHell.gd: dino HP: ", current_health)
+	set_process(true)
+	# set_fixed_process(true)
+
+func _process(delta):
+	current_health = currentDino.CurrentHP
+	if (current_health == 0):
+		print("BulletHell.gd: you're dead!")
+		get_tree().change_scene("res://death_screen/Death_Screen.tscn")
+
+
+
+
+
+
+
+
+##########################################
+# CODE GRAVEYARD
+##########################################
 #var player_speed = 300
 # player_velocity doesn't need to be initialized
 #		because it is updated to 0 on inactivity
 #		in _fixed_process()
 #var player_velocity = Vector2()
-var colliding
 
-# first function called is _ready()
-func _ready():
-	print("Party size = ", Party.party.size())
-	if Party.party.size() == 0:
-		Party.party.append(Party.createDinoInstance(255, 20, 20))
-	else:
-		currentDino = Party.party[0]
-	print("BulletHell.gd sees player health as ", currentDino.CurrentHP)
-	set_process(true)
-	set_fixed_process(true)
-	# BOUNDARY BOX DEBUGGING
+# BOUNDARY BOX DEBUGGING
 	#var boundarybox = get_node("Box").get_pos()
 	#print("boundarybox_x is", boundarybox.x)
 	#print("boundarybox_y is", boundarybox.y)
@@ -71,3 +98,7 @@ func _ready():
 #)
 
 # NOTE: BH BOUNDARIES 500x500 box, 8px border, active area is 485x485
+
+##########################################
+# END CODE GRAVEYARD
+##########################################

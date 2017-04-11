@@ -1,3 +1,8 @@
+#
+# attached to fireball.tscn parent node fire_ball
+# This script is attached to every single fireball spawned! Yay!
+#
+
 extends KinematicBody2D
 
 var _movement
@@ -9,8 +14,9 @@ func shoot(directional_force):
 	
 func _fixed_process(delta):
 	move(_movement)
-	#if (self.is_colliding()):
-	#	destroy()
+	#if (get_collider() != ):
+	#	self.free()
+	#	self.destroy()
 
 #func destroy():
 #	queue_free()

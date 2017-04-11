@@ -131,7 +131,6 @@ text = [ "Sorry, the lighthouse is closed due to construction.", "Please return 
 
 [node name="Player" type="KinematicBody2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 72, 40 )
 transform/scale = Vector2( 0.25, 0.25 )
 input/pickable = false

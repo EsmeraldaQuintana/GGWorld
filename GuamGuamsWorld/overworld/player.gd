@@ -1,3 +1,5 @@
+# attached to overworld.tscn -> overworld -> Player
+
 extends KinematicBody2D
 #Code based on XAND's
 
@@ -20,15 +22,19 @@ var animationPlayer
 #Movement Constants
 const GRID = 16
 
+#Needed for Death Screen
+var currentDino = Party.party[0]
+var currentHP
+
 func _ready():
 	world = get_world_2d().get_direct_space_state()
 	set_fixed_process(true)
+	set_process(true)
 	set_process_input(true)
 	sprite = get_node("Sprite")
 	animationPlayer = get_node("AnimationPlayer")
-	var myParty = Party.party
-	print('Your party contains: ')
-	for dino in myParty:
+	print('player.gd: Your party contains: ')
+	for dino in Party.party:
 		print(dino.name)
 
 func _input(event):
@@ -125,6 +131,18 @@ func _fixed_process(delta):
 			moving = false
 	interact = false
 	menu = false
+
+func _process(delta):
+	# reupdating currentDino so this code won't break when we can change order of party
+	currentDino = Party.party[0]
+	currentHP = currentDino.CurrentHP
+	# Death Screen Handler
+	#	need to eventually make a "all_pokemon_dead" function
+	#	and use it here instead
+	if (currentHP == 0):
+		print("Player.gd: you're dead!")
+		get_tree().change_scene("res://death_screen/Death_Screen.tscn")
+	
 
 # This could maybe go in a different file -- that might make more sense.
 func randomEncounter():

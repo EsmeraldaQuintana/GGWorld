@@ -1,5 +1,6 @@
-# This represents YOUR Pokemon in the battle scene.
-# Loads its back sprite and places it in the scene.
+#
+# attached to BulletHell.tscn -> battleArena -> myPokemon
+# 
 
 extends "res://dinos/dino.gd".Dino
 

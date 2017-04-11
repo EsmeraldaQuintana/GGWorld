@@ -1,7 +1,0 @@
-
-2/20
-	Started BulletHell.tscn
-	Tried to tile the background but it broke ("only used for 3d")
-	Need to add collision between BH Boundaries and BH Player
-	Need to add wasd movement to BH Player
-

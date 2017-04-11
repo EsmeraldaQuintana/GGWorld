@@ -65,7 +65,7 @@ func _input(event):
 					print(spot)
 					
 				elif (spot == 4):
-					get_node("team/Spot[5]").set_texture(load("res://overworld/map/Menu" + Selected.tex))
+					#get_node("team/Spot[5]").set_texture(load("res://overworld/map/Menu" + Selected.tex))
 					spot = 5
 					print(spot)
 					

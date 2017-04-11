@@ -1,3 +1,6 @@
+# attached to overworld.tscn : overworld -> Player -> Camera2D -> CanvasLayer -> Dialo
+# attached to Dialogue Box.tscn : Dialogue Box
+
 #Testing push capability
 
 extends Patch9Frame

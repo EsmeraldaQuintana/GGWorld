@@ -1,3 +1,5 @@
+# attached to res://battle_menu/battleMenu.tscn : menuBackground -> menuArrow
+
 extends Sprite
 
 var init_location = Vector2(-49, -7)

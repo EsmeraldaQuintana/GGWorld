@@ -1,3 +1,6 @@
+# attatched to res://overworld.tscn : overworld -> Player -> Camera2D -> CanvasLayer -> Menu
+# attached to res://overworld/map/Menu.tscn : Menu
+
 extends Patch9Frame
 
 #Variables of menu openness and use

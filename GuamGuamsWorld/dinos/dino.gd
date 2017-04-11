@@ -1,3 +1,5 @@
+# attached to dino.tscn -> frontSprite
+
 extends Sprite
 
 class Dino extends Sprite:
@@ -9,3 +11,7 @@ class Dino extends Sprite:
 
 func _ready():
 	pass
+	
+#func _currentHP():
+#	return 20
+#	# HOW DOES THIS WORK I'M RETARDED
