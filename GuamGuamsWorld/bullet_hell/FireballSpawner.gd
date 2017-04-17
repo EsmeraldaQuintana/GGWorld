@@ -5,12 +5,15 @@ extends KinematicBody2D
 
 var directional_force = Vector2(0, 3)
 var shoot_chance = 0 # initialized to 0
+var bullet_pick = 10
 var timer
 var bullet_delay = 1
 var can_shoot = false
 
-export (PackedScene) var scene # Inspector -> Script Variables -> field holds res://bullet_hell/fireball.tscn
+#export (PackedScene) var scene # Inspector -> Script Variables -> field holds res://bullet_hell/fireball.tscn
 # ^ scene points to a fireball 
+
+var scene = load("res://bullet_hell/bullet_objects/fireball.tscn")
 
 func _ready():
 	_ready_timer() # delays FireballSpawner from shooting
@@ -29,6 +32,11 @@ func on_timeout_complete():
 
 func _process(delta):
 	shoot_chance = randi()%11+1
+	bullet_pick = randi()%2
+	if (bullet_pick == 0):
+		scene = load(MoveDictionary.moveDictionary[0].tscn)
+	else:
+		scene = load(MoveDictionary.moveDictionary[1].tscn)
 	if ((shoot_chance > 2) && can_shoot):
 		shoot()
 	
