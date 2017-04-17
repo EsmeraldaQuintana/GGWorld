@@ -138,7 +138,12 @@ text = [ "Sorry, the lighthouse is closed due to construction.", "Please return 
 
 [node name="Player" type="KinematicBody2D" parent="."]
 
-transform/pos = Vector2( 88, 56 )
+<<<<<<< HEAD
+editor/display_folded = true
+transform/pos = Vector2( 264, 104 )
+=======
+transform/pos = Vector2( 56, 56 )
+>>>>>>> ee2c01b753053b1695f10d9b88f3a625b00b5528
 transform/scale = Vector2( 0.25, 0.25 )
 input/pickable = false
 collision/layers = 1
@@ -153,7 +158,11 @@ transform/scale = Vector2( 4, 4 )
 texture = ExtResource( 5 )
 vframes = 4
 hframes = 3
+<<<<<<< HEAD
+frame = 6
+=======
 frame = 3
+>>>>>>> ee2c01b753053b1695f10d9b88f3a625b00b5528
 region_rect = Rect2( 0, 0, 96, 128 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
