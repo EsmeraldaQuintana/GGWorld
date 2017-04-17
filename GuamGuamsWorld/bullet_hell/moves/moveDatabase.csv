@@ -1,2 +1,2 @@
-Number,Name,Type,Damage
-1,Fireball,Fire,10
+Number,Name,Type,Damage,tscn,Script
+0,Fireball,Fire,10,res://bullet_hell/bullet_objects/fireball.tscn,res://bullet_hell/Bullet.gd

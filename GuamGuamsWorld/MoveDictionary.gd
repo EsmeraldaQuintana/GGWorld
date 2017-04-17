@@ -30,26 +30,30 @@ func db_import(csv_file, dict_to_append, _HEADERS_LIST):
 	var temp_dict = {} # will only live within this function
 
 	while !file.eof_reached():
-		var line = file.get_csv_line()
+		var line = file.get_csv_line() # grabs the whole fucking line
 		if is_header == true:
-			# set attributes_list : this is the header line
 			attributes_list = line
-			#print("MoveDictionary.gd: _HEADERS_LIST contains... ")
 			for item in attributes_list:
-				#print("MoveDictionary.gd: ", item, " ")
 				_HEADERS_LIST.append(item)
 			is_header = false
-		else: # we have the header list
+		else:
 			temp_dict[attributes_list[0]] = int(line[0])
 			for i in range(1, _HEADERS_LIST.size()):
-				# create a key in temp_dict that is just one of the headers
 				temp_dict[attributes_list[i]] = line[i]
+			#print("MoveDictionary: dict_to_append is ", dict_to_append)
+			#print("MoveDictionary: temp_dict is ", temp_dict)
 			dict_to_append[int(line[0])] = temp_dict
+			#print("MoveDictionary: dict_to_append is ", dict_to_append)
 			temp_dict = {} # clear temp_dict
-	
-	print("MoveDictionary.gd: moveDictionary contains...")
-	for dino in dict_to_append.values():
-		print("MoveDictionary.gd: ", dino)
-		
+	#print("MoveDictionary: dict_to_append is ", dict_to_append)
+	#print("MoveDictionary: _HEADERS_LIST is ", _HEADERS_LIST)
+
+	#print("MoveDictionary.gd: moveDictionary contains...")
+	#for dino in dict_to_append.values():
+	#	print("MoveDictionary.gd: ", dino)
+
 func _ready():
 	db_import("res://bullet_hell/moves/moveDatabase.csv", self.moveDictionary, self.moveDictionary_HEADERS_LIST)
+	print("MoveDictionary: moveDictionary is ", moveDictionary)
+	#print("MoveDictionary: moveDictionary[1].Damage is ", moveDictionary[1].Damage)
+	print("MoveDictionary: moveDictionary_HEADERS_LIST is ", moveDictionary_HEADERS_LIST)
