@@ -10,11 +10,32 @@
 
 extends Node
 
+var bullet_number = randi()%2
+var bullet_damage
+var bullet_scene
+
 var moveDictionary = {}
 var moveDictionary_HEADERS_LIST = []
-# params:  csv_file        csv file path
-#          dict_to_append  .
-#          _HEADERS_LIST   .
+
+func _ready():
+	set_process(true)
+	set_fixed_process(true)
+	db_import("res://bullet_hell/moves/moveDatabase.csv", self.moveDictionary, self.moveDictionary_HEADERS_LIST)
+	print("MoveDictionary.gd: moveDictionary is ", moveDictionary)
+	print("MoveDictionary.gd: HEADERS_LIST is ", moveDictionary_HEADERS_LIST)
+	#print("MoveDictionary: moveDictionary[1].Damage is ", moveDictionary[1].Damage)
+	#print("MoveDictionary: moveDictionary_HEADERS_LIST is ", moveDictionary_HEADERS_LIST)
+	
+func _process(delta):
+	random_bullet_update()
+
+
+func random_bullet_update():
+	bullet_number = randi()%2
+	bullet_damage = MoveDictionary.moveDictionary[bullet_number].Damage
+	bullet_scene = MoveDictionary.moveDictionary[bullet_number].tscn
+	
+
 func db_import(csv_file, dict_to_append, _HEADERS_LIST):
 	# In order to loop through keys of keys as noted in the EDITED section
 	# of the first post, EXTRA ARG is called _HEADERS_LIST
@@ -51,9 +72,3 @@ func db_import(csv_file, dict_to_append, _HEADERS_LIST):
 	#print("MoveDictionary.gd: moveDictionary contains...")
 	#for dino in dict_to_append.values():
 	#	print("MoveDictionary.gd: ", dino)
-
-func _ready():
-	db_import("res://bullet_hell/moves/moveDatabase.csv", self.moveDictionary, self.moveDictionary_HEADERS_LIST)
-	print("MoveDictionary: moveDictionary is ", moveDictionary)
-	#print("MoveDictionary: moveDictionary[1].Damage is ", moveDictionary[1].Damage)
-	print("MoveDictionary: moveDictionary_HEADERS_LIST is ", moveDictionary_HEADERS_LIST)

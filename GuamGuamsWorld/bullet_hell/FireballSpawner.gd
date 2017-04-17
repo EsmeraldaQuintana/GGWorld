@@ -17,6 +17,7 @@ var scene = load("res://bullet_hell/bullet_objects/fireball.tscn")
 
 func _ready():
 	_ready_timer() # delays FireballSpawner from shooting
+	set_process(true) # how did this code work without that fucking line? Whatever, it's here now.
 
 func _ready_timer():
 	set_process(true)
@@ -31,13 +32,9 @@ func on_timeout_complete():
 	can_shoot = true
 
 func _process(delta):
-	shoot_chance = randi()%11+1
-	bullet_pick = randi()%2
-	if (bullet_pick == 0):
-		scene = load(MoveDictionary.moveDictionary[0].tscn)
-	else:
-		scene = load(MoveDictionary.moveDictionary[1].tscn)
-	if ((shoot_chance > 2) && can_shoot):
+	shoot_chance = randi()%20+1
+	scene = load(MoveDictionary.bullet_scene)
+	if ((shoot_chance == 1) && can_shoot):
 		shoot()
 	
 func shoot():
@@ -58,3 +55,10 @@ func shoot():
 
 #func fire_once():
 #	shoot()
+
+#func _process(delta):
+#	bullet_pick = randi()%2
+#	if (MoveDictionary.bullet_number == 0):
+#	scene = load(MoveDictionary.moveDictionary[0].tscn)
+#	else:
+#	scene = load(MoveDictionary.moveDictionary[1].tscn)
