@@ -10,31 +10,30 @@
 
 extends Node
 
+var moveDictionary = {}
+var moveDictionary_HEADERS_LIST = []
+
+# VARIABLES for random bullet
 var bullet_number = randi()%2
 var bullet_damage
 var bullet_scene
-
-var moveDictionary = {}
-var moveDictionary_HEADERS_LIST = []
 
 func _ready():
 	set_process(true)
 	set_fixed_process(true)
 	db_import("res://bullet_hell/moves/moveDatabase.csv", self.moveDictionary, self.moveDictionary_HEADERS_LIST)
 	print("MoveDictionary.gd: moveDictionary is ", moveDictionary)
-	print("MoveDictionary.gd: HEADERS_LIST is ", moveDictionary_HEADERS_LIST)
+	#print("MoveDictionary.gd: HEADERS_LIST is ", moveDictionary_HEADERS_LIST)
 	#print("MoveDictionary: moveDictionary[1].Damage is ", moveDictionary[1].Damage)
 	#print("MoveDictionary: moveDictionary_HEADERS_LIST is ", moveDictionary_HEADERS_LIST)
 	
 func _process(delta):
 	random_bullet_update()
 
-
 func random_bullet_update():
 	bullet_number = randi()%2
 	bullet_damage = MoveDictionary.moveDictionary[bullet_number].Damage
 	bullet_scene = MoveDictionary.moveDictionary[bullet_number].tscn
-	
 
 func db_import(csv_file, dict_to_append, _HEADERS_LIST):
 	# In order to loop through keys of keys as noted in the EDITED section
@@ -68,7 +67,6 @@ func db_import(csv_file, dict_to_append, _HEADERS_LIST):
 			temp_dict = {} # clear temp_dict
 	#print("MoveDictionary: dict_to_append is ", dict_to_append)
 	#print("MoveDictionary: _HEADERS_LIST is ", _HEADERS_LIST)
-
 	#print("MoveDictionary.gd: moveDictionary contains...")
 	#for dino in dict_to_append.values():
 	#	print("MoveDictionary.gd: ", dino)

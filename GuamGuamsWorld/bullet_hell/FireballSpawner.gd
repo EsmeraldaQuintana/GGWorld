@@ -5,7 +5,6 @@ extends KinematicBody2D
 
 var directional_force = Vector2(0, 3)
 var shoot_chance = 0 # initialized to 0
-var bullet_pick = 10
 var timer
 var bullet_delay = 1
 var can_shoot = false

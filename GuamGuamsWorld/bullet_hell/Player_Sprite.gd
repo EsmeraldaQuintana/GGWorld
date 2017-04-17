@@ -39,6 +39,7 @@ func _fixed_process(delta):
 func _process(delta):
 	bullet_damage = MoveDictionary.bullet_damage
 	if (is_colliding()):
+		print("PlayerSprite.gd: collider: ", get_collider())
 		collision_normal = get_collision_normal()
 		motion = collision_normal.slide(motion)
 		velocity = collision_normal.slide(velocity)
