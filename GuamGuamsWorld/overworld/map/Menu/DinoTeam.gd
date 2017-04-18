@@ -6,36 +6,43 @@ var spot = 0
 var selected
 # shield your eyes (DIRTY)
 # all the nodes I use 
+var spot_0
 var level_0
 var name_0
 var mon_0 
 var HP_0
+var spot_1
 var level_1
 var name_1
 var mon_1 
 var HP_1
+var spot_2
 var level_2
 var name_2
 var mon_2 
 var HP_2
+var spot_3
 var level_3
 var name_3
 var mon_3 
 var HP_3
+var spot_4
 var level_4
 var name_4
 var mon_4 
 var HP_4
+var spot_5
 var level_5
 var name_5
 var mon_5 
 var HP_5
+var message_box
 
 func _ready():
 	print("in ready")
 	set_process_input(true)
-	selected = get_node("team/spot_selected")
-	level_0 = get_node("team/Spot[0]/Level_0")
+	selected = get_tree().get_current_scene().get_node("/root/Pokemon/team/Spot_selected")
+	level_0 = get_tree().get_current_scene().get_node("/root/Pokemon/team/Spot[0]/Level_0")
 	level_1 = get_node("team/Spot[1]/Level_1")
 	level_2 = get_node("team/Spot[2]/Level_2")
 	level_3 = get_node("team/Spot[3]/Level_3")
@@ -59,20 +66,21 @@ func _ready():
 	mon_3 = get_node("team/Spot[3]/Mon[3]")
 	mon_4 = get_node("team/Spot[4]/Mon[4]")
 	mon_5 = get_node("team/Spot[5]/Mon[5]")
+	message_box = get_node("team/Message_box")
 	_assign()
-	
 	
 func _assign():
 	print("assignment")
 	level_0.set_text("1")
-	level_1.set_text("1")
-	level_2.set_text("1")
-	level_3.set_text("1")
-	level_4.set_text("1")
-	level_5.set_text("1")
+	level_1.set_text("")
+	level_2.set_text("")
+	level_3.set_text("")
+	level_4.set_text("")
+	level_5.set_text("")
+	#name_0.set_text(Party.party[0].name)
 	name_0.set_text("Torchic")
-	name_1.set_text("Squirt")
-	name_2.set_text("Ivy")
+	name_1.set_text("")
+	name_2.set_text("")
 	name_3.set_text("")
 	name_4.set_text("")
 	name_5.set_text("")
@@ -82,6 +90,7 @@ func _assign():
 	HP_3.set_text("")
 	HP_4.set_text("")
 	HP_5.set_text("")
+	message_box.set_text("Choose a Pokemon")
 
 # Do stuff on an event 
 func _input(event):
@@ -90,72 +99,94 @@ func _input(event):
 			# if were are in the 1st position 
 			if (Input.is_action_pressed("ui_up")):
 				if (spot == 0): 
-					get_node("team/Spot[0]_select").set_hidden(true)
+					get_node("team/Spot[0]").set_texture(load("res://overworld/map/Menu/Spot_0.tex"))
 					get_node("team/Cancel_selected").set_hidden(false)
+					
 					spot = 6 
 					print(spot)
 				elif (spot == 1):
-					get_node("team/spot_selected").set_hidden(true)
-					get_node("team/Spot[0]_select").set_hidden(false)
+					get_node("team/Spot[1]").set_texture(load("res://overworld/map/Menu/tMon.tex"))
+					get_node("team/Spot[0]").set_texture(load("res://overworld/map/Menu/1stMon.tex"))
 					spot = 0
 					print(spot)
 				elif (spot == 2):
+					get_node("team/Spot[2]").set_texture(load("res://overworld/map/Menu/tMon.tex"))
+					get_node("team/Spot[1]").set_texture(load("res://overworld/map/Menu/Selected.tex"))
 					spot = 1
 					print(spot)
 				elif (spot == 3):
+					get_node("team/Spot[3]").set_texture(load("res://overworld/map/Menu/tMon.tex"))
+					get_node("team/Spot[2]").set_texture(load("res://overworld/map/Menu/Selected.tex"))
 					spot = 2
 					print(spot)
 				elif (spot == 4):
+					get_node("team/Spot[4]").set_texture(load("res://overworld/map/Menu/tMon.tex"))
+					get_node("team/Spot[3]").set_texture(load("res://overworld/map/Menu/Selected.tex"))
 					spot = 3
 					print(spot)
 				elif (spot == 5):
+					get_node("team/Spot[5]").set_texture(load("res://overworld/map/Menu/tMon.tex"))
+					get_node("team/Spot[4]").set_texture(load("res://overworld/map/Menu/Selected.tex"))
 					spot = 4
 					print(spot)
 				elif (spot == 6):
+					get_node("team/Spot[5]").set_texture(load("res://overworld/map/Menu/Selected.tex"))
 					get_node("team/Cancel_selected").set_hidden(true)
 					spot = 5
 					print(spot)
 				
 			if (Input.is_key_pressed(KEY_DOWN)):
 				if (spot == 0):
-					get_node("team/Spot[0]_select").set_hidden(true)
-					get_node("team/spot_selected").set_hidden(false)
+					#get_node("team/Spot[0]_select").set_hidden(true)
+					#get_node("team/Spot_selected").set_hidden(false)
+					get_node("team/Spot[0]").set_texture(load("res://overworld/map/Menu/Spot_0.tex"))
+					get_node("team/Spot[1]").set_texture(load("res://overworld/map/Menu/Selected.tex"))
 					spot = 1
 					print(spot)
 				
 				elif (spot == 1):
-					get_node("team/spot_selected").set_hidden(true)
+					#get_node("team/Spot_selected").set_hidden(true)
+					get_node("team/Spot[1]").set_texture(load("res://overworld/map/Menu/tMon.tex"))
+					get_node("team/Spot[2]").set_texture(load("res://overworld/map/Menu/Selected.tex"))
 					#get_node("team/Spot[0]_select").set_hidden(false)
 					spot = 2
 					print(spot)
 					
 				elif (spot == 2):
+					get_node("team/Spot[2]").set_texture(load("res://overworld/map/Menu/tMon.tex"))
+					get_node("team/Spot[3]").set_texture(load("res://overworld/map/Menu/Selected.tex"))
 					spot = 3
 					print(spot)
 					
 				elif (spot == 3):
+					get_node("team/Spot[3]").set_texture(load("res://overworld/map/Menu/tMon.tex"))
+					get_node("team/Spot[4]").set_texture(load("res://overworld/map/Menu/Selected.tex"))
 					spot = 4
 					print(spot)
 					
 				elif (spot == 4):
-					#get_node("team/Spot[5]").set_texture(load("res://overworld/map/Menu" + Selected.tex))
+					get_node("team/Spot[4]").set_texture(load("res://overworld/map/Menu/tMon.tex"))
+					get_node("team/Spot[5]").set_texture(load("res://overworld/map/Menu/Selected.tex"))
 					spot = 5
 					print(spot)
 					
 				elif (spot == 5):
 					spot = 6
+					get_node("team/Spot[5]").set_texture(load("res://overworld/map/Menu/tMon.tex"))
 					get_node("team/Cancel_selected").set_hidden(false)
 					print(spot)
 					
 				elif (spot == 6):
 					spot = 0
 					get_node("team/Cancel_selected").set_hidden(true)
-					get_node("team/Spot[0]_select").set_hidden(false)
+					get_node("team/Spot[0]").set_texture(load("res://overworld/map/Menu/1stMon.tex"))
 					print(spot)
 					
 			if (Input.is_action_pressed("ui_interact")):
 				if (spot == 0):
 					#change label swap
+					message_box.set_text("Do What?")
+					get_node("team/Message_box/Container").set_hidden(false)
 					print("swap to 0")
 				elif (spot == 1):
 					print("swap to 1")
@@ -168,8 +199,10 @@ func _input(event):
 				elif (spot == 5):
 					print("swap to 5")
 				elif (spot == 6):
+					get_tree().set_pause(false)
 					get_tree().change_scene("res://overworld/overworld.tscn")
 					
 			if (Input.is_key_pressed(KEY_ESCAPE)):
+				get_tree().set_pause(false)
 				get_tree().change_scene("res://overworld/overworld.tscn")
 

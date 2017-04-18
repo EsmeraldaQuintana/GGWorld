@@ -23,6 +23,7 @@ var animationPlayer
 const GRID = 16
 
 #Needed for Death Screen
+
 var currentDino = Party.party[0]
 var currentHP
 
