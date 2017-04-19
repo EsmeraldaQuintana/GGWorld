@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=1]
+[gd_scene load_steps=18 format=1]
 
 [ext_resource path="res://overworld/map/tileset.xml" type="TileSet" id=1]
 [ext_resource path="res://overworld/map/fixed.png" type="Texture" id=2]
@@ -6,13 +6,12 @@
 [ext_resource path="res://overworld/player.gd" type="Script" id=4]
 [ext_resource path="res://overworld/PlayerSprites/redtest.png" type="Texture" id=5]
 [ext_resource path="res://overworld/map/Dialogue Box.tscn" type="PackedScene" id=6]
-[ext_resource path="res://overworld/map/Interact/speech.png" type="Texture" id=7]
+[ext_resource path="res://overworld/map/Menu/Box.png" type="Texture" id=7]
 [ext_resource path="res://overworld/map/Interact/Dialogue_Box.gd" type="Script" id=8]
 [ext_resource path="res://overworld/map/Interact/font.fnt" type="BitmapFont" id=9]
 [ext_resource path="res://overworld/map/Menu.tscn" type="PackedScene" id=10]
-[ext_resource path="res://overworld/map/Menu/Box.png" type="Texture" id=11]
-[ext_resource path="res://overworld/map/Menu.gd" type="Script" id=12]
-[ext_resource path="res://overworld/map/Menu/Controls.tscn" type="PackedScene" id=13]
+[ext_resource path="res://overworld/map/Menu.gd" type="Script" id=11]
+[ext_resource path="res://overworld/map/Menu/Controls.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -138,11 +137,7 @@ text = [ "Sorry, the lighthouse is closed due to construction.", "Please return 
 
 [node name="Player" type="KinematicBody2D" parent="."]
 
-<<<<<<< HEAD
-transform/pos = Vector2( 232, -168 )
-=======
-transform/pos = Vector2( 88, 56 )
->>>>>>> a9d4e85df389a46f702158347c706a3d3c828278
+transform/pos = Vector2( 72, 40 )
 transform/scale = Vector2( 0.25, 0.25 )
 input/pickable = false
 collision/layers = 1
@@ -157,7 +152,7 @@ transform/scale = Vector2( 4, 4 )
 texture = ExtResource( 5 )
 vframes = 4
 hframes = 3
-frame = 3
+frame = 6
 region_rect = Rect2( 0, 0, 96, 128 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
@@ -253,14 +248,14 @@ margin/left = 185.0
 margin/top = 0.0
 margin/right = 329.0
 margin/bottom = 210.0
-texture = ExtResource( 11 )
+texture = ExtResource( 7 )
 patch_margin/left = 8
 patch_margin/top = 8
 patch_margin/right = 8
 patch_margin/bottom = 8
-script/script = ExtResource( 12 )
+script/script = ExtResource( 11 )
 
-[node name="Controls" type="Patch9Frame" parent="Player/Camera2D/CanvasLayer" instance=ExtResource( 13 )]
+[node name="Controls" type="Patch9Frame" parent="Player/Camera2D/CanvasLayer" instance=ExtResource( 12 )]
 
 process/pause_mode = 2
 visibility/visible = false
@@ -274,7 +269,7 @@ margin/left = 0.00195312
 margin/top = 0.0
 margin/right = 370.0
 margin/bottom = 400.0
-texture = ExtResource( 11 )
+texture = ExtResource( 7 )
 patch_margin/left = 8
 patch_margin/top = 8
 patch_margin/right = 8

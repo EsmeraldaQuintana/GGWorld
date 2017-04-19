@@ -38,6 +38,7 @@ modulate = Color( 0.488281, 0.295639, 0.295639, 1 )
 
 [node name="Spot[0]" type="TextureFrame" parent="team"]
 
+editor/display_folded = true
 anchor/right = 1
 anchor/bottom = 1
 rect/scale = Vector2( 0.1425, 0.195 )
@@ -486,6 +487,7 @@ stretch_mode = 0
 
 [node name="Message_box" type="Label" parent="team"]
 
+editor/display_folded = true
 rect/scale = Vector2( 0.225, 0.225 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
