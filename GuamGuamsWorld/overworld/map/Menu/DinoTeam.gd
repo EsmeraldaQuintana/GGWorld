@@ -2,8 +2,13 @@ extends Patch9Frame
 
 # location in party 
 var spot = 0 
+# boolean if we a selecting or not 
+var selecting = true
+var menu_sel = false 
 # spot of selection [1-5]
 var selected
+#location of the pointer 
+var pointer 
 # shield your eyes (DIRTY)
 # all the nodes I use 
 var spot_0
@@ -37,10 +42,15 @@ var name_5
 var mon_5 
 var HP_5
 var message_box
+var summary 
+var swap 
+var item 
+var cancel 
 
 func _ready():
 	print("in ready")
 	set_process_input(true)
+	pointer = get_node("team/Message_box/Container/Arrow")
 	selected = get_tree().get_current_scene().get_node("/root/Pokemon/team/Spot_selected")
 	level_0 = get_tree().get_current_scene().get_node("/root/Pokemon/team/Spot[0]/Level_0")
 	level_1 = get_node("team/Spot[1]/Level_1")
@@ -67,7 +77,12 @@ func _ready():
 	mon_4 = get_node("team/Spot[4]/Mon[4]")
 	mon_5 = get_node("team/Spot[5]/Mon[5]")
 	message_box = get_node("team/Message_box")
+	summary = get_node("team/Message_box/Container/Summary")
+	swap = get_node("team/Message_box/Container/Swap")
+	item = get_node("team/Message_box/Container/Item")
+	cancel = get_node("team/Message_box/Container/Cancel")
 	_assign()
+	_set_sprites()
 	
 func _assign():
 	print("assignment")
@@ -91,11 +106,14 @@ func _assign():
 	HP_4.set_text("")
 	HP_5.set_text("")
 	message_box.set_text("Choose a Pokemon")
+	
+func _set_sprites():
+	get_node("team/Spot[0]/Mon[0]").set_texture(load("res://dinos/Torchic/frontSprite.png"))
 
 # Do stuff on an event 
 func _input(event):
 		# if the event is a key that is pressed
-		if event.type == InputEvent.KEY && event.pressed:
+		if event.type == InputEvent.KEY && event.pressed && selecting:
 			# if were are in the 1st position 
 			if (Input.is_action_pressed("ui_up")):
 				if (spot == 0): 
@@ -183,9 +201,12 @@ func _input(event):
 					print(spot)
 					
 			if (Input.is_action_pressed("ui_interact")):
+				selecting = false
+				menu_sel = true 
+				_set_container()
 				if (spot == 0):
 					#change label swap
-					message_box.set_text("Do What?")
+					
 					get_node("team/Message_box/Container").set_hidden(false)
 					print("swap to 0")
 				elif (spot == 1):
@@ -202,7 +223,17 @@ func _input(event):
 					get_tree().set_pause(false)
 					get_tree().change_scene("res://overworld/overworld.tscn")
 					
-			if (Input.is_key_pressed(KEY_ESCAPE)):
-				get_tree().set_pause(false)
-				get_tree().change_scene("res://overworld/overworld.tscn")
+		if (Input.is_key_pressed(KEY_ESCAPE)):
+			#get_tree().set_pause(false)
+			get_tree().change_scene("res://overworld/overworld.tscn")
+			
+func _set_container():
+	message_box.set_text("Do What?")
+	summary.set_text("Summary")
+	swap.set_text("Swap")
+	item.set_text("Item")
+	cancel.set_text("Cancel")
+	
+func _update_pointer():
+	pointer.set_global_pos(Vector2(pointer.get_global_pos().x, pointer.get_global_pos().y+8))
 

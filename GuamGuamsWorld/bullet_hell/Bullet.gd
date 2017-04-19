@@ -1,12 +1,10 @@
 #
-# attached to fireball.tscn parent node fire_ball
-# This script is attached to every single fireball spawned! Yay!
+# this script is listed in moveDatabase.csv l2
 #
 
 extends KinematicBody2D
 
 var _movement
-var damage = 10 # THIS IS IT, official damage, it's here
 
 func shoot(directional_force):
 	_movement = directional_force

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://overworld/map/Menu/menu.tex" type="Texture" id=1]
 [ext_resource path="res://overworld/map/Menu/DinoTeam.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://overworld/map/Menu/tCancel.tex" type="Texture" id=6]
 [ext_resource path="res://overworld/map/Menu/Cancel_selected.tex" type="Texture" id=7]
 [ext_resource path="res://overworld/map/Interact/speech.png" type="Texture" id=8]
+[ext_resource path="res://overworld/map/Menu/pointer.png" type="Texture" id=9]
 
 [node name="Pokemon" type="Patch9Frame"]
 
@@ -37,7 +38,6 @@ modulate = Color( 0.488281, 0.295639, 0.295639, 1 )
 
 [node name="Spot[0]" type="TextureFrame" parent="team"]
 
-editor/display_folded = true
 anchor/right = 1
 anchor/bottom = 1
 rect/scale = Vector2( 0.1425, 0.195 )
@@ -83,8 +83,8 @@ max_lines_visible = -1
 
 [node name="Mon[0]" type="Sprite" parent="team/Spot[0]"]
 
-transform/pos = Vector2( 10.9285, 15.3846 )
-transform/scale = Vector2( 24.9636, 20.5128 )
+transform/pos = Vector2( 19.2497, 25.641 )
+transform/scale = Vector2( 0.75, 0.75 )
 
 [node name="Level_0" type="Label" parent="team/Spot[0]"]
 
@@ -522,25 +522,27 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 10.0
+margin/left = 9.0
 margin/top = 5.0
-margin/right = 53.0
+margin/right = 52.0
 margin/bottom = 19.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Switch" type="Label" parent="team/Message_box/Container"]
+[node name="Swap" type="Label" parent="team/Message_box/Container"]
 
 rect/scale = Vector2( 0.5, 0.5 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 10.0
+margin/left = 9.0
 margin/top = 14.0
-margin/right = 53.0
+margin/right = 52.0
 margin/bottom = 28.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -552,10 +554,11 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 10.0
-margin/top = 23.0
-margin/right = 53.0
-margin/bottom = 37.0
+margin/left = 9.0
+margin/top = 24.0
+margin/right = 52.0
+margin/bottom = 38.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -567,12 +570,20 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 10.0
-margin/top = 31.0
-margin/right = 53.0
-margin/bottom = 45.0
+margin/left = 9.0
+margin/top = 32.0
+margin/right = 52.0
+margin/bottom = 46.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="Arrow" type="Sprite" parent="team/Message_box/Container"]
+
+transform/pos = Vector2( 6.88697, 7.82783 )
+transform/rot = -180.0
+transform/scale = Vector2( -0.316522, 0.32032 )
+texture = ExtResource( 9 )
 
 

@@ -35,7 +35,9 @@ func db_import(csv_file, dict_to_append, DICT_HEADERS_LIST):
 		if is_header == true:
 			# set attributes_list : this is the header line
 			attributes_list = line
+			#print("DinoDictionary.gd: DINODEX_HEADERS_LIST contains... ")
 			for item in attributes_list:
+				#print("DinoDictionary.gd: ", item, " ")
 				DICT_HEADERS_LIST.append(item)
 			is_header = false
 		else: # we have the header list
@@ -46,9 +48,9 @@ func db_import(csv_file, dict_to_append, DICT_HEADERS_LIST):
 			dict_to_append[int(line[0])] = temp_dict
 			temp_dict = {} # clear temp_dict
 	
-	print("Dinodex contains...")
+	print("DinoDictionary.gd: Dinodex contains...")
 	for dino in dict_to_append.values():
-		print(dino)
+		print("DinoDictionary.gd: ", dino, " ")
 		
 func _ready():
 	db_import("res://dinos/dinoDatabase.csv", self.dinodex, self.DINODEX_HEADERS_LIST)

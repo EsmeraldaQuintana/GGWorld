@@ -39,10 +39,10 @@ extents = Vector2( 10, 14.3401 )
 custom_solver_bias = 0.0
 extents = Vector2( 29.6323, 10.0572 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=8]
 
 custom_solver_bias = 0.0
-extents = Vector2( 25.8226, 25.0966 )
+radius = 26.2191
 
 [sub_resource type="Animation" id=7]
 
@@ -215,7 +215,7 @@ __meta__ = { "_edit_lock_":true }
 
 transform/pos = Vector2( 296.183, 425.583 )
 input/pickable = false
-shapes/0/shape = SubResource( 6 )
+shapes/0/shape = SubResource( 8 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -231,7 +231,7 @@ __meta__ = { "_edit_lock_":true }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 
-shape = SubResource( 6 )
+shape = SubResource( 8 )
 trigger = false
 _update_shape_index = 0
 __meta__ = { "_edit_lock_":true }
@@ -278,7 +278,6 @@ collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 13 )
-scene = ExtResource( 14 )
 
 [node name="SpawnPoint" type="Position2D" parent="FireballSpawner"]
 
@@ -294,5 +293,7 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "MoveBulletSpawn"
+
+[node name="fire_ball" parent="." instance=ExtResource( 14 )]
 
 
