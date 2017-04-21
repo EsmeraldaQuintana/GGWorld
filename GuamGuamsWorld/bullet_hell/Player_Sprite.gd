@@ -37,6 +37,7 @@ func _fixed_process(delta):
 	move(motion)
 
 func _process(delta):
+	# bullet_damage = get_collder().damage # NEED TO DO SOMETHING LIKE THIS INSTEAD OF USING MOVE DICTIONARY
 	bullet_damage = MoveDictionary.bullet_damage
 	if (is_colliding()):
 		collision_normal = get_collision_normal()
