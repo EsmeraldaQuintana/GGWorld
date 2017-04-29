@@ -5,6 +5,9 @@ extends Node
 # party is just a list of Pokemon
 var party = []
 
+# the dino you're currently fighting
+var fighting
+
 func ready():
 	if Party.party.size() == 0:
 		Party.party.append(Party.createDinoInstance(255, 20, 20))

@@ -27,7 +27,12 @@ tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.1, 0.2, 0.3 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":1, "values":[ 6, 7, 8, 6 ] }
+tracks/0/keys = {
+"times": FloatArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 6, 7, 8, 6 ]
+}
 
 [sub_resource type="Animation" id=3]
 
@@ -38,7 +43,12 @@ tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.1, 0.2, 0.3 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":1, "values":[ 3, 4, 5, 3 ] }
+tracks/0/keys = {
+"times": FloatArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 4, 5, 3 ]
+}
 
 [sub_resource type="Animation" id=4]
 
@@ -49,7 +59,12 @@ tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.1, 0.2, 0.3 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":1, "values":[ 9, 10, 11, 9 ] }
+tracks/0/keys = {
+"times": FloatArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 9, 10, 11, 9 ]
+}
 
 [sub_resource type="Animation" id=5]
 
@@ -60,7 +75,12 @@ tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.1, 0.2, 0.3 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":1, "values":[ 0, 1, 2, 0 ] }
+tracks/0/keys = {
+"times": FloatArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 0 ]
+}
 
 [node name="overworld" type="Node2D"]
 
@@ -137,7 +157,7 @@ text = [ "Sorry, the lighthouse is closed due to construction.", "Please return 
 
 [node name="Player" type="KinematicBody2D" parent="."]
 
-transform/pos = Vector2( 216, 88 )
+transform/pos = Vector2( 88, 56 )
 transform/scale = Vector2( 0.25, 0.25 )
 input/pickable = false
 collision/layers = 1
@@ -152,6 +172,7 @@ transform/scale = Vector2( 4, 4 )
 texture = ExtResource( 5 )
 vframes = 4
 hframes = 3
+frame = 6
 region_rect = Rect2( 0, 0, 96, 128 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]

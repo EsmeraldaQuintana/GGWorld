@@ -52,7 +52,7 @@ func _ready():
 	set_process_input(true)
 	pointer = get_node("team/Message_box/Container/Arrow")
 	selected = get_tree().get_current_scene().get_node("/root/Pokemon/team/Spot_selected")
-	level_0 = get_tree().get_current_scene().get_node("/root/Pokemon/team/Spot[0]/Level_0")
+	level_0 = get_tree().get_current_scene().get_node("/team/Spot[0]/Level_0")
 	level_1 = get_node("team/Spot[1]/Level_1")
 	level_2 = get_node("team/Spot[2]/Level_2")
 	level_3 = get_node("team/Spot[3]/Level_3")

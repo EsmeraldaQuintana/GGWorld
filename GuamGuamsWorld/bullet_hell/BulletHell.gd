@@ -25,7 +25,17 @@ func _ready():
 	current_health = currentDino.CurrentHP
 	print("BulletHell.gd: dino HP: ", current_health)
 	set_process(true)
+	var timer = Timer.new()
+	timer.connect("timeout",self,"_on_timer_timeout") 
+	add_child(timer)
+	timer.set_wait_time(20)
+	timer.start()
 	# set_fixed_process(true)
+
+func _on_timer_timeout():
+	if (Party.party.size() < 6):
+		Party.party.append(Party.fighting)
+		self.get_tree().change_scene("res://overworld/packedOverworld.tscn")
 
 func _process(delta):
 	current_health = currentDino.CurrentHP
