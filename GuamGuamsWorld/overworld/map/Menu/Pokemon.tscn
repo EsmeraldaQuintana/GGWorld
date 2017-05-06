@@ -104,7 +104,6 @@ max_lines_visible = -1
 
 [node name="Spot[1]" type="TextureFrame" parent="team"]
 
-editor/display_folded = true
 rect/scale = Vector2( 0.155, 0.225 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -134,14 +133,14 @@ max_lines_visible = -1
 
 [node name="Name_1" type="Label" parent="team/Spot[1]"]
 
-rect/scale = Vector2( 1, 0.85 )
+rect/scale = Vector2( 0.85, 0.65 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 41.0
+margin/left = 33.0
 margin/top = 1.0
-margin/right = 82.0
+margin/right = 74.0
 margin/bottom = 15.0
 percent_visible = 1.0
 lines_skipped = 0
@@ -164,12 +163,11 @@ max_lines_visible = -1
 
 [node name="Mon[1]" type="Sprite" parent="team/Spot[1]"]
 
-transform/pos = Vector2( 20.3749, 1.48148 )
-transform/scale = Vector2( 17.8503, 17.7778 )
+transform/pos = Vector2( 25, 8 )
+transform/scale = Vector2( 0.5, 0.5 )
 
 [node name="Spot[2]" type="TextureFrame" parent="team"]
 
-editor/display_folded = true
 rect/scale = Vector2( 0.155, 0.225 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -199,15 +197,15 @@ max_lines_visible = -1
 
 [node name="Name_2" type="Label" parent="team/Spot[2]"]
 
-rect/scale = Vector2( 1, 0.85 )
+rect/scale = Vector2( 0.85, 0.65 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 41.0
-margin/top = 1.33333
-margin/right = 82.0
-margin/bottom = 15.3333
+margin/left = 33.0
+margin/top = 1.0
+margin/right = 74.0
+margin/bottom = 15.0
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -229,12 +227,11 @@ max_lines_visible = -1
 
 [node name="Mon[2]" type="Sprite" parent="team/Spot[2]"]
 
-transform/pos = Vector2( 20.3749, 1.48148 )
-transform/scale = Vector2( 17.8503, 17.7778 )
+transform/pos = Vector2( 25, 8 )
+transform/scale = Vector2( 0.5, 0.5 )
 
 [node name="Spot[3]" type="TextureFrame" parent="team"]
 
-editor/display_folded = true
 rect/scale = Vector2( 0.155, 0.225 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -264,14 +261,14 @@ max_lines_visible = -1
 
 [node name="Name_3" type="Label" parent="team/Spot[3]"]
 
-rect/scale = Vector2( 1, 0.85 )
+rect/scale = Vector2( 0.85, 0.65 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 41.0
+margin/left = 31.0
 margin/top = 1.0
-margin/right = 82.0
+margin/right = 72.0
 margin/bottom = 15.0
 percent_visible = 1.0
 lines_skipped = 0
@@ -294,12 +291,11 @@ max_lines_visible = -1
 
 [node name="Mon[3]" type="Sprite" parent="team/Spot[3]"]
 
-transform/pos = Vector2( 20.3749, 1.48148 )
-transform/scale = Vector2( 17.8503, 17.7778 )
+transform/pos = Vector2( 25, 8 )
+transform/scale = Vector2( 0.5, 0.5 )
 
 [node name="Spot[4]" type="TextureFrame" parent="team"]
 
-editor/display_folded = true
 rect/scale = Vector2( 0.155, 0.225 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -329,15 +325,15 @@ max_lines_visible = -1
 
 [node name="Name_4" type="Label" parent="team/Spot[4]"]
 
-rect/scale = Vector2( 1, 0.85 )
+rect/scale = Vector2( 0.85, 0.65 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 41.0
-margin/top = 1.33333
-margin/right = 82.0
-margin/bottom = 15.3333
+margin/left = 31.0
+margin/top = 1.0
+margin/right = 72.0
+margin/bottom = 15.0
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -359,12 +355,11 @@ max_lines_visible = -1
 
 [node name="Mon[4]" type="Sprite" parent="team/Spot[4]"]
 
-transform/pos = Vector2( 20.3749, 1.48148 )
-transform/scale = Vector2( 17.8503, 17.7778 )
+transform/pos = Vector2( 25, 8 )
+transform/scale = Vector2( 0.5, 0.5 )
 
 [node name="Spot[5]" type="TextureFrame" parent="team"]
 
-editor/display_folded = true
 rect/scale = Vector2( 0.155, 0.225 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -394,14 +389,14 @@ max_lines_visible = -1
 
 [node name="Name_5" type="Label" parent="team/Spot[5]"]
 
-rect/scale = Vector2( 1, 0.85 )
+rect/scale = Vector2( 0.85, 0.65 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 41.0
+margin/left = 31.0
 margin/top = 1.0
-margin/right = 82.0
+margin/right = 72.0
 margin/bottom = 15.0
 percent_visible = 1.0
 lines_skipped = 0
@@ -424,8 +419,8 @@ max_lines_visible = -1
 
 [node name="Mon[5]" type="Sprite" parent="team/Spot[5]"]
 
-transform/pos = Vector2( 20.3749, 1.48148 )
-transform/scale = Vector2( 17.8503, 17.7778 )
+transform/pos = Vector2( 25, 8 )
+transform/scale = Vector2( 0.5, 0.5 )
 
 [node name="Spot[0]_select" type="TextureFrame" parent="team"]
 

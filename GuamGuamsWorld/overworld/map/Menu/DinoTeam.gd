@@ -47,6 +47,10 @@ var swap
 var item 
 var cancel 
 
+var Torchic
+var Bulbasaur
+var Squirtle
+
 func _ready():
 	print("in ready")
 	set_process_input(true)
@@ -82,7 +86,9 @@ func _ready():
 	item = get_node("team/Message_box/Container/Item")
 	cancel = get_node("team/Message_box/Container/Cancel")
 	_assign()
+	_load_sprites()
 	_set_sprites()
+
 	
 func _assign():
 	print("assignment")
@@ -93,22 +99,77 @@ func _assign():
 	level_4.set_text("")
 	level_5.set_text("")
 	#name_0.set_text(Party.party[0].name)
-	name_0.set_text("Torchic")
-	name_1.set_text("")
-	name_2.set_text("")
-	name_3.set_text("")
-	name_4.set_text("")
-	name_5.set_text("")
-	HP_0.set_text("100  100")
-	HP_1.set_text("")
-	HP_2.set_text("")
-	HP_3.set_text("")
-	HP_4.set_text("")
-	HP_5.set_text("")
+	name_0.set_text(Party.party[0].name)
+	
+	if Party.party.size() < 2:
+		name_1.set_text("")
+	else:
+		name_1.set_text(Party.party[1].name)
+		
+	if Party.party.size() < 3:
+		name_2.set_text("")
+	else:
+		name_2.set_text(Party.party[2].name)
+		
+	if Party.party.size() < 4:
+		name_3.set_text("")
+	else:
+		name_3.set_text(Party.party[3].name)
+		
+	if Party.party.size() < 5:
+		name_4.set_text("")
+	else:
+		name_4.set_text(Party.party[4].name)
+		
+	if Party.party.size() < 6:
+		name_5.set_text("")
+	else:
+		name_5.set_text(Party.party[5].name)
+	
+	HP_0.set_text(" " + str(Party.party[0].CurrentHP) + "  " + str(Party.party[0].TotalHP))
+	
+	if Party.party.size() < 2:
+		HP_1.set_text("")
+	else:
+		HP_1.set_text("  " + str(Party.party[1].CurrentHP) + "  " + str(Party.party[1].TotalHP))
+		
+	if Party.party.size() < 3:
+		HP_2.set_text("")
+	else:
+		HP_2.set_text("  " + str(Party.party[2].CurrentHP) + "  " + str(Party.party[2].TotalHP))
+	
+	if Party.party.size() < 4:
+		HP_3.set_text("")
+	else:
+		HP_3.set_text("  " + str(Party.party[3].CurrentHP) + "  " + str(Party.party[3].TotalHP))
+	
+	if Party.party.size() < 5:
+		HP_4.set_text("")
+	else:
+		HP_4.set_text("  " + str(Party.party[4].CurrentHP) + "  " + str(Party.party[4].TotalHP))
+	
+	if Party.party.size() < 6:
+		HP_5.set_text("")
+	else:
+		HP_5.set_text("  " + str(Party.party[5].CurrentHP) + "  " + str(Party.party[5].TotalHP))
+
 	message_box.set_text("Choose a Pokemon")
 	
+func _load_sprites():
+	Torchic = load("res://dinos/Torchic/frontSprite.png")
+	Bulbasaur = load("res://dinos/Bulbasaur/frontSprite.png")
+	Squirtle = load("res://dinos/Squirtle/frontSprite.png")
+	
 func _set_sprites():
-	get_node("team/Spot[0]/Mon[0]").set_texture(load("res://dinos/Torchic/frontSprite.png"))
+	for i in range(0, Party.party.size()): 
+		#print("i = " + str(i))
+		if Party.party[i].name == "Torchic":
+			get_node("team/Spot[" + str(i) + "]/Mon[" + str(i) + "]").set_texture(Torchic)
+		elif Party.party[i].name == "Bulbasaur":
+			get_node("team/Spot[" + str(i) + "]/Mon[" + str(i) + "]").set_texture(Bulbasaur)
+		else:
+			get_node("team/Spot[" + str(i) + "]/Mon[" + str(i) + "]").set_texture(Squirtle)
+
 
 # Do stuff on an event 
 func _input(event):
@@ -201,6 +262,7 @@ func _input(event):
 					print(spot)
 					
 			if (Input.is_action_pressed("ui_interact")):
+				get_node("/root/Pokemon/team/Message_box/Container").open = true
 				selecting = false
 				menu_sel = true 
 				_set_container()

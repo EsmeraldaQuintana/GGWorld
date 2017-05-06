@@ -2,7 +2,7 @@ extends TextureFrame
 
 #Variables of menu openness and use
 var menu = false
-var open = true
+var open = false
 
 #Direction variables for pointer
 var up = false
@@ -23,13 +23,16 @@ func _ready():
 	container = get_node("/root/Pokemon/team/Message_box/Container")
 	labels = get_node("/root/Pokemon/team/Message_box/Container").get_children()
 	pointer = get_node("/root/Pokemon/team/Message_box/Arrow")
+	#get_tree().set_pause(true)
 
 #If the menu is open continue executing
 func _fixed_process(delta):
 	if open:
-		
 		#If the interact button is pressed go to the option pressed
 		if Input.is_action_pressed("ui_interact"):
+			#get_tree().set_pause(false)
+			container.set_hidden(false)
+			pointer.set_hidden(false)
 			_handle_interaction()
 		
 		if up:
@@ -44,28 +47,31 @@ func _fixed_process(delta):
 				currentLabel = 0
 			else:
 				currentLabel = currentLabel + 1
-			# print(currentLabel)
+			print(currentLabel)
 			
 	up = false 
 	down = false
 			
 #Check which label the arrow is currently pointing at and execute appropriately
 func _handle_interaction():
-	container.set_hidden(false)
-	pointer.set_hidden(false)
-	if currentLabel == 0:
-		print("summary")
-	elif currentLabel == 1:
-		get_node("/root/Pokemon/team/Message_box").set_text("Swap with who")
-		print("swap")
-	elif currentLabel == 2:
-		get_node("/root/Pokemon/team/Message_box").set_text("Maybe one day")
-		print("item")
-	elif currentLabel == 3:
-		container.set_hidden(true)
-		pointer.set_hidden(true)
-		get_tree().set_pause(false)
-		print("cancel")
+	if open:
+		if currentLabel == 0:
+			print("summary")
+		elif currentLabel == 1:
+			container.set_hidden(true)
+			pointer.set_hidden(true)
+			get_node("/root/Pokemon/team/Message_box").set_text("Swap with who")
+			open = false
+			print("swap")
+		elif currentLabel == 2:
+			get_node("/root/Pokemon/team/Message_box").set_text("Maybe one day")
+			print("item")
+		elif currentLabel == 3:
+			container.set_hidden(true)
+			pointer.set_hidden(true)
+			#get_tree().set_pause(false)
+			get_tree().change_scene("res://overworld/map/Menu/Pokemon.tscn")
+			print("cancel")
 		
 func _unhandled_key_input(key_event):
 	if open:
@@ -83,7 +89,6 @@ func _unhandled_key_input(key_event):
 			up = false
 			
 func _open_menu():
-	#set_hidden(false)
-	get_tree().set_pause(true)
-	menu = false
-	open = true
+	#get_tree().set_pause(true)
+	open = true 
+	print("menu open")
