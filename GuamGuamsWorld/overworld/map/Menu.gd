@@ -42,17 +42,17 @@ func _fixed_process(delta):
 		if up:
 			#Not working, should make the cursor wrap around
 			if currentLabel == 0:
-				currentLabel == labels.size()-1
+				currentLabel = labels.size()-1
 			else:
-				currentLabel -= 1
+				currentLabel = currentLabel - 1
 			pointer_update()
 		#If the down button is pressed move the cursor down
 		if down:
 			#Not working, should make the cursor wrap around
-			if currentLabel == labels.size()-1:
-				currentLabel == 0
+			if currentLabel == labels.size() - 1:
+				currentLabel = 0
 			else:
-				currentLabel += 1
+				currentLabel = currentLabel + 1
 			pointer_update()
 		
 		menu = false

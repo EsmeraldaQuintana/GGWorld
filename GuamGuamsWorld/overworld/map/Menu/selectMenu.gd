@@ -40,6 +40,7 @@ func _fixed_process(delta):
 				currentLabel = labels.size() - 1
 			else:
 				currentLabel = currentLabel - 1
+			_move_arrow()
 			print(currentLabel)
 			
 		if down:
@@ -47,6 +48,7 @@ func _fixed_process(delta):
 				currentLabel = 0
 			else:
 				currentLabel = currentLabel + 1
+			_move_arrow()
 			print(currentLabel)
 			
 	up = false 
@@ -88,6 +90,9 @@ func _unhandled_key_input(key_event):
 		elif key_event.is_action_released("ui_up"):
 			up = false
 			
+func _move_arrow():
+	pointer.set_global_pos(Vector2(pointer.get_global_pos().x, labels[currentLabel].get_global_pos().y+8))
+
 func _open_menu():
 	#get_tree().set_pause(true)
 	open = true 
