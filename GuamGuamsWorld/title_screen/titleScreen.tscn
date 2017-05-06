@@ -38,9 +38,7 @@ margin/bottom = 220.0
 texture = ExtResource( 2 )
 modulate = Color( 0, 0, 0.961765, 1 )
 stretch_mode = 0
-__meta__ = {
-"_edit_lock_": true
-}
+__meta__ = { "_edit_lock_":true }
 
 [node name="BH image" type="Sprite" parent="logo"]
 
@@ -49,9 +47,7 @@ transform/pos = Vector2( 52.5, 97.5 )
 transform/scale = Vector2( 0.402344, 0.36875 )
 texture = ExtResource( 3 )
 modulate = Color( 0.53549, 1, 0.710392, 1 )
-__meta__ = {
-"_edit_lock_": true
-}
+__meta__ = { "_edit_lock_":true }
 
 [node name="exitButton" type="TextureButton" parent="."]
 
@@ -67,14 +63,10 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 textures/normal = ExtResource( 4 )
-params/resize_mode = 0
 params/scale = Vector2( 0.75, 0.75 )
-params/stretch_mode = 0
 params/modulate = Color( 1, 0.851563, 0.882874, 1 )
 script/script = ExtResource( 5 )
-__meta__ = {
-"_edit_lock_": true
-}
+__meta__ = { "_edit_lock_":true }
 
 [node name="startButton" type="TextureButton" parent="."]
 
@@ -90,13 +82,9 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 textures/normal = ExtResource( 6 )
-params/resize_mode = 0
 params/scale = Vector2( 0.75, 0.75 )
-params/stretch_mode = 0
 params/modulate = Color( 0.960938, 0.371613, 0.924105, 1 )
 script/script = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
+__meta__ = { "_edit_lock_":true }
 
 

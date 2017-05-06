@@ -50,9 +50,9 @@ var cancel
 func _ready():
 	print("in ready")
 	set_process_input(true)
-	pointer = get_node("team/Message_box/Container/Arrow")
+	pointer = get_node("team/Message_box/Arrow")
 	selected = get_tree().get_current_scene().get_node("/root/Pokemon/team/Spot_selected")
-	level_0 = get_tree().get_current_scene().get_node("/team/Spot[0]/Level_0")
+	level_0 = get_tree().get_current_scene().get_node("team/Spot[0]/Level_0")
 	level_1 = get_node("team/Spot[1]/Level_1")
 	level_2 = get_node("team/Spot[2]/Level_2")
 	level_3 = get_node("team/Spot[3]/Level_3")
@@ -86,7 +86,7 @@ func _ready():
 	
 func _assign():
 	print("assignment")
-	level_0.set_text("1")
+	level_0.set_text("")
 	level_1.set_text("")
 	level_2.set_text("")
 	level_3.set_text("")
@@ -207,7 +207,7 @@ func _input(event):
 				if (spot == 0):
 					#change label swap
 					
-					get_node("team/Message_box/Container").set_hidden(false)
+					#get_node("team/Message_box/Container").set_hidden(false)
 					print("swap to 0")
 				elif (spot == 1):
 					print("swap to 1")
