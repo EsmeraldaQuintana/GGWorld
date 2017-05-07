@@ -8,10 +8,15 @@ var open = false
 var up = false
 var down = false
 
+var inSwappe = true
+var inSwapper = false  
+
 #Variable of what option you're on
 var currentLabel = 0
 var container
 var labels
+var swappe
+var swapper
 
 #Location of arrow
 var pointer
@@ -60,9 +65,31 @@ func _handle_interaction():
 		if currentLabel == 0:
 			print("summary")
 		elif currentLabel == 1:
+			#inSwappe = true
 			container.set_hidden(true)
 			pointer.set_hidden(true)
 			get_node("/root/Pokemon/team/Message_box").set_text("Swap with who")
+			get_node("/root/Pokemon").selecting = true
+			 
+			# if they press enter after choosing swap 
+			if Input.is_action_pressed("ui_interact"):
+				if inSwappe:
+					swappe = get_node("/root/Pokemon").spot
+					print("swappe = " + str(swappe))
+					inSwappe = false
+					inSwapper = true 
+
+				elif inSwapper:
+					swapper = get_node("/root/Pokemon").spot
+					print("swappe = " + str(swappe))
+					print("swapper = " + str(swapper))
+					inSwapper = false
+				
+				for i in range (0, Party.party.size()):
+					if get_node("/root/Pokemon").spot == i:
+						Party.party[0] = Party.party[i]
+						#get_tree().change_scene("res://overworld/map/Menu/Pokemon.tscn")
+					
 			open = false
 			print("swap")
 		elif currentLabel == 2:
