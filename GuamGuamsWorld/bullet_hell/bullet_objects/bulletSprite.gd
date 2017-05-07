@@ -11,8 +11,8 @@ func _ready():
 	
 func load_bullet_sprites():
 	ember = load("res://_assets/Bullet_FIRE.png")
-	waterGun = load("res://_assets/pkmn diamond attack graphics/Water-Sport.png")
-	razorLeaf = load("res://_assets/pkmn diamond attack graphics/Leaves.png")
+	waterGun = load("res://_assets/pkmn_diamond/Water-Sport.png")
+	razorLeaf = load("res://_assets/pkmn_diamond/Leaves.png")
 
 func set_bullet_sprites():
 	name = get_node("/root/BulletHell/battleArena/otherPokemon").otherDino.name
