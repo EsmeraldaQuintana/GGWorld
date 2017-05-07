@@ -52,6 +52,7 @@ func _process(delta):
 		elif current_state == "Bag":
 			label.set_text("You've got nothing but a gum wrapper and three cents.")
 		elif current_state == "Dinos":
+			# switch the sprite change hp bar 
 			label.set_text("Dino-switching DLC coming soon -- only $20.")
 		elif current_state == "Run":
 			self.get_tree().change_scene("res://overworld/packedOverworld.tscn")

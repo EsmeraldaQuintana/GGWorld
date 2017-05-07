@@ -4,11 +4,13 @@
 
 extends "res://dinos/dino.gd".Dino
 
+var otherDino
+
 func _ready():
 	# Picks random pokemon from dictionary.
 	var possibleNums = DinoDictionary.dinodex.keys()
 	var i = randi() % possibleNums.size()
-	var otherDino = Party.createDinoInstance(possibleNums[i], 20, 20)
+	otherDino = Party.createDinoInstance(possibleNums[i], 20, 20)
 	Party.fighting = otherDino
 	set_texture(otherDino.frontSprite)
 	print(otherDino.name, " loaded into scene")
