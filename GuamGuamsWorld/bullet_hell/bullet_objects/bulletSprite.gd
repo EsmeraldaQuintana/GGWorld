@@ -23,5 +23,5 @@ func set_bullet_sprites():
 		self.set_texture(ember)
 	if name == "Squirtle":
 		self.set_texture(waterGun)
-	if name == "Bulbasuar":
+	if name == "Bulbasaur":
 		self.set_texture(razorLeaf)
