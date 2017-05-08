@@ -65,13 +65,17 @@ func _handle_interaction():
 		get_tree().set_pause(false)
 		get_tree().change_scene("res://bullet_hell/BulletHell.tscn")
 	elif currentLabel == 1:
-		get_node("../Controls").set_hidden(false)
-	elif currentLabel == 2:
-		get_tree().set_pause(false)
-		get_tree().change_scene("res://title_screen/titleScreen.tscn")
-	elif currentLabel == 3:
 		get_tree().set_pause(false)
 		get_tree().change_scene("res://overworld/map/Menu/Pokemon.tscn")
+	elif currentLabel == 2:
+		print("Items")
+	elif currentLabel == 3:
+		print("Controls")
+		get_node("../Controls").set_hidden(false)
+	elif currentLabel == 4:
+		print("Quit")
+		get_tree().set_pause(false)
+		get_tree().change_scene("res://title_screen/titleScreen.tscn")
 
 #Repositions pointer based on current label
 func pointer_update():
