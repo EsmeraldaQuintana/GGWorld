@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://battle_menu/menu_background.png" type="Texture" id=1]
 [ext_resource path="res://battle_menu/menu_arrow.png" type="Texture" id=2]
 [ext_resource path="res://battle_menu/menuArrow.gd" type="Script" id=3]
 [ext_resource path="res://battle_menu/textBackground.png" type="Texture" id=4]
 [ext_resource path="res://Pokemon GB.fnt" type="BitmapFont" id=5]
+[ext_resource path="res://battle_menu/swapBox.gd" type="Script" id=6]
 
 [node name="menuBackground" type="Sprite"]
 
@@ -38,5 +39,32 @@ autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="swapBox" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -112.698, -45.3592 )
+transform/scale = Vector2( 0.301724, 3.18182 )
+texture = ExtResource( 4 )
+script/script = ExtResource( 6 )
+
+[node name="mons" type="Label" parent="swapBox"]
+
+rect/scale = Vector2( 1.8, 0.3 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -83.0
+margin/top = -16.0
+margin/right = 0.0
+margin/bottom = 90.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="arrow" type="Sprite" parent="swapBox"]
 
 

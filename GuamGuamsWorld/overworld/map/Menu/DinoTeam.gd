@@ -162,13 +162,13 @@ func _load_sprites():
 	
 func _set_sprites():
 	for i in range(0, Party.party.size()): 
-		#print("i = " + str(i))
-		if Party.party[i].name == "Torchic":
-			get_node("team/Spot[" + str(i) + "]/Mon[" + str(i) + "]").set_texture(Torchic)
-		elif Party.party[i].name == "Bulbasaur":
-			get_node("team/Spot[" + str(i) + "]/Mon[" + str(i) + "]").set_texture(Bulbasaur)
-		else:
-			get_node("team/Spot[" + str(i) + "]/Mon[" + str(i) + "]").set_texture(Squirtle)
+		if i < 6:
+			if Party.party[i].name == "Torchic":
+				get_node("team/Spot[" + str(i) + "]/Mon[" + str(i) + "]").set_texture(Torchic)
+			elif Party.party[i].name == "Bulbasaur":
+				get_node("team/Spot[" + str(i) + "]/Mon[" + str(i) + "]").set_texture(Bulbasaur)
+			else:
+				get_node("team/Spot[" + str(i) + "]/Mon[" + str(i) + "]").set_texture(Squirtle)
 
 
 # Do stuff on an event 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=1]
+[gd_scene load_steps=26 format=1]
 
 [ext_resource path="res://bullet_hell/BulletHell.gd" type="Script" id=1]
 [ext_resource path="res://_assets/grass.png" type="Texture" id=2]
@@ -21,34 +21,42 @@
 
 shader/shading_mode = 0
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="CanvasItemShader" id=2]
 
-custom_solver_bias = 0.0
-extents = Vector2( 31.8676, 10 )
+_code = { "fragment":"", "fragment_ofs":0, "light":"", "light_ofs":0, "vertex":"", "vertex_ofs":0 }
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="CanvasItemMaterial" id=3]
 
-custom_solver_bias = 0.0
-extents = Vector2( 32.0775, 33.2394 )
+shader/shader = SubResource( 2 )
+shader/shading_mode = 0
 
 [sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 14.3401 )
+extents = Vector2( 31.8676, 10 )
 
 [sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
+extents = Vector2( 32.0775, 33.2394 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 14.3401 )
+
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
 extents = Vector2( 29.6323, 10.0572 )
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=8]
 
 custom_solver_bias = 0.0
 radius = 26.2191
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=9]
 
-resource/name = "MoveBulletSpawn"
 length = 10.0
 loop = true
 step = 0.1
@@ -76,7 +84,6 @@ __meta__ = { "_edit_lock_":true }
 
 [node name="Black Background" type="TextureFrame" parent="."]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -86,10 +93,14 @@ margin/top = 0.0
 margin/right = 1024.0
 margin/bottom = 600.0
 texture = ExtResource( 2 )
+expand = true
+stretch_mode = 0
 __meta__ = { "_edit_lock_":true }
 
 [node name="Box Background" type="TileMap" parent="."]
 
+visibility/opacity = 0.65
+material/material = SubResource( 3 )
 mode = 0
 tile_set = ExtResource( 3 )
 cell/size = Vector2( 16, 16 )
@@ -120,7 +131,7 @@ __meta__ = { "_edit_lock_":true }
 transform/pos = Vector2( 0.389121, 246.356 )
 transform/scale = Vector2( 7.79894, 0.116908 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1.00482, 0, 0, 3.18253, -0.168083, -1.9027 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -135,7 +146,7 @@ __meta__ = { "_edit_lock_":true }
 
 transform/pos = Vector2( -0.168083, -1.9027 )
 transform/scale = Vector2( 1.00482, 3.18253 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 trigger = false
 _update_shape_index = 0
 __meta__ = { "_edit_lock_":true }
@@ -145,7 +156,7 @@ __meta__ = { "_edit_lock_":true }
 transform/pos = Vector2( 0.138237, -246.13 )
 transform/scale = Vector2( 7.79956, 0.129555 )
 input/pickable = false
-shapes/0/shape = SubResource( 3 )
+shapes/0/shape = SubResource( 5 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -158,7 +169,7 @@ __meta__ = { "_edit_lock_":true }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Box/top wall"]
 
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 trigger = false
 _update_shape_index = 0
 __meta__ = { "_edit_lock_":true }
@@ -168,7 +179,7 @@ __meta__ = { "_edit_lock_":true }
 transform/pos = Vector2( -246.01, 0.427536 )
 transform/scale = Vector2( 0.124496, 7.57259 )
 input/pickable = false
-shapes/0/shape = SubResource( 4 )
+shapes/0/shape = SubResource( 6 )
 shapes/0/transform = Matrix32( 3.01733, 0, 0, 2.22849, -1.23323, -0.069454 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -183,7 +194,7 @@ __meta__ = { "_edit_lock_":true }
 
 transform/pos = Vector2( -1.23323, -0.069454 )
 transform/scale = Vector2( 3.01733, 2.22849 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 trigger = false
 _update_shape_index = 0
 __meta__ = { "_edit_lock_":true }
@@ -194,7 +205,7 @@ editor/display_folded = true
 transform/pos = Vector2( 246.039, 3.83166 )
 transform/scale = Vector2( 0.124779, 7.69284 )
 input/pickable = false
-shapes/0/shape = SubResource( 5 )
+shapes/0/shape = SubResource( 7 )
 shapes/0/transform = Matrix32( 1, 0, 0, 3.14573, 0, -0.472209 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -209,7 +220,7 @@ __meta__ = { "_edit_lock_":true }
 
 transform/pos = Vector2( 0, -0.472209 )
 transform/scale = Vector2( 1, 3.14573 )
-shape = SubResource( 5 )
+shape = SubResource( 7 )
 trigger = false
 _update_shape_index = 0
 __meta__ = { "_edit_lock_":true }
@@ -218,7 +229,7 @@ __meta__ = { "_edit_lock_":true }
 
 transform/pos = Vector2( 296.183, 425.583 )
 input/pickable = false
-shapes/0/shape = SubResource( 6 )
+shapes/0/shape = SubResource( 8 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -234,16 +245,15 @@ script/script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 
-shape = SubResource( 6 )
+shape = SubResource( 8 )
 trigger = false
 _update_shape_index = 0
 __meta__ = { "_edit_lock_":true }
 
 [node name="battleArena" type="Sprite" parent="."]
 
-transform/pos = Vector2( 788.899, 164.664 )
+transform/pos = Vector2( 810, 166 )
 texture = ExtResource( 9 )
-__meta__ = { "_edit_lock_":true }
 
 [node name="myPokemon" type="Sprite" parent="battleArena"]
 
@@ -265,7 +275,6 @@ transform/scale = Vector2( 1.5, 1.5 )
 transform/pos = Vector2( 799.023, 540.212 )
 transform/scale = Vector2( 3.43114, 0.465695 )
 texture = ExtResource( 13 )
-__meta__ = { "_edit_lock_":true }
 
 [node name="Hp Bar " type="Node2D" parent="."]
 
@@ -292,7 +301,7 @@ transform/pos = Vector2( 297.228, 78.4108 )
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/MoveBulletSpawn = SubResource( 7 )
+anims/MoveBulletSpawn = SubResource( 9 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
