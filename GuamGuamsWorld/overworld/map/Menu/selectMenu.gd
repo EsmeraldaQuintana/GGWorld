@@ -11,12 +11,15 @@ var down = false
 var inSwappe = true
 var inSwapper = false  
 
+var ready = false 
+
 #Variable of what option you're on
 var currentLabel = 0
 var container
 var labels
 var swappe
 var swapper
+var tempMon
 
 #Location of arrow
 var pointer
@@ -73,23 +76,10 @@ func _handle_interaction():
 			 
 			# if they press enter after choosing swap 
 			if Input.is_action_pressed("ui_interact"):
-				if inSwappe:
-					swappe = get_node("/root/Pokemon").spot
-					print("swappe = " + str(swappe))
-					inSwappe = false
-					inSwapper = true 
-
-				elif inSwapper:
-					swapper = get_node("/root/Pokemon").spot
-					print("swappe = " + str(swappe))
-					print("swapper = " + str(swapper))
-					inSwapper = false
-				
-				for i in range (0, Party.party.size()):
-					if get_node("/root/Pokemon").spot == i:
-						Party.party[0] = Party.party[i]
-						#get_tree().change_scene("res://overworld/map/Menu/Pokemon.tscn")
-					
+				getSwapSpots()
+				if ready:
+					doSwap()
+					get_tree().change_scene("res://overworld/map/Menu/Pokemon.tscn")
 			open = false
 			print("swap")
 		elif currentLabel == 2:
@@ -101,7 +91,30 @@ func _handle_interaction():
 			#get_tree().set_pause(false)
 			get_tree().change_scene("res://overworld/map/Menu/Pokemon.tscn")
 			print("cancel")
+
+func getSwapSpots():
+	if inSwappe:
+		swappe = get_node("/root/Pokemon").spot
+		print("swappe = " + str(swappe))
+		inSwappe = false
+		inSwapper = true 
+	elif inSwapper:
+		swapper = get_node("/root/Pokemon").spot
+		print("swappe = " + str(swappe))
+		print("swapper = " + str(swapper))
+		inSwapper = false
+		ready = true
 		
+func doSwap():
+	if Party.party[swappe] != null && Party.party[swapper] != null:
+		for i in range (0, Party.party.size()):
+			if get_node("/root/Pokemon").spot == i:
+				tempMon = Party.party[swappe] 
+				Party.party[swappe] = Party.party[swapper]
+				Party.party[swapper] = tempMon
+	else:
+		print("cant swap null referances")
+	
 func _unhandled_key_input(key_event):
 	if open:
 		if key_event.is_action_pressed("ui_menu"):

@@ -70,22 +70,27 @@ func _process(delta):
 	self.set_pos(current_location)
 	
 func _unhandled_key_input(event):
-	print("swapping sprites")
+	print("swapping sprites in battle")
 	if event.is_action_pressed("swap_0") == true:
 		print("0 was pressed")
 		swapBox.set_hidden(true)
 	elif event.is_action_pressed("swap_1") == true:
 		print("1 was pressed")
 		pSprite.set_texture(Party.party[1].backSprite)
+		swapBox.set_hidden(true)
 	elif event.is_action_pressed("swap_2"):
 		print("2 was pressed")
 		pSprite.set_texture(Party.party[2].backSprite)
+		swapBox.set_hidden(true)
 	elif event.is_action_pressed("swap_3"):
 		print("3 was pressed")
 		pSprite.set_texture(Party.party[3].backSprite)
+		swapBox.set_hidden(true)
 	elif event.is_action_pressed("swap_4"):
 		print("4 was pressed")
 		pSprite.set_texture(Party.party[4].backSprite)
+		swapBox.set_hidden(true)
 	elif event.is_action_pressed("swap_5"):
 		print("5 was pressed")
 		pSprite.set_texture(Party.party[5].backSprite)
+		swapBox.set_hidden(true)
