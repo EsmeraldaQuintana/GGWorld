@@ -10,6 +10,7 @@ var player_size
 var currentDino
 var current_health
 var colliding
+var ChatBox
 
 var no_party = true
 
@@ -33,6 +34,7 @@ func _ready():
 	# set_fixed_process(true)
 
 func _on_timer_timeout():
+	ChatBox = get_node("/root/overworld/Player/ChatBox")
 	if (Party.party.size() < 6):
 		Party.party.append(Party.fighting)
 		self.get_tree().change_scene("res://overworld/packedOverworld.tscn")
