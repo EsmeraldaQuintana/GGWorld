@@ -34,7 +34,7 @@ func _ready():
 	# set_fixed_process(true)
 
 func _on_timer_timeout():
-	ChatBox = get_node("/root/overworld/Player/ChatBox")
+	#ChatBox = get_node("/root/overworld/Player/ChatBox")
 	if (Party.party.size() < 6):
 		Party.party.append(Party.fighting)
 		self.get_tree().change_scene("res://overworld/packedOverworld.tscn")
@@ -44,7 +44,6 @@ func _process(delta):
 	if (current_health == 0):
 		print("BulletHell.gd: you're dead!")
 		get_tree().change_scene("res://death_screen/Death_Screen.tscn")
-
 
 
 

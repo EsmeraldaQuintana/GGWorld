@@ -120,7 +120,6 @@ __meta__ = { "_edit_lock_":true }
 
 [node name="Box" type="Sprite" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 312.357, 297.949 )
 texture = ExtResource( 4 )
 script/script = ExtResource( 5 )
