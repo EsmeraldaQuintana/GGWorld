@@ -16,6 +16,7 @@ var world
 var chatBox
 var chatBoxMessage
 var collision_normal 
+var GuamMode = false 
 
 var velocity = Vector2()
 var motion = Vector2()
@@ -96,6 +97,7 @@ func _fixed_process(delta):
 				direction = Vector2(0, -1)
 				currentPos = get_pos()
 				animationPlayer.play("walk_up")
+				chatBox.set_hidden(true)
 			if rand == 0:
 				randomEncounter()
 		elif Input.is_action_pressed("move_owdown"):
@@ -105,6 +107,7 @@ func _fixed_process(delta):
 				direction = Vector2(0, 1)
 				currentPos = get_pos()
 				animationPlayer.play("walk_down")
+				chatBox.set_hidden(true)
 			if rand == 0:
 				randomEncounter()
 		elif Input.is_action_pressed("move_owleft"):
@@ -114,6 +117,7 @@ func _fixed_process(delta):
 				direction = Vector2(-1, 0)
 				currentPos = get_pos()
 				animationPlayer.play("walk_left")
+				chatBox.set_hidden(true)
 			if rand == 0:
 				randomEncounter()
 		elif Input.is_action_pressed("move_owright"):
@@ -123,6 +127,7 @@ func _fixed_process(delta):
 				direction = Vector2(1, 0)
 				currentPos = get_pos()
 				animationPlayer.play("walk_right")
+				chatBox.set_hidden(true)
 			if rand == 0:
 				randomEncounter()
 		
@@ -147,9 +152,19 @@ func _fixed_process(delta):
 		move_to(get_pos() + direction * speed)
 		if get_pos() == currentPos + Vector2(GRID * direction.x, GRID * direction.y):
 			moving = false
+		if (is_colliding()):
+			var other = get_collider()
+			moving = false
+			print("colliding in fixed")
+			revert_motion()
+			print("moved?")
+			chatBox.set_hidden(false)
+			chatBoxMessage.set_text("You've unlocked the GuamGuam")
+			if other.is_in_group("Upgrades"):
+				GuamMode = true
+				other.queue_free()
 	interact = false
 	menu = false
-	
 func _on_Area2D_body_enter( body ):
 	print("Entered Area2D with body ", body)
 	
@@ -157,25 +172,6 @@ func _on_Area2D_body_exit( body ):
 	print("Exited Area2D with body ", body)
 
 func _process(delta):
-	#var move_remainder = move(velocity)
-	if (is_colliding()):
-		print("Player is touching")
-		var other = get_collider()
-		print(other)
-		collision_normal = get_collision_normal()
-		motion = collision_normal.slide(motion)
-		velocity = collision_normal.slide(velocity)
-		other.queue_free()
-
-		#moving = false
-		#canMove = true 
-		#move(final_move)
-		chatBox.set_hidden(false)
-		chatBoxMessage.set_text("You've unlocked the GuamGuam")
-		print(speed)
-		#self.set_pos(Vector2(27.0,130.0))
-		get_tree().reload_current_scene()
-	
 	# reupdating currentDino so this code won't break when we can change order of party
 	currentDino = Party.party[0]
 	currentHP = currentDino.CurrentHP
