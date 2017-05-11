@@ -17,12 +17,20 @@ var labels
 
 #Location of arrow
 var pointer
+# Player node 
+var Player 
+var GuamGuam
+
+var name 
 
 func _ready():
 	set_process_unhandled_key_input(true)
 	set_fixed_process(true)
+	name = Party.party[0].name
 	labels = get_node("Labels").get_children()
 	pointer = get_node("Sprite")
+	Player = get_node("/root/overworld/Player")
+	#GuamGuam = get_node("/root/overworld/GuamGuam")
 	
 #If the menu is open continue executing
 func _fixed_process(delta):
@@ -68,7 +76,11 @@ func _handle_interaction():
 		get_tree().set_pause(false)
 		get_tree().change_scene("res://overworld/map/Menu/Pokemon.tscn")
 	elif currentLabel == 2:
-		print("Items")
+		print("GuamMode")
+		if Player.GuamMode:
+			print("Unlocked")
+			Player.transform()
+			
 	elif currentLabel == 3:
 		print("Controls")
 		get_node("../Controls").set_hidden(false)

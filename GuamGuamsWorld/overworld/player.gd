@@ -18,10 +18,15 @@ var chatBoxMessage
 var collision_normal 
 var GuamMode = false 
 
+var Player 
+var Torchic 
+var Squirtle 
+var Bulbasuar 
+
+var transformed = false 
+
 var velocity = Vector2()
 var motion = Vector2()
-
-
 
 #Variables for menus and interacting
 var interact = false
@@ -35,15 +40,16 @@ var animationPlayer
 const GRID = 16
 
 #Needed for Death Screen
-
 var currentDino = Party.party[0]
 var currentHP
+var name 
 
 func _ready():
 	world = get_world_2d().get_direct_space_state()
 	set_process(true)
 	set_process_input(true)
 	set_fixed_process(true)
+	name = Party.party[0].name
 	sprite = get_node("Sprite")
 	chatBox = get_node("ChatBox")
 	chatBoxMessage = get_node("ChatBox/Message")
@@ -53,6 +59,10 @@ func _ready():
 	print('player.gd: Your party contains: ')
 	for dino in Party.party:
 		print(dino.name)
+	Player = load("res://overworld/PlayerSprites/redtest.png")
+	Torchic = load("res://overworld/PlayerSprites/gTorchic.png")
+	Squirtle = load("res://overworld/PlayerSprites/gSquirt.png")
+	Bulbasuar = load("res://overworld/PlayerSprites/gBulba.png")
 
 func _input(event):
 	#If the player pressed Esc, quit the game
@@ -199,3 +209,28 @@ func interact(result):
 		if typeof(dictionary.collider) == TYPE_OBJECT and dictionary.collider.has_node("Interact"):
 			get_node("Camera2D/CanvasLayer/Dialogue Box").set_hidden(false)
 			get_node("Camera2D/CanvasLayer/Dialogue Box")._print_dialogue(dictionary.collider.get_node("Interact").text)
+			
+func transform():
+	if (!transformed):
+		if (name == "Torchic"):
+			#switch into attack mode 
+			print("Tochic in GuamMode")
+			#swap sprite sheet 
+			get_node("Sprite").set_texture(Torchic)
+			transformed = true 
+		if (name == "Bulbasuar"):
+			#switch into attack mode 
+			print("Bulbasuar in GuamMode")
+			#swap sprite sheet 
+			get_node("Sprite").set_texture(Bulbasuar)
+			transformed = true 
+		if (name == "Squirtle"):
+			#switch into attack mode 
+			print("Squirtle in GuamMode")
+			#swap sprite sheet 
+			get_node("Sprite").set_texture(Squirtle)
+			transformed = true 
+	elif (transformed):
+		#get_node("Sprite").set_texture(Player)
+		print("Trying to swap back")
+		

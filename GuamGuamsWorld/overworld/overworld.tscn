@@ -220,7 +220,6 @@ autoplay = ""
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
-editor/display_folded = true
 transform/pos = Vector2( -0.0300293, -0.27301 )
 anchor_mode = 1
 rotating = false

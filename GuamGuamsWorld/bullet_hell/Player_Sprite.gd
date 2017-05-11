@@ -30,7 +30,7 @@ func _fixed_process(delta):
 		velocity.y = WALK_SPEED
 	elif (Input.is_action_pressed("move_up")):
 		velocity.y = -WALK_SPEED
-	elif (Input.is_action_pressed("ui_select")):
+	elif (Input.is_action_pressed("ui_attack")):
 		print("U pressed attack")
 		velocity.y = 0
 	else:

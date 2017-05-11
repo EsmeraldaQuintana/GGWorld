@@ -7,7 +7,6 @@ var attack_mode = false
 func _ready():
 	set_fixed_process(true)
 	print("In GuamGuam ready")
-	name = Party.party[0].name
 	interact()
 
 func _fixed_process(delta):
@@ -21,17 +20,3 @@ func _fixed_process(delta):
 func interact():
 	print("In GuamGuam interact")
 
-	
-func transform():
-	if (name == "Torchic"):
-		#switch into attack mode 
-		attack_mode = true
-		#swap sprite sheet 
-	if (name == "Bulbasuar"):
-		#switch into attack mode 
-		attack_mode = true
-		#swap sprite sheet 
-	if (name == "Bulbasuar"):
-		#switch into attack mode 
-		attack_mode = true
-		#swap sprite sheet 
