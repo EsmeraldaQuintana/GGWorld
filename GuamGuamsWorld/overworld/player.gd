@@ -3,6 +3,9 @@
 extends KinematicBody2D
 #Code based on XAND's
 
+#const GRAVITY = 200.0
+#const WALK_SPEED = 200
+
 #Movement Variables
 var direction = Vector2(0, 0)
 var currentPos = Vector2(0, 0)
@@ -10,6 +13,14 @@ var moving = false
 var speed = 1
 var canMove = true
 var world
+var chatBox
+var chatBoxMessage
+var collision_normal 
+
+var velocity = Vector2()
+var motion = Vector2()
+
+
 
 #Variables for menus and interacting
 var interact = false
@@ -29,11 +40,15 @@ var currentHP
 
 func _ready():
 	world = get_world_2d().get_direct_space_state()
-	set_fixed_process(true)
 	set_process(true)
 	set_process_input(true)
+	set_fixed_process(true)
 	sprite = get_node("Sprite")
+	chatBox = get_node("ChatBox")
+	chatBoxMessage = get_node("ChatBox/Message")
 	animationPlayer = get_node("AnimationPlayer")
+	#get_node("../Player").connect("body_enter",self,"_on_Area2D_body_enter")
+	#get_node("../GuamGuam").connect("body_exit",self,"_on_Area2D_body_exit")
 	print('player.gd: Your party contains: ')
 	for dino in Party.party:
 		print(dino.name)
@@ -50,6 +65,8 @@ func _input(event):
 		menu = false
 		
 func _fixed_process(delta):
+	#print("in player fixed")
+
 	#While not moving check if the spaces adjacent to player have collision
 	#If a movement key is pressed turn the sprite the direction pressed
 	#If the position is 'open' move the player one tile in that direction
@@ -68,7 +85,7 @@ func _fixed_process(delta):
 		var resultRight = world.intersect_point(get_pos() + Vector2(GRID, 0))
 		
 		# Hardcoded 1/20 random encounter rate
-		var rand = randi() % 20
+		var rand = randi() % 50
 		
 		#When respective direction is pressed, sprite is changed to that direction
 		#If there is no collision in that direction's tile, move to it
@@ -132,8 +149,33 @@ func _fixed_process(delta):
 			moving = false
 	interact = false
 	menu = false
+	
+func _on_Area2D_body_enter( body ):
+	print("Entered Area2D with body ", body)
+	
+func _on_Area2D_body_exit( body ):
+	print("Exited Area2D with body ", body)
 
 func _process(delta):
+	#var move_remainder = move(velocity)
+	if (is_colliding()):
+		print("Player is touching")
+		var other = get_collider()
+		print(other)
+		collision_normal = get_collision_normal()
+		motion = collision_normal.slide(motion)
+		velocity = collision_normal.slide(velocity)
+		other.queue_free()
+
+		#moving = false
+		#canMove = true 
+		#move(final_move)
+		chatBox.set_hidden(false)
+		chatBoxMessage.set_text("You've unlocked the GuamGuam")
+		print(speed)
+		#self.set_pos(Vector2(27.0,130.0))
+		get_tree().reload_current_scene()
+	
 	# reupdating currentDino so this code won't break when we can change order of party
 	currentDino = Party.party[0]
 	currentHP = currentDino.CurrentHP

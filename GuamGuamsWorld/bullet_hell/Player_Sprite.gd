@@ -30,6 +30,9 @@ func _fixed_process(delta):
 		velocity.y = WALK_SPEED
 	elif (Input.is_action_pressed("move_up")):
 		velocity.y = -WALK_SPEED
+	elif (Input.is_action_pressed("ui_select")):
+		print("U pressed attack")
+		velocity.y = 0
 	else:
 		velocity.y = 0
 	# defines motion based on velocity per second
