@@ -45,6 +45,9 @@ var currentHP
 var name 
 
 func _ready():
+	var packed_ow = PackedScene.new()
+	packed_ow.pack(get_tree().get_current_scene())
+	ResourceSaver.save("res://overworld/packedOverworld.tscn", packed_ow)
 	world = get_world_2d().get_direct_space_state()
 	set_process(true)
 	set_process_input(true)

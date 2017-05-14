@@ -111,6 +111,9 @@ func _unhandled_key_input(key_event):
 
 #Reveals menu, pauses game
 func _open_menu():
+	var packed_ow = PackedScene.new()
+	packed_ow.pack(get_tree().get_current_scene())
+	ResourceSaver.save("res://overworld/packedOverworld.tscn", packed_ow)
 	set_hidden(false)
 	get_tree().set_pause(true)
 	menu = false

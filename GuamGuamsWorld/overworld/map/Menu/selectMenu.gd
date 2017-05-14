@@ -24,6 +24,9 @@ var tempMon
 #Location of arrow
 var pointer
 
+#Sprite for the player if transformed
+var pSprite 
+
 func _ready():
 	print("in selectMenu")
 	set_process_unhandled_key_input(true)
@@ -31,6 +34,7 @@ func _ready():
 	container = get_node("/root/Pokemon/team/Message_box/Container")
 	labels = get_node("/root/Pokemon/team/Message_box/Container").get_children()
 	pointer = get_node("/root/Pokemon/team/Message_box/Arrow")
+	pSprite = get_node("/root/overworld/")
 	#get_tree().set_pause(true)
 
 #If the menu is open continue executing
@@ -112,6 +116,7 @@ func doSwap():
 				tempMon = Party.party[swappe] 
 				Party.party[swappe] = Party.party[swapper]
 				Party.party[swapper] = tempMon
+				#if get_node("/root/overworld/")
 	else:
 		print("cant swap null referances")
 	
