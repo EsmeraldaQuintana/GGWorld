@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=1]
+[gd_scene load_steps=29 format=1]
 
 [ext_resource path="res://bullet_hell/BulletHell.gd" type="Script" id=1]
 [ext_resource path="res://_assets/grass.png" type="Texture" id=2]
@@ -6,17 +6,18 @@
 [ext_resource path="res://_assets/BulletHellBoundary.png" type="Texture" id=4]
 [ext_resource path="res://bullet_hell/Box.gd" type="Script" id=5]
 [ext_resource path="res://bullet_hell/Player_Sprite.gd" type="Script" id=6]
-[ext_resource path="res://Attack.gd" type="Script" id=7]
-[ext_resource path="res://_assets/BulletHellpokeball.png" type="Texture" id=8]
-[ext_resource path="res://bullet_hell/pSprite.gd" type="Script" id=9]
-[ext_resource path="res://_assets/Pokemon_battle_arena.png" type="Texture" id=10]
-[ext_resource path="res://bullet_hell/myDino.gd" type="Script" id=11]
-[ext_resource path="res://bullet_hell/otherDino.gd" type="Script" id=12]
-[ext_resource path="res://battle_menu/battleMenu.tscn" type="PackedScene" id=13]
-[ext_resource path="res://_assets/100x25_box.png" type="Texture" id=14]
-[ext_resource path="res://bullet_hell/DinoHP.gd" type="Script" id=15]
-[ext_resource path="res://bullet_hell/FireballSpawner.gd" type="Script" id=16]
-[ext_resource path="res://bullet_hell/bullet_objects/fireball.tscn" type="PackedScene" id=17]
+[ext_resource path="res://_assets/BulletHellpokeball.png" type="Texture" id=7]
+[ext_resource path="res://bullet_hell/pSprite.gd" type="Script" id=8]
+[ext_resource path="res://Attack.gd" type="Script" id=9]
+[ext_resource path="res://icon.png" type="Texture" id=10]
+[ext_resource path="res://_assets/Pokemon_battle_arena.png" type="Texture" id=11]
+[ext_resource path="res://bullet_hell/myDino.gd" type="Script" id=12]
+[ext_resource path="res://bullet_hell/otherDino.gd" type="Script" id=13]
+[ext_resource path="res://battle_menu/battleMenu.tscn" type="PackedScene" id=14]
+[ext_resource path="res://_assets/100x25_box.png" type="Texture" id=15]
+[ext_resource path="res://bullet_hell/DinoHP.gd" type="Script" id=16]
+[ext_resource path="res://bullet_hell/FireballSpawner.gd" type="Script" id=17]
+[ext_resource path="res://bullet_hell/bullet_objects/fireball.tscn" type="PackedScene" id=18]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -243,31 +244,11 @@ collision/margin = 0.08
 script/script = ExtResource( 6 )
 __meta__ = { "_edit_lock_":true }
 
-[node name="Attack" type="KinematicBody2D" parent="Player"]
-
-transform/pos = Vector2( 0, -60 )
-input/pickable = false
-shapes/0/shape = SubResource( 9 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = false
-collision/layers = 2
-collision/mask = 2
-collision/margin = 0.08
-script/script = ExtResource( 7 )
-
-[node name="Sprite" type="Sprite" parent="Player/Attack"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Attack"]
-
-shape = SubResource( 9 )
-trigger = false
-_update_shape_index = 0
-
 [node name="Player Sprite" type="Sprite" parent="Player"]
 
 transform/pos = Vector2( -1.18301, -0.583008 )
-texture = ExtResource( 8 )
-script/script = ExtResource( 9 )
+texture = ExtResource( 7 )
+script/script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 
@@ -276,22 +257,46 @@ trigger = false
 _update_shape_index = 0
 __meta__ = { "_edit_lock_":true }
 
+[node name="Attack" type="KinematicBody2D" parent="Player"]
+
+visibility/visible = false
+transform/pos = Vector2( 0, -45 )
+transform/scale = Vector2( 0.4, 0.4 )
+input/pickable = false
+shapes/0/shape = SubResource( 9 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 2
+collision/margin = 0.08
+script/script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Player/Attack"]
+
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Attack"]
+
+shape = SubResource( 9 )
+trigger = false
+_update_shape_index = 0
+
 [node name="battleArena" type="Sprite" parent="."]
 
 transform/pos = Vector2( 810, 166 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 
 [node name="myPokemon" type="Sprite" parent="battleArena"]
 
 transform/pos = Vector2( -63.8987, 24 )
-script/script = ExtResource( 11 )
+script/script = ExtResource( 12 )
 
 [node name="otherPokemon" type="Sprite" parent="battleArena"]
 
 transform/pos = Vector2( 56.1013, -4.66382 )
-script/script = ExtResource( 12 )
+script/script = ExtResource( 13 )
 
-[node name="menuBackground" parent="." instance=ExtResource( 13 )]
+[node name="menuBackground" parent="." instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 800, 400 )
 transform/scale = Vector2( 1.5, 1.5 )
@@ -300,13 +305,13 @@ transform/scale = Vector2( 1.5, 1.5 )
 
 transform/pos = Vector2( 799.023, 540.212 )
 transform/scale = Vector2( 3.43114, 0.465695 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 
 [node name="Hp Bar " type="Node2D" parent="."]
 
 transform/pos = Vector2( 704.567, 533.82 )
 transform/scale = Vector2( 2.5, 0.5 )
-script/script = ExtResource( 15 )
+script/script = ExtResource( 16 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="FireballSpawner" type="KinematicBody2D" parent="."]
@@ -316,7 +321,7 @@ input/pickable = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
-script/script = ExtResource( 16 )
+script/script = ExtResource( 17 )
 
 [node name="SpawnPoint" type="Position2D" parent="FireballSpawner"]
 
@@ -333,6 +338,6 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = "MoveBulletSpawn"
 
-[node name="fire_ball" parent="." instance=ExtResource( 17 )]
+[node name="fire_ball" parent="." instance=ExtResource( 18 )]
 
 

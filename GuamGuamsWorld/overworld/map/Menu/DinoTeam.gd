@@ -283,11 +283,12 @@ func _input(event):
 					print("swap to 5")
 				elif (spot == 6):
 					get_tree().set_pause(false)
-					get_tree().change_scene("res://overworld/overworld.tscn")
+					self.get_tree().change_scene("res://overworld/packedOverworld.tscn")
 					
 		if (Input.is_key_pressed(KEY_ESCAPE)):
 			#get_tree().set_pause(false)
-			get_tree().change_scene("res://overworld/overworld.tscn")
+			self.get_tree().change_scene("res://overworld/packedOverworld.tscn")
+			
 			
 func _set_container():
 	message_box.set_text("Do What?")

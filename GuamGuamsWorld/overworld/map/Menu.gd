@@ -39,7 +39,7 @@ func _fixed_process(delta):
 		#If the interact button is pressed go to the option pressed
 		if Input.is_action_pressed("ui_interact"):
 			_handle_interaction()
-		
+
 		#If menu button is hit again, close the menu
 		if menu:
 			set_hidden(true)
@@ -76,11 +76,11 @@ func _handle_interaction():
 		get_tree().set_pause(false)
 		get_tree().change_scene("res://overworld/map/Menu/Pokemon.tscn")
 	elif currentLabel == 2:
+		get_tree().set_pause(false)
 		print("GuamMode")
 		if Player.GuamMode:
 			print("Unlocked")
 			Player.transform()
-			
 	elif currentLabel == 3:
 		print("Controls")
 		get_node("../Controls").set_hidden(false)

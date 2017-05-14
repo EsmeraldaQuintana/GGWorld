@@ -21,7 +21,7 @@ var GuamMode = false
 var Player 
 var Torchic 
 var Squirtle 
-var Bulbasuar 
+var Bulbasaur 
 
 var transformed = false 
 
@@ -62,7 +62,7 @@ func _ready():
 	Player = load("res://overworld/PlayerSprites/redtest.png")
 	Torchic = load("res://overworld/PlayerSprites/gTorchic.png")
 	Squirtle = load("res://overworld/PlayerSprites/gSquirt.png")
-	Bulbasuar = load("res://overworld/PlayerSprites/gBulba.png")
+	Bulbasaur = load("res://overworld/PlayerSprites/gBulba.png")
 
 func _input(event):
 	#If the player pressed Esc, quit the game
@@ -214,15 +214,15 @@ func transform():
 	if (!transformed):
 		if (name == "Torchic"):
 			#switch into attack mode 
-			print("Tochic in GuamMode")
+			print("Torchic in GuamMode")
 			#swap sprite sheet 
 			get_node("Sprite").set_texture(Torchic)
 			transformed = true 
-		if (name == "Bulbasuar"):
+		if (name == "Bulbasaur"):
 			#switch into attack mode 
-			print("Bulbasuar in GuamMode")
+			print("Bulbasaur in GuamMode")
 			#swap sprite sheet 
-			get_node("Sprite").set_texture(Bulbasuar)
+			get_node("Sprite").set_texture(Bulbasaur)
 			transformed = true 
 		if (name == "Squirtle"):
 			#switch into attack mode 
