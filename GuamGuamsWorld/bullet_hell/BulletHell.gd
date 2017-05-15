@@ -14,6 +14,8 @@ var ChatBox
 
 var no_party = true
 
+var name
+
 func _ready():
 	#print("BulletHell.gd: Party size = ", Party.party.size())
 	if (Party.party.size() == 0):
@@ -47,8 +49,14 @@ func _process(delta):
 		#print("BulletHell.gd: you're dead!")
 		get_tree().change_scene("res://death_screen/Death_Screen.tscn")
 
-
-
+func _update_move_Dic():
+	name = get_node("battleArena/otherPokemon").get_script().name
+	if name == "Torchic":
+		MoveDictionary.bullet_number = 0
+	if name == "Squirtle":
+		MoveDictionary.bullet_number = 3
+	if name == "Bulbasaur":
+		MoveDictionary.bullet_number = 2
 
 
 

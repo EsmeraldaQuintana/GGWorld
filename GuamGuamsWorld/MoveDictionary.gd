@@ -14,7 +14,7 @@ var moveDictionary = {}
 var moveDictionary_HEADERS_LIST = []
 
 # VARIABLES for random bullet
-var bullet_number = randi()%2
+var bullet_number = 0
 var bullet_damage
 var bullet_scene
 
@@ -31,7 +31,6 @@ func _process(delta):
 	random_bullet_update()
 
 func random_bullet_update():
-	bullet_number = randi()%2
 	bullet_damage = MoveDictionary.moveDictionary[bullet_number].Damage
 	bullet_scene = MoveDictionary.moveDictionary[bullet_number].tscn
 

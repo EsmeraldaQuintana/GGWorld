@@ -12,6 +12,7 @@ func _ready():
 	var possibleNums = DinoDictionary.dinodex.keys()
 	var i = randi() % possibleNums.size()
 	otherDino = Party.createDinoInstance(possibleNums[i], 20, 20)
+	print("MY NAME IS ", name)
 	Party.fighting = otherDino
 	set_texture(otherDino.frontSprite)
 	#print(otherDino.name, " loaded into scene")
