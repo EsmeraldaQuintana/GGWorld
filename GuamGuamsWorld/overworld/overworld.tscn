@@ -1,15 +1,16 @@
-[gd_scene load_steps=19 format=1]
+[gd_scene load_steps=20 format=1]
 
-[ext_resource path="res://overworld/map/tileset.xml" type="TileSet" id=1]
-[ext_resource path="res://overworld/map/fixed.png" type="Texture" id=2]
-[ext_resource path="res://overworld/map/signLine.gd" type="Script" id=3]
-[ext_resource path="res://overworld/GuamGuam.gd" type="Script" id=4]
-[ext_resource path="res://_assets/pkmn_diamond/Substitute-Back.png" type="Texture" id=5]
-[ext_resource path="res://overworld/player.gd" type="Script" id=6]
-[ext_resource path="res://overworld/map/Dialogue Box.tscn" type="PackedScene" id=7]
-[ext_resource path="res://overworld/map/Menu.tscn" type="PackedScene" id=8]
-[ext_resource path="res://overworld/map/Menu/Controls.tscn" type="PackedScene" id=9]
-[ext_resource path="res://battle_menu/textBackground.png" type="Texture" id=10]
+[ext_resource path="res://overworld/Overworld.gd" type="Script" id=1]
+[ext_resource path="res://overworld/map/tileset.xml" type="TileSet" id=2]
+[ext_resource path="res://overworld/map/fixed.png" type="Texture" id=3]
+[ext_resource path="res://overworld/map/signLine.gd" type="Script" id=4]
+[ext_resource path="res://overworld/GuamGuam.gd" type="Script" id=5]
+[ext_resource path="res://_assets/pkmn_diamond/Substitute-Back.png" type="Texture" id=6]
+[ext_resource path="res://overworld/player.gd" type="Script" id=7]
+[ext_resource path="res://overworld/map/Dialogue Box.tscn" type="PackedScene" id=8]
+[ext_resource path="res://overworld/map/Menu.tscn" type="PackedScene" id=9]
+[ext_resource path="res://overworld/map/Menu/Controls.tscn" type="PackedScene" id=10]
+[ext_resource path="res://battle_menu/textBackground.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -80,10 +81,12 @@ tracks/0/keys = { "times":FloatArray( 0, 0.1, 0.2, 0.3 ), "transitions":FloatArr
 
 [node name="overworld" type="Node2D"]
 
+script/script = ExtResource( 1 )
+
 [node name="Ground" type="TileMap" parent="."]
 
 mode = 0
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell/size = Vector2( 16, 16 )
 cell/quadrant_size = 16
 cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -101,7 +104,7 @@ tile_data = IntArray( -2097158, 21, -2097157, 21, -2097156, 21, -2097155, 21, -2
 [node name="TileBack" type="TileMap" parent="."]
 
 mode = 0
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell/size = Vector2( 16, 16 )
 cell/quadrant_size = 16
 cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -121,7 +124,7 @@ tile_data = IntArray( -1310707, 66, -1310706, 67, -1310705, 68, -1310704, 69, -1
 editor/display_folded = true
 visibility/visible = false
 transform/pos = Vector2( 248, -264 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 vframes = 54
 hframes = 52
 frame = 1707
@@ -148,7 +151,7 @@ _update_shape_index = 0
 
 [node name="Interact" type="Node2D" parent="Sprite/StaticBody2D"]
 
-script/script = ExtResource( 3 )
+script/script = ExtResource( 4 )
 text = [ "Sorry, the lighthouse is closed due to construction.", "Please return later!" ]
 
 [node name="GuamGuam" type="KinematicBody2D" parent="." groups=[ "Upgrades" ]]
@@ -162,12 +165,12 @@ shapes/0/trigger = false
 collision/layers = 0
 collision/mask = 1
 collision/margin = 0.08
-script/script = ExtResource( 4 )
+script/script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="GuamGuam"]
 
 transform/scale = Vector2( 2, 2 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="Collide" type="CollisionShape2D" parent="GuamGuam"]
 
@@ -186,7 +189,7 @@ shapes/0/trigger = false
 collision/layers = 3
 collision/mask = 1
 collision/margin = 0.08
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Player"]
 
@@ -245,7 +248,7 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 4, 3 )
 
-[node name="Dialogue Box" parent="Player/Camera2D/CanvasLayer" instance=ExtResource( 7 )]
+[node name="Dialogue Box" parent="Player/Camera2D/CanvasLayer" instance=ExtResource( 8 )]
 
 visibility/visible = false
 margin/left = 4.0
@@ -260,7 +263,7 @@ margin/right = 572.0
 margin/bottom = 99.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 
-[node name="Menu" parent="Player/Camera2D/CanvasLayer" instance=ExtResource( 8 )]
+[node name="Menu" parent="Player/Camera2D/CanvasLayer" instance=ExtResource( 9 )]
 
 process/pause_mode = 2
 visibility/visible = false
@@ -268,7 +271,7 @@ rect/scale = Vector2( 0.5, 0.5 )
 margin/left = 185.0
 margin/right = 329.0
 
-[node name="Controls" parent="Player/Camera2D/CanvasLayer" instance=ExtResource( 9 )]
+[node name="Controls" parent="Player/Camera2D/CanvasLayer" instance=ExtResource( 10 )]
 
 process/pause_mode = 2
 visibility/visible = false
@@ -282,7 +285,7 @@ margin/right = 370.0
 visibility/visible = false
 transform/pos = Vector2( -179, 189.25 )
 transform/scale = Vector2( -1.62931, -1.32955 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 
 [node name="Message" type="Label" parent="Player/ChatBox"]
 
@@ -304,7 +307,7 @@ max_lines_visible = -1
 [node name="TileFront" type="TileMap" parent="."]
 
 mode = 0
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell/size = Vector2( 16, 16 )
 cell/quadrant_size = 16
 cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
