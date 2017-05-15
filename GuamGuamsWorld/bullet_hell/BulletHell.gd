@@ -29,7 +29,7 @@ func _ready():
 	var timer = Timer.new()
 	timer.connect("timeout",self,"_on_timer_timeout") 
 	add_child(timer)
-	timer.set_wait_time(20)
+	timer.set_wait_time(5)
 	timer.start()
 	# set_fixed_process(true)
 

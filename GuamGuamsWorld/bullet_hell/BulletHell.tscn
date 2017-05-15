@@ -260,7 +260,7 @@ __meta__ = { "_edit_lock_":true }
 [node name="Attack" type="KinematicBody2D" parent="Player"]
 
 visibility/visible = false
-transform/pos = Vector2( 0, -45 )
+transform/pos = Vector2( 0, -70 )
 transform/scale = Vector2( 0.4, 0.4 )
 input/pickable = false
 shapes/0/shape = SubResource( 9 )

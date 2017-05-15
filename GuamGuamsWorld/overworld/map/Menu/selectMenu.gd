@@ -25,7 +25,12 @@ var tempMon
 var pointer
 
 #Sprite for the player if transformed
+var player
 var pSprite 
+var Red 
+var Torchic
+var Squirtle 
+var Bulbasaur 
 
 func _ready():
 	print("in selectMenu")
@@ -34,9 +39,14 @@ func _ready():
 	container = get_node("/root/Pokemon/team/Message_box/Container")
 	labels = get_node("/root/Pokemon/team/Message_box/Container").get_children()
 	pointer = get_node("/root/Pokemon/team/Message_box/Arrow")
-	pSprite = get_node("/root/overworld/")
+	#pSprite = get_node("/root/overworld/Player/Sprite")
+	#player = get_node("/root/overworld/Player")
 	#get_tree().set_pause(true)
-
+	
+	#Red = load("res://overworld/PlayerSprites/redtest.png")
+	#Torchic = load("res://overworld/PlayerSprites/gTorchic.png")
+	#Squirtle = load("res://overworld/PlayerSprites/gSquirt.png")
+	#Bulbasaur = load("res://overworld/PlayerSprites/gBulba.png")
 #If the menu is open continue executing
 func _fixed_process(delta):
 	if open:
@@ -116,7 +126,13 @@ func doSwap():
 				tempMon = Party.party[swappe] 
 				Party.party[swappe] = Party.party[swapper]
 				Party.party[swapper] = tempMon
-				#if get_node("/root/overworld/")
+				#if player.transformed:
+				#	if Party.party[0].name == "Torchic":
+				#		pSprite = Torchic
+				#	if Party.party[0].name == "Squirtle":
+				#		pSprite = Squirtle
+				#	if Party.party[0].name == "Bulbasaur":
+				#		pSprite = Bulbasaur
 	else:
 		print("cant swap null referances")
 	
