@@ -35,6 +35,7 @@ func _process(delta):
 	shoot_chance = randi()%20+1
 	scene = load(MoveDictionary.bullet_scene)
 	if ((shoot_chance == 1) && can_shoot):
+		#print("FUCK ME")
 		shoot()
 	
 func shoot():
