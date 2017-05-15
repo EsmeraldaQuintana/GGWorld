@@ -188,6 +188,7 @@ _update_shape_index = 0
 
 [node name="Player" type="KinematicBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 72, 40 )
 transform/scale = Vector2( 0.25, 0.25 )
 input/pickable = false
@@ -260,6 +261,7 @@ scale = Vector2( 4, 3 )
 
 [node name="Dialogue Box" type="Patch9Frame" parent="Player/Camera2D/CanvasLayer" instance=ExtResource( 8 )]
 
+editor/display_folded = true
 visibility/visible = false
 focus/ignore_mouse = true
 focus/stop_mouse = true

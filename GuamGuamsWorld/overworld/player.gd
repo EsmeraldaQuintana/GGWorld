@@ -23,6 +23,8 @@ var Torchic
 var Squirtle 
 var Bulbasaur 
 
+var name_of_party_head
+
 var transformed = false 
 
 var velocity = Vector2()
@@ -42,7 +44,7 @@ const GRID = 16
 #Needed for Death Screen
 var currentDino = Party.party[0]
 var currentHP
-var name 
+
 
 func _ready():
 	var packed_ow = PackedScene.new()
@@ -52,7 +54,7 @@ func _ready():
 	set_process(true)
 	set_process_input(true)
 	set_fixed_process(true)
-	name = Party.party[0].name
+	name_of_party_head = Party.party[0].name
 	sprite = get_node("Sprite")
 	chatBox = get_node("ChatBox")
 	chatBoxMessage = get_node("ChatBox/Message")
@@ -168,21 +170,21 @@ func _fixed_process(delta):
 		if (is_colliding()):
 			var other = get_collider()
 			moving = false
-			print("colliding in fixed")
+			print("player.gd: colliding in fixed")
 			revert_motion()
-			print("moved?")
+			print("player.gd: moved?")
 			chatBox.set_hidden(false)
-			chatBoxMessage.set_text("You've unlocked the GuamGuam")
-			if other.is_in_group("Upgrades"):
+			chatBoxMessage.set_text("player.gd: You've unlocked the GuamGuam")
+			if other.is_in_group("player.gd: Upgrades"):
 				GuamMode = true
 				other.queue_free()
 	interact = false
 	menu = false
 func _on_Area2D_body_enter( body ):
-	print("Entered Area2D with body ", body)
+	print("player.gd: Entered Area2D with body ", body)
 	
 func _on_Area2D_body_exit( body ):
-	print("Exited Area2D with body ", body)
+	print("player.gd: Exited Area2D with body ", body)
 
 func _process(delta):
 	# reupdating currentDino so this code won't break when we can change order of party
@@ -215,19 +217,19 @@ func interact(result):
 			
 func transform():
 	if (!transformed):
-		if (name == "Torchic"):
+		if (name_of_party_head == "Torchic"):
 			#switch into attack mode 
 			print("Torchic in GuamMode")
 			#swap sprite sheet 
 			get_node("Sprite").set_texture(Torchic)
 			transformed = true 
-		if (name == "Bulbasaur"):
+		if (name_of_party_head == "Bulbasaur"):
 			#switch into attack mode 
 			print("Bulbasaur in GuamMode")
 			#swap sprite sheet 
 			get_node("Sprite").set_texture(Bulbasaur)
 			transformed = true 
-		if (name == "Squirtle"):
+		if (name_of_party_head == "Squirtle"):
 			#switch into attack mode 
 			print("Squirtle in GuamMode")
 			#swap sprite sheet 
@@ -235,5 +237,5 @@ func transform():
 			transformed = true 
 	elif (transformed):
 		#get_node("Sprite").set_texture(Player)
-		print("Trying to swap back")
+		print("player.gd: Trying to swap back")
 		
