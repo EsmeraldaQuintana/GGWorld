@@ -189,7 +189,7 @@ _update_shape_index = 0
 [node name="Player" type="KinematicBody2D" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( 72, 40 )
+transform/pos = Vector2( 88, 72 )
 transform/scale = Vector2( 0.25, 0.25 )
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
@@ -277,6 +277,106 @@ patch_margin/top = 5
 patch_margin/right = 17
 patch_margin/bottom = 5
 script/script = ExtResource( 10 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/Camera2D/CanvasLayer/Dialogue Box"]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 10.0
+margin/top = 6.0
+margin/right = 80.0
+margin/bottom = 76.0
+custom_fonts/mono_font = ExtResource( 11 )
+custom_fonts/bold_italics_font = ExtResource( 11 )
+custom_fonts/italics_font = ExtResource( 11 )
+custom_fonts/bold_font = ExtResource( 11 )
+custom_fonts/normal_font = ExtResource( 11 )
+bbcode/enabled = false
+bbcode/bbcode = ""
+visible_characters = -1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/Camera2D/CanvasLayer/Dialogue Box"]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 10.0
+margin/top = 6.0
+margin/right = 80.0
+margin/bottom = 76.0
+custom_fonts/mono_font = ExtResource( 11 )
+custom_fonts/bold_italics_font = ExtResource( 11 )
+custom_fonts/italics_font = ExtResource( 11 )
+custom_fonts/bold_font = ExtResource( 11 )
+custom_fonts/normal_font = ExtResource( 11 )
+bbcode/enabled = false
+bbcode/bbcode = ""
+visible_characters = -1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/Camera2D/CanvasLayer/Dialogue Box"]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 10.0
+margin/top = 6.0
+margin/right = 80.0
+margin/bottom = 76.0
+custom_fonts/mono_font = ExtResource( 11 )
+custom_fonts/bold_italics_font = ExtResource( 11 )
+custom_fonts/italics_font = ExtResource( 11 )
+custom_fonts/bold_font = ExtResource( 11 )
+custom_fonts/normal_font = ExtResource( 11 )
+bbcode/enabled = false
+bbcode/bbcode = ""
+visible_characters = -1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/Camera2D/CanvasLayer/Dialogue Box"]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 10.0
+margin/top = 6.0
+margin/right = 80.0
+margin/bottom = 76.0
+custom_fonts/mono_font = ExtResource( 11 )
+custom_fonts/bold_italics_font = ExtResource( 11 )
+custom_fonts/italics_font = ExtResource( 11 )
+custom_fonts/bold_font = ExtResource( 11 )
+custom_fonts/normal_font = ExtResource( 11 )
+bbcode/enabled = false
+bbcode/bbcode = ""
+visible_characters = -1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/Camera2D/CanvasLayer/Dialogue Box"]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 10.0
+margin/top = 6.0
+margin/right = 80.0
+margin/bottom = 76.0
+custom_fonts/mono_font = ExtResource( 11 )
+custom_fonts/bold_italics_font = ExtResource( 11 )
+custom_fonts/italics_font = ExtResource( 11 )
+custom_fonts/bold_font = ExtResource( 11 )
+custom_fonts/normal_font = ExtResource( 11 )
+bbcode/enabled = false
+bbcode/bbcode = ""
+visible_characters = -1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Player/Camera2D/CanvasLayer/Dialogue Box"]
 

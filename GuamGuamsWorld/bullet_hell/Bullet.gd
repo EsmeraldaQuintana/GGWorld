@@ -13,9 +13,9 @@ func shoot(directional_force):
 	
 func _fixed_process(delta):
 	move(_movement)
-	#if (get_collider() != ):
+	if (is_colliding()):
 	#	self.free()
-	#	self.destroy()
+		self.destroy()
 
-#func destroy():
-#	queue_free()
+func destroy():
+	queue_free()
