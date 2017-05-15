@@ -305,6 +305,26 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+margin/left = 10.0
+margin/top = 6.0
+margin/right = 80.0
+margin/bottom = 76.0
+custom_fonts/mono_font = ExtResource( 11 )
+custom_fonts/bold_italics_font = ExtResource( 11 )
+custom_fonts/italics_font = ExtResource( 11 )
+custom_fonts/bold_font = ExtResource( 11 )
+custom_fonts/normal_font = ExtResource( 11 )
+bbcode/enabled = false
+bbcode/bbcode = ""
+visible_characters = -1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/Camera2D/CanvasLayer/Dialogue Box"]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
 margin/left = 12.0
 margin/top = 6.0
 margin/right = 572.0
