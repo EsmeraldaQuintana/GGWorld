@@ -16,7 +16,8 @@ func _pressed():
 	#var Overworldgd = preload("res://overworld/Overworld.gd")
 	#print("continueButton.gd: preload ended! ", Overworldgd)
 	#Overworldgd.death = true
-	global.death = true
-	print("set global.death to ", global.death)
+	# THIS IS THE EASY FIX, but reload_current_scene() in Overworld.gd doesn't work...
+	#global.death = true
+	#print("set global.death to ", global.death)
 	get_tree().change_scene("res://overworld/overworld.tscn")
 	
