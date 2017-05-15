@@ -11,7 +11,7 @@ func _ready():
 
 func _reload():
 	print("overworld.gd: in _reload()...")
-	#get_tree().reload_current_scene()
+	get_tree().reload_current_scene()
 
 #func _get_death_val():
 #	return death_happened
