@@ -32,7 +32,7 @@ func on_timeout_complete():
 	can_shoot = true
 
 func _process(delta):
-	shoot_chance = randi()%20+1
+	shoot_chance = randi()%5+1
 	scene = load(MoveDictionary.bullet_scene)
 	if ((shoot_chance == 1) && can_shoot):
 		#print("FUCK ME")
