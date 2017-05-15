@@ -15,7 +15,7 @@ var ChatBox
 var no_party = true
 
 func _ready():
-	print("BulletHell.gd: Party size = ", Party.party.size())
+	#print("BulletHell.gd: Party size = ", Party.party.size())
 	if (Party.party.size() == 0):
 		no_party = true
 		Party.party.append(Party.createDinoInstance(255, 20, 20))
@@ -24,7 +24,7 @@ func _ready():
 		currentDino = Party.party[0] # else pick first pokemon in Party
 		no_party = false
 	current_health = currentDino.CurrentHP
-	print("BulletHell.gd: dino HP: ", current_health)
+	#print("BulletHell.gd: dino HP: ", current_health)
 	set_process(true)
 	var timer = Timer.new()
 	timer.connect("timeout",self,"_on_timer_timeout") 
@@ -35,14 +35,16 @@ func _ready():
 
 func _on_timer_timeout():
 	#ChatBox = get_node("/root/overworld/Player/ChatBox")
+	# Catch pokemon!
 	if (Party.party.size() < 6):
 		Party.party.append(Party.fighting)
 		self.get_tree().change_scene("res://overworld/packedOverworld.tscn")
 
 func _process(delta):
+	### Death Screen!
 	current_health = currentDino.CurrentHP
 	if (current_health == 0):
-		print("BulletHell.gd: you're dead!")
+		#print("BulletHell.gd: you're dead!")
 		get_tree().change_scene("res://death_screen/Death_Screen.tscn")
 
 
