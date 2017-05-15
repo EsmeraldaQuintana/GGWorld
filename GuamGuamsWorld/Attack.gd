@@ -1,3 +1,5 @@
+# attached to BulletHell.tscn -> Player -> Attack
+
 extends KinematicBody2D
 
 var sprite 

@@ -189,7 +189,7 @@ _update_shape_index = 0
 [node name="Player" type="KinematicBody2D" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( 72, 40 )
+transform/pos = Vector2( 56, 56 )
 transform/scale = Vector2( 0.25, 0.25 )
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
