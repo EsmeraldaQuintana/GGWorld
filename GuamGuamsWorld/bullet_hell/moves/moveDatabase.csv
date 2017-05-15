@@ -1,3 +1,5 @@
 Number,Name,Type,Damage,tscn,Script
 0,Fireball,Fire,5,res://bullet_hell/bullet_objects/fireball.tscn,res://bullet_hell/Bullet.gd
-1,Test,Fire,5,res://bullet_hell/bullet_objects/test.tscn,res://bullet_hell/Bullet.gd
+1,Spready,Fire,5,res://bullet_hell/bullet_objects/spready.tscn,res://bullet_hell/Bullet.gd
+2,Leaves,Grass,3,res://bullet_hell/bullet_objects/leaves.tscn,res://bullet_hell/Bullet.gd
+3,WaterGun,10,res://bullet_hell/bullet_objects/watergun.tscn,res://bullet_hell/Bullet.gd

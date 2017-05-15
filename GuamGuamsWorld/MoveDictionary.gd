@@ -22,7 +22,7 @@ func _ready():
 	set_process(true)
 	set_fixed_process(true)
 	db_import("res://bullet_hell/moves/moveDatabase.csv", self.moveDictionary, self.moveDictionary_HEADERS_LIST)
-	print("MoveDictionary.gd: moveDictionary is ", moveDictionary)
+	#print("MoveDictionary.gd: moveDictionary is ", moveDictionary)
 	#print("MoveDictionary.gd: HEADERS_LIST is ", moveDictionary_HEADERS_LIST)
 	#print("MoveDictionary: moveDictionary[1].Damage is ", moveDictionary[1].Damage)
 	#print("MoveDictionary: moveDictionary_HEADERS_LIST is ", moveDictionary_HEADERS_LIST)

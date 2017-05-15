@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://_assets/pkmn_diamond/Water-Sport.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[sub_resource type="CircleShape2D" id=4]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[node name="watergun" type="KinematicBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1.39354, 0, 0, 1.61902, -100.996, -18.4807 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 0.717931, 0, 0, 1.08129, -62.1001, -25.8297 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 3 )
+shapes/2/transform = Matrix32( 0.483535, 0, 0, 0.515987, -40.0532, -32.8201 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 4 )
+shapes/3/transform = Matrix32( 0.690355, 0, 0, 0.281592, -6.53476, -33.3579 )
+shapes/3/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( -40.5606, -12.4802 )
+transform/scale = Vector2( 0.653328, 0.653328 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( -100.996, -18.4807 )
+transform/scale = Vector2( 1.39354, 1.61902 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="CollisionShape2D 2" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( -62.1001, -25.8297 )
+transform/scale = Vector2( 0.717931, 1.08129 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 1
+
+[node name="CollisionShape2D 3" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( -40.0532, -32.8201 )
+transform/scale = Vector2( 0.483535, 0.515987 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 2
+
+[node name="CollisionShape2D 4" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( -6.53476, -33.3579 )
+transform/scale = Vector2( 0.690355, 0.281592 )
+shape = SubResource( 4 )
+trigger = false
+_update_shape_index = 3
+
+
