@@ -75,7 +75,7 @@ func _process(delta):
 	self.set_pos(current_location)
 	
 func _unhandled_key_input(event):
-	print("swapping sprites in battle")
+	#print("swapping sprites in battle")
 	if swapped == false:
 		if event.is_action_pressed("swap_0") == true:
 			print("0 was pressed")

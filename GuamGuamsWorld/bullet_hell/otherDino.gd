@@ -1,6 +1,7 @@
 #
 # attached to BulletHell.tscn -> battleArena -> otherPokemon
 # This represents the OTHER Pokemon in the battle scene.
+# Currently, it picks a random Dino 
 
 extends "res://dinos/dino.gd".Dino
 
@@ -13,4 +14,4 @@ func _ready():
 	otherDino = Party.createDinoInstance(possibleNums[i], 20, 20)
 	Party.fighting = otherDino
 	set_texture(otherDino.frontSprite)
-	print(otherDino.name, " loaded into scene")
+	#print(otherDino.name, " loaded into scene")

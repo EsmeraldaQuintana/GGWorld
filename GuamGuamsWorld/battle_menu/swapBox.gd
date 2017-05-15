@@ -4,7 +4,7 @@ var options
 var swapCode 
 
 func _ready():
-	print("in the swapBox")
+	#print("swapBox.gd: in the swapBox")
 	getLabels()
 	setLabels()
 	
@@ -14,10 +14,10 @@ func getLabels():
 func setLabels():
 	swapCode = "0 : Cancel \n"
 	if Party.party.size() < 2:
-		print("Only one in party")
+		print("swapBox.gd: Only one in party")
 	else:
 		for i in range (1, Party.party.size()):
 			swapCode += str(i) + ": " + Party.party[i].name + " \n"
 
 	options.set_text(swapCode)
-	print("set labels")
+	print("swapBox.gd: set labels")

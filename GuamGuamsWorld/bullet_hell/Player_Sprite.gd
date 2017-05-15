@@ -43,6 +43,8 @@ func _process(delta):
 	# bullet_damage = get_collder().damage # NEED TO DO SOMETHING LIKE THIS INSTEAD OF USING MOVE DICTIONARY
 	bullet_damage = MoveDictionary.bullet_damage
 	if (is_colliding()):
+		if (self.get_collider().get_script() != null):
+			print("WE HAVE A SCRIPT BABY")
 		collision_normal = get_collision_normal()
 		motion = collision_normal.slide(motion)
 		velocity = collision_normal.slide(velocity)

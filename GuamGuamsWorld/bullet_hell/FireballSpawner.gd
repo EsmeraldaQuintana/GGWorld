@@ -12,7 +12,8 @@ var can_shoot = false
 #export (PackedScene) var scene # Inspector -> Script Variables -> field holds res://bullet_hell/fireball.tscn
 # ^ scene points to a fireball 
 
-var scene = load("res://bullet_hell/bullet_objects/fireball.tscn")
+var scene
+#= load("res://bullet_hell/bullet_objects/fireball.tscn")
 
 func _ready():
 	_ready_timer() # delays FireballSpawner from shooting

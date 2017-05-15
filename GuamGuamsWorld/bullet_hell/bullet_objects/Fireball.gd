@@ -6,7 +6,6 @@
 extends KinematicBody2D
 
 var _movement
-var damage = 10 # THIS IS IT, official damage, it's here
 
 func shoot(directional_force):
 	_movement = directional_force
